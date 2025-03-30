@@ -1,0 +1,22 @@
+﻿@model NhaHang.Models.Users
+@{
+    ViewData["Title"] = "Đăng Ký";
+}
+
+<h2>Đăng Ký</h2>
+<h2>Đăng Ký</h2>
+<form asp-action="Register" method="post">
+    <input type="text" name="HoTen" placeholder="Họ tên" required />
+
+    <select name="GioiTinh">
+        <option value="Nam">Nam</option>
+        <option value="Nữ">Nữ</option>
+        <option value="Khác">Khác</option>
+    </select>
+
+    <input type="SDT" name="SDT" placeholder="SDT" required />
+    <input type="email" name="Email" placeholder="Email" required />
+    <input type="password" name="MatKhau" placeholder="Mật khẩu" required />
+    <input type="DiaChi" name="DiaChi" placeholder="Địa Chỉ" required />
+    <button type="submit">Đăng Ký</button>
+</form>
