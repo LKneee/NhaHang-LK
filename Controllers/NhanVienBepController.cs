@@ -4,10 +4,9 @@ namespace NhaHang.Controllers
 {
     public class NhanVienBepController : Controller
     {
-        public IActionResult Index()
+        public IActionResult KitchenView()
         {
             return View();
         }
     }
-
 }

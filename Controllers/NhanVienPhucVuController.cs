@@ -4,10 +4,9 @@ namespace NhaHang.Controllers
 {
     public class NhanVienPhucVuController : Controller
     {
-        public IActionResult Index()
+        public IActionResult ServiceView()
         {
             return View();
         }
     }
-
 }

@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-public class KhachHangController : Controller
+namespace NhaHang.Controllers
 {
-    public IActionResult Index()
+    public class KhachHangController : Controller
     {
-        return View();
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

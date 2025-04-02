@@ -15,7 +15,20 @@ namespace NhaHang.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var userRole = HttpContext.Session.GetString("UserRole");
+
+            if (!string.IsNullOrEmpty(userRole))
+            {
+                return userRole switch
+                {
+                    "KhachHang" => RedirectToAction("Index", "KhachHang"),
+                    "QuanLy" => RedirectToAction("Dashboard", "QuanLy"),
+                    "NhanVienPhucVu" => RedirectToAction("ServiceView", "NhanVienPhucVu"),
+                    "NhanVienBep" => RedirectToAction("KitchenView", "NhanVienBep"),
+                    _ => View()
+                };
+            }
+            return View(); 
         }
 
         public IActionResult Privacy()

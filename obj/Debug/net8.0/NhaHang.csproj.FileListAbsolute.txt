@@ -166,3 +166,4 @@ D:\DACNA\NhaHang\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodi
 D:\DACNA\NhaHang\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\DACNA\NhaHang\obj\Debug\net8.0\NhaHang.csproj.AssemblyReference.cache
 D:\DACNA\NhaHang\obj\Debug\net8.0\NhaHang.csproj.Up2Date
+D:\DACNA\NhaHang\obj\Debug\net8.0\NhaHang.sourcelink.json
