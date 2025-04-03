@@ -1,0 +1,125 @@
+﻿/* Import font đẹp hơn */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Toàn bộ trang */
+body {
+    background: url('/image/nen.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center; /* Đẩy khung về bên trái */
+    align-items: center;
+    height: 100vh;
+    padding-top: 10%;
+}
+
+
+/* Form đăng ký */
+.register-form {
+    
+    padding: 10px 35px;
+    border-radius: 15px;
+    width: 420px;
+    height: 630px;
+    color: #fff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+    /* Tiêu đề */
+    .register-form h2 {
+        font-size: 38px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'Playfair Display', serif;
+        letter-spacing: 2px;
+    }
+
+    /* Input & Select */
+    .register-form input,
+    .register-form select {
+        width: 100%;
+        padding: 14px;
+        margin: 12px 0;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #333;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+        .register-form input:focus,
+        .register-form select:focus {
+            background: #fff;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+            transform: scale(1.03);
+        }
+
+    /* Button */
+    .register-form button {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+        .register-form button:hover {
+            background: linear-gradient(45deg, #ff6a00, #ee0979);
+            transform: scale(1.05);
+            box-shadow: 0px 4px 12px rgba(255, 79, 79, 0.6);
+        }
+
+    /* Placeholder style */
+    .register-form input::placeholder {
+        color: #777;
+        font-style: italic;
+    }
+
+/* Hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+header {
+    position: fixed; /* Cố định header */
+    top: 0; /* Đặt header ở trên cùng */
+    left: 0; /* Căn trái */
+    right: 0; /* Căn phải */
+    z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
+    width: 100%; /* Đảm bảo chiều rộng của header bằng chiều rộng trang */
+    background-color: white; /* Đặt màu nền nếu cần */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Thêm bóng mờ cho header */
+}
+
+body {
+    margin-top: 70px; /* Thêm khoảng cách để tránh che mất nội dung khi header cố định */
+}

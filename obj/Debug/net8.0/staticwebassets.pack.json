@@ -5,12 +5,32 @@
       "PackagePath": "staticwebassets\\NhaHang.bundle.scp.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Home.css",
+      "PackagePath": "staticwebassets\\css\\Home.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhaHang.css",
+      "PackagePath": "staticwebassets\\css\\NhaHang.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",
+      "PackagePath": "staticwebassets\\css\\Register.css"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\nen.jpg",
+      "PackagePath": "staticwebassets\\image\\nen.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\js\\site.js",

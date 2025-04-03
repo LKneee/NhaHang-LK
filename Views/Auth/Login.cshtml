@@ -2,9 +2,30 @@
     ViewData["Title"] = "Đăng Nhập";
 }
 
-<h2>Đăng Nhập</h2>
-<form asp-action="Login" method="post">
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="password" name="password" placeholder="Mật khẩu" required />
-    <button type="submit">Đăng Nhập</button>
-</form>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/Login.css"  />
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="login-form">
+            <h2>LOGIN</h2>
+            <form asp-action="Login" method="post">
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="password" placeholder="Mật khẩu" required />
+                <button type="submit">Đăng Nhập</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px;">
+                Chưa có tài khoản? <a href="/Auth/Register" style="color: #ff4b2b;">Đăng ký ngay</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
