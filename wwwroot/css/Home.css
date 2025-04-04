@@ -1,7 +1,7 @@
 ﻿/* Nền gradient */
 body {
-    color: white; /* Màu chữ trắng cho tất cả các phần tử */
-    font-family: 'Montserrat', sans-serif; /* Phông chữ hiện đại */
+    color: white;
+    font-family: 'Montserrat', sans-serif; 
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -17,17 +17,17 @@ body {
 
 /* Tiêu đề h1 */
 h1.display-4 {
-    font-size: 4rem; /* Cỡ chữ lớn */
-    font-family: 'Great Vibes', cursive; /* Phông chữ thư pháp */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Bóng chữ */
-    margin-bottom: 20px; /* Khoảng cách dưới */
+    font-size: 4rem; 
+    font-family: 'Great Vibes', cursive; 
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); 
+    margin-bottom: 20px; 
 }
 
 /* Đoạn văn */
 p {
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.7); /* Màu trắng nhạt cho văn bản */
-    font-family: 'Montserrat', sans-serif; /* Phông chữ modern */
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', sans-serif; 
     margin-top: 0;
     margin-bottom: 20px;
 }

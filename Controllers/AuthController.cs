@@ -30,7 +30,7 @@ namespace NhaHang.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -59,8 +59,17 @@ namespace NhaHang.Controllers
                 return View();
             }
 
+            string hoTen = user.HoTen ?? "Chưa cập nhật";
+            string sdt = user.SDT ?? "Chưa cập nhật";
+            string diaChi = user.DiaChi ?? "Chưa cập nhật";
+            string gioiTinh = user.GioiTinh ?? "Chưa cập nhật";
+
             HttpContext.Session.SetString("UserRole", user.VaiTro);
-            HttpContext.Session.SetString("UserName", user.HoTen);
+            HttpContext.Session.SetString("UserName", hoTen);
+            HttpContext.Session.SetString("UserEmail", user.Email);
+            HttpContext.Session.SetString("UserSDT", sdt);
+            HttpContext.Session.SetString("UserDiaChi", diaChi);
+            HttpContext.Session.SetString("UserGioiTinh", gioiTinh);
 
             return RedirectToAction("Index", "Home");
         }

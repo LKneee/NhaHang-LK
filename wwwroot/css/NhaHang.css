@@ -1,31 +1,32 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500&display=swap');
 
 body {
-    background-color: #f8f9fa; /* Màu nền nhẹ nhàng */
+    background-color: #f8f9fa; 
     font-family: "Montserrat", sans-serif;
 }
 
-/* ------ Logo thương hiệu nhẹ nhàng hơn ------ */
+
 .nhahang-brand {
+    text-align:start;
     font-family: "Great Vibes", cursive;
-    font-size: 64px;
+    font-size: 54px;
     font-weight: 600;
-    background: linear-gradient(45deg, #E0A96D, #D8BFAA); /* Gradient vàng đồng nhẹ */
+    background: linear-gradient(45deg, #E0A96D, #D8BFAA); 
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Hiệu ứng chữ gradient */
+    -webkit-text-fill-color: transparent; 
     letter-spacing: 2px;
-    text-shadow: 1px 1px 6px rgba(224, 169, 109, 0.4); /* Bóng mềm mại */
+    text-shadow: 1px 1px 6px rgba(224, 169, 109, 0.4); 
     transition: transform 0.3s ease-in-out;
 }
 
     .nhahang-brand:hover {
-        transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi hover */
+        transform: scale(1.05); 
     }
 
 /* ------ Navbar hiện đại tối giản ------ */
 .navbar-custom {
-    background: rgba(30, 30, 30, 0.95); /* Màu nền tối nhẹ */
-    backdrop-filter: blur(10px); /* Hiệu ứng mờ */
+    background: rgba(30, 30, 30, 0.95); 
+    backdrop-filter: blur(10px); 
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     padding: 12px 20px;
     transition: all 0.3s ease-in-out;
@@ -37,37 +38,37 @@ body {
 
 /* ------ Menu Navbar ------ */
 .navbar-nav .nav-link {
-    font-size: 22px; /* Tăng kích thước icon */
+    font-size: 22px; 
     color: #D8D8D8 !important;
     transition: color 0.3s ease-in-out;
-    padding: 12px 20px; /* Tăng khoảng cách giữa các icon */
+    padding: 12px 20px; 
 }
 
     /* Hiệu ứng hover */
     .navbar-nav .nav-link:hover {
-        color: #E0A96D !important; /* Vàng đồng nhẹ */
+        color: #E0A96D !important; 
     }
 
-    /* Tăng kích thước icon và thêm khoảng cách giữa các icon */
+
     .navbar-nav .nav-link i {
-        font-size: 26px; /* Kích thước icon to hơn */
-        margin-right: 8px; /* Cách ra một chút */
+        font-size: 26px; 
+        margin-right: 8px; 
     }
 
-/* ------ Button mobile menu ------ */
+
 .navbar-toggler {
     border: none;
     outline: none;
 }
 
 .navbar-toggler-icon {
-    filter: invert(1); /* Biến icon menu thành màu trắng */
+    filter: invert(1); 
 }
 
-/* ------ Responsive Adjustments ------ */
+
 @media (max-width: 768px) {
     .nhahang-brand {
-        font-size: 48px; /* Giảm kích thước trên mobile */
+        font-size: 48px; 
     }
 
     .navbar-nav .nav-link {

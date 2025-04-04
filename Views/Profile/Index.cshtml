@@ -1,0 +1,34 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "Thông Tin Cá Nhân";
+}
+
+<div class ="Profile">
+    <h2>Thông Tin Cá Nhân</h2>
+    <table class="table">
+        <tr>
+            <th>Họ Tên:</th>
+            <td>@Model.HoTen</td>
+        </tr>
+        <tr>
+            <th>Số Điện Thoại:</th>
+            <td>@Model.SDT</td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <th>Địa Chỉ:</th>
+            <td>@Model.DiaChi</td>
+        </tr>
+        <tr>
+            <th>Giới Tính:</th>
+            <td>@Model.GioiTinh</td>
+        </tr>
+    </table>
+</div>
+
+
+<a class="btn btn-primary" asp-controller="Auth" asp-action="Logout">Đăng Xuất</a>

@@ -68,11 +68,11 @@ public class AccountController : Controller
             return View();
         }
 
-        // 🔥 Lưu thông tin người dùng vào Session
+
         HttpContext.Session.SetString("UserEmail", user.Email);
         HttpContext.Session.SetString("UserRole", user.VaiTro);
 
-        // ✅ Chuyển hướng theo VaiTro
+
         return user.VaiTro switch
         {
             "KhachHang" => RedirectToAction("Index", "KhachHang"),
