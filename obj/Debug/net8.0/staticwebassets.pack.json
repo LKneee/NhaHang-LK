@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\logo.jpg",
+      "PackagePath": "staticwebassets\\image\\logo.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\nen.jpg",
       "PackagePath": "staticwebassets\\image\\nen.jpg"
     },

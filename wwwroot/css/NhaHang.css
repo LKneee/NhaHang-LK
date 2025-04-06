@@ -6,24 +6,8 @@ body {
 }
 
 
-.nhahang-brand {
-    text-align:start;
-    font-family: "Great Vibes", cursive;
-    font-size: 54px;
-    font-weight: 600;
-    background: linear-gradient(45deg, #E0A96D, #D8BFAA); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 6px rgba(224, 169, 109, 0.4); 
-    transition: transform 0.3s ease-in-out;
-}
 
-    .nhahang-brand:hover {
-        transform: scale(1.05); 
-    }
 
-/* ------ Navbar hiện đại tối giản ------ */
 .navbar-custom {
     background: rgba(30, 30, 30, 0.95); 
     backdrop-filter: blur(10px); 
@@ -36,7 +20,6 @@ body {
         background: rgba(20, 20, 20, 0.98);
     }
 
-/* ------ Menu Navbar ------ */
 .navbar-nav .nav-link {
     font-size: 22px; 
     color: #D8D8D8 !important;
@@ -44,7 +27,7 @@ body {
     padding: 12px 20px; 
 }
 
-    /* Hiệu ứng hover */
+  
     .navbar-nav .nav-link:hover {
         color: #E0A96D !important; 
     }

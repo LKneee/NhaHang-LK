@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sP6XRoVa0tS4YxlWFx3EbKI/8f3t+tAVYrkUvpwEInU=",
+  "Hash": "7JEM+YgKCP4nVt6s9do/48XxFNfE9Kw8vaIrXlhLZlo=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\image\\logo.jpg",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "image/logo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\logo.jpg"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\image\\nen.jpg",
