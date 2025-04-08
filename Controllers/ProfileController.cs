@@ -13,7 +13,7 @@ namespace NhaHang.Controllers
                 return RedirectToAction("Login", "Auth");
             }
 
-            // Lấy thông tin người dùng từ session
+           
             var userInfo = new
             {
                 HoTen = HttpContext.Session.GetString("UserName"),

@@ -14,59 +14,77 @@
 </head>
 <body>
     <header>
-
         <nav class="navbar navbar-expand-sm navbar-light navbar-custom mb-0">
             <div class="container-fluid d-flex justify-content-center position-relative">
 
-                <a class="navbar-brand nhahang-brand "
+                <a class="navbar-brand nhahang-brand"
                    asp-area="" asp-controller="Home" asp-action="Index">
                     <div class="logo-wrapper">
                         <img src="~/image/logo.jpg" alt="Logo" class="logo-img" />
                     </div>
                 </a>
 
-
-
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ms-auto">
+                <div class="collapse navbar-collapse d-flex justify-content-between w-100">
+                    
+
+                    <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
-                               Home
-                            </a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Menu" asp-action="Index">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="About" asp-action="Index">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="News" asp-action="Index">Tin tức</a>
+                        </li>
+                    </ul>
+
+                    
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-items">
+                            <form asp-area="" asp-controller="Search" asp-action="Index" method="get" class="search-box">
+                                <button type="submit" class="search-button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <input type="text" name="query" placeholder="Tìm kiếm..." class="search-input" />
+
+                            </form>
+                        </li>
+
+                        <li class="nav-items">
                             <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index">
-                                <i class="fas fa-shopping-cart"></i> 
+                                <i class="fas fa-shopping-cart"></i>
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-items">
                             @if (HttpContextAccessor.HttpContext.Session.GetString("UserEmail") != null)
                             {
-           
                                 <a class="nav-link" asp-area="" asp-controller="Profile" asp-action="Index">
-                                    <i class="fa-regular fa-circle-user"></i> 
+                                    <i class="fa-regular fa-circle-user"></i>
                                 </a>
                             }
                             else
                             {
- 
                                 <a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Login">
-                                    <i class="fa-regular fa-circle-user"></i> 
+                                    <i class="fa-regular fa-circle-user"></i>
                                 </a>
                             }
                         </li>
+
                     </ul>
+
                 </div>
             </div>
         </nav>
-
-
     </header>
 
     <div class="container">
@@ -80,7 +98,4 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-
-
-
 </html>

@@ -26,5 +26,6 @@ namespace NhaHang.Models
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public string VaiTro { get; private set; }
+
     }
 }
