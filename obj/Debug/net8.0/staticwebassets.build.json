@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7JEM+YgKCP4nVt6s9do/48XxFNfE9Kw8vaIrXlhLZlo=",
+  "Hash": "jIJUEMxXbmQhf/0M1cWDS0r9VHCjdiK9VkWsTr41Cxk=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "NhaHang\\wwwroot",
       "Source": "NhaHang",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\DACNA\\NhaHang\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NhaHang.styles.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NhaHang.styles.css",
       "SourceId": "NhaHang",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "NhaHang.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\DACNA\\NhaHang\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NhaHang.styles.css"
+      "OriginalItemSpec": "D:\\NhaHang\\NhaHang-LK\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NhaHang.styles.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NhaHang.bundle.scp.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NhaHang.bundle.scp.css",
       "SourceId": "NhaHang",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "NhaHang.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\DACNA\\NhaHang\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NhaHang.bundle.scp.css"
+      "OriginalItemSpec": "D:\\NhaHang\\NhaHang-LK\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NhaHang.bundle.scp.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Home.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\Home.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "css/Home.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Home.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Login.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\Login.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "css/Login.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Login.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhaHang.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\NhaHang.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "css/NhaHang.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\NhaHang.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\Register.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "css/Register.css",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Register.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\site.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\site.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\favicon.ico",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\favicon.ico",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\image\\logo.jpg",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\image\\logo.jpg",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "image/logo.jpg",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\image\\logo.jpg"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\image\\nen.jpg",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\image\\nen.jpg",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "image/nen.jpg",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\image\\nen.jpg"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\js\\site.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\js\\site.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1176,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1195,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "ContentRoot": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\",
       "BasePath": "_content/NhaHang",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

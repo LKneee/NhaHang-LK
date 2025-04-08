@@ -17,67 +17,67 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NhaHang
 build_property.RootNamespace = NhaHang
-build_property.ProjectDir = D:\DACNA\NhaHang\
+build_property.ProjectDir = D:\NhaHang\NhaHang-LK\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\DACNA\NhaHang
+build_property.MSBuildProjectDirectory = D:\NhaHang\NhaHang-LK
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/DACNA/NhaHang/Views/Auth/Login.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/Auth/Register.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/Home/Index.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/Home/Privacy.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/KhachHang/Index.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/KhachHang/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/NhanVienBep/KitchenView.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/NhanVienBep/KitchenView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5CZXBcS2l0Y2hlblZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/NhanVienPhucVu/ServiceView.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/NhanVienPhucVu/ServiceView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5QaHVjVnVcU2VydmljZVZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/Profile/Index.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/Profile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/QuanLy/Dashboard.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/QuanLy/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/Shared/Error.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/_ViewImports.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/_ViewStart.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/Shared/_Layout.cshtml]
+[D:/NhaHang/NhaHang-LK/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mkfzr3ivx8

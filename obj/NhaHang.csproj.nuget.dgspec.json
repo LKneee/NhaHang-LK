@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DACNA\\NhaHang\\NhaHang.csproj": {}
+    "D:\\NhaHang\\NhaHang-LK\\NhaHang.csproj": {}
   },
   "projects": {
-    "D:\\DACNA\\NhaHang\\NhaHang.csproj": {
+    "D:\\NhaHang\\NhaHang-LK\\NhaHang.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DACNA\\NhaHang\\NhaHang.csproj",
+        "projectUniqueName": "D:\\NhaHang\\NhaHang-LK\\NhaHang.csproj",
         "projectName": "NhaHang",
-        "projectPath": "D:\\DACNA\\NhaHang\\NhaHang.csproj",
-        "packagesPath": "C:\\Users\\Le Khoi\\.nuget\\packages\\",
-        "outputPath": "D:\\DACNA\\NhaHang\\obj\\",
+        "projectPath": "D:\\NhaHang\\NhaHang-LK\\NhaHang.csproj",
+        "packagesPath": "C:\\Users\\My Computer\\.nuget\\packages\\",
+        "outputPath": "D:\\NhaHang\\NhaHang-LK\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Le Khoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\My Computer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
