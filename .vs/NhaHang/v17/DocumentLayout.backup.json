@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "D:\\NhaHang\\NhaHang-LK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\wwwroot\\css\\nhahang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:wwwroot\\css\\nhahang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\wwwroot\\css\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:wwwroot\\css\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\wwwroot\\css\\nhahang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:wwwroot\\css\\nhahang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\nhahang\\nhahang-lk\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,25 +42,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NhaHang.css",
-              "DocumentMoniker": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\NhaHang.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\NhaHang.css",
-              "ToolTip": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\NhaHang.css",
-              "RelativeToolTip": "wwwroot\\css\\NhaHang.css",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAiwE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-07T22:56:00.407Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -49,21 +52,105 @@
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\NhaHang\\NhaHang-LK\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T18:38:33.505Z"
+              "WhenOpened": "2025-04-06T18:38:33.505Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Register.css",
+              "DocumentMoniker": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\Register.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\Register.css",
+              "ToolTip": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\Register.css",
+              "RelativeToolTip": "wwwroot\\css\\Register.css",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAABIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-08T17:17:13.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.css",
+              "DocumentMoniker": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\Login.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\Login.css",
+              "ToolTip": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\Login.css",
+              "RelativeToolTip": "wwwroot\\css\\Login.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-08T07:08:28.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\NhaHang\\NhaHang-LK\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Auth\\Login.cshtml",
+              "ToolTip": "D:\\NhaHang\\NhaHang-LK\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "Views\\Auth\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T07:09:02.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\NhaHang\\NhaHang-LK\\Views\\Auth\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Auth\\Register.cshtml",
+              "ToolTip": "D:\\NhaHang\\NhaHang-LK\\Views\\Auth\\Register.cshtml",
+              "RelativeToolTip": "Views\\Auth\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T17:19:48.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NhaHang.css",
+              "DocumentMoniker": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\NhaHang.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\NhaHang.css",
+              "ToolTip": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\NhaHang.css",
+              "RelativeToolTip": "wwwroot\\css\\NhaHang.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-07T22:56:00.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\NhaHang\\NhaHang-LK\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\NhaHang\\NhaHang-LK\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAADcAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T18:36:14.94Z"
+              "WhenOpened": "2025-04-06T18:36:14.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Home.css",
+              "DocumentMoniker": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\Home.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\Home.css",
+              "ToolTip": "D:\\NhaHang\\NhaHang-LK\\wwwroot\\css\\Home.css",
+              "RelativeToolTip": "wwwroot\\css\\Home.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-08T06:03:13.976Z"
             }
           ]
         }

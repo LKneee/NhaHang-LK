@@ -11,12 +11,12 @@
 
 /* Toàn bộ trang */
 body {
-    background: url('/image/nen.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 70vh;
 }
 
 .login-container {
@@ -24,7 +24,7 @@ body {
     justify-content: center; 
     align-items: center;
     height: 100vh;
-    padding-top: 10%;
+    padding-top: 20%;
 }
 
 /* Form đăng nhập */
