@@ -4,9 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NhaHang</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/Register.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/NhaHang.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     @using Microsoft.AspNetCore.Http
@@ -68,9 +67,20 @@
                         <li class="nav-items">
                             @if (HttpContextAccessor.HttpContext.Session.GetString("UserEmail") != null)
                             {
-                                <a class="nav-link" asp-area="" asp-controller="Profile" asp-action="Index">
-                                    <i class="fa-regular fa-circle-user"></i>
-                                </a>
+                                var userImage = HttpContextAccessor.HttpContext.Session.GetString("UserImage");
+
+                                if (!string.IsNullOrEmpty(userImage))
+                                {
+                                    <a class="nav-link" asp-area="" asp-controller="Profile" asp-action="Index">
+                                        <img src="@userImage" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" />
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a class="nav-link" asp-area="" asp-controller="Profile" asp-action="Index">
+                                        <i class="fa-regular fa-circle-user"></i>
+                                    </a>
+                                }
                             }
                             else
                             {
@@ -79,6 +89,7 @@
                                 </a>
                             }
                         </li>
+
 
                     </ul>
 

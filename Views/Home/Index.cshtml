@@ -1,7 +1,7 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-
+    ViewData["Title"] = "Home";
 }
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -9,9 +9,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/Home.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="text-center">
-        <h1 class="display-4">Chào mừng bạn đến với nhà hàng </h1>
-    </div>
+
+    <section class="hero-section">
+        <div class="content">
+            <h1>Nhà Hàng LK</h1>
+            <p>Đa dạng món ăn</p>
+            <a href="/Auth/Login">Đặt món ngay</a>
+        </div>
+    </section>
+
+
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Về chúng tôi</h2>
+            <h3>Nhà Hàng LK</h3>
+            <p>Là nhà hàng tuyệt vời, là một nhà hàng có những món ăn ngon tuyệt, xứng đáng top 1.</p>
+        </div>
+        <div class="about-images">
+            <img src="~/image/h2.jpg" alt="ảnh 1" />
+            <img src="~/image/h3.jpg" alt="ảnh 2" />
+            <img src="~/image/h4.jpg" alt="ảnh 3" />
+            <img src="~/image/h5.jpg" alt="ảnh 4" />
+        </div>
+    </section>
+
+    <section class="featured-section">
+        <h2>Danh mục nổi bật</h2>
+        <div class="featured-items">
+            <div class="item">
+                <img src="~/image/m1.jpg" alt="Món cá" />
+                <p>Món mặn</p>
+            </div>
+            <div class="item">
+                <img src="~/image/m2.jpg" alt="Món gà" />
+                <p>Lẩu</p>
+            </div>
+            <div class="item">
+                <img src="~/image/m3.jpg" alt="Món vịt" />
+                <p>Nước uống</p>
+            </div>
+            <div class="item">
+                <img src="~/image/m4.jpg" alt="Món chim" />
+                <p>Tráng miệng</p>
+            </div>
+        </div>
+    </section>
+
 </body>
+</html>

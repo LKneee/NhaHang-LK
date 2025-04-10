@@ -1,0 +1,15 @@
+﻿.quanly-container {
+    margin: 50px auto;
+    padding: 30%;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .quanly-container h2 {
+        color: #2c3e50;
+        font-size: 28px;
+        font-weight: bold;
+    }

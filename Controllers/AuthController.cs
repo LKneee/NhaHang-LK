@@ -70,6 +70,7 @@ namespace NhaHang.Controllers
             HttpContext.Session.SetString("UserSDT", sdt);
             HttpContext.Session.SetString("UserDiaChi", diaChi);
             HttpContext.Session.SetString("UserGioiTinh", gioiTinh);
+            HttpContext.Session.SetString("UserImage", user.Image ?? "");
 
             return RedirectToAction("Index", "Home");
         }

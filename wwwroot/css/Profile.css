@@ -1,0 +1,18 @@
+﻿body{
+    display:flex;
+    text-align:center;
+    justify-content:center;
+
+}
+.Profile {
+    display: flex;
+    background-color: #f8f9fa;
+    padding-top:20%;
+}
+
+    .Profile h2 {
+        align-content: center;
+        color: #2c3e50;
+        font-size: 16px;
+        font-weight: bold;
+    }

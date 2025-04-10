@@ -5,8 +5,20 @@
       "PackagePath": "staticwebassets\\NhaHang.bundle.scp.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\70c285c9-1785-459e-ad53-75874909672e.jpg",
+      "PackagePath": "staticwebassets\\avatar\\70c285c9-1785-459e-ad53-75874909672e.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\cf37a074-b737-4ead-8224-35b34409f21b.jpg",
+      "PackagePath": "staticwebassets\\avatar\\cf37a074-b737-4ead-8224-35b34409f21b.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Home.css",
       "PackagePath": "staticwebassets\\css\\Home.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\KhachHang.css",
+      "PackagePath": "staticwebassets\\css\\KhachHang.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Login.css",
@@ -15,6 +27,22 @@
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhaHang.css",
       "PackagePath": "staticwebassets\\css\\NhaHang.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienBep.css",
+      "PackagePath": "staticwebassets\\css\\NhanVienBep.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu.css",
+      "PackagePath": "staticwebassets\\css\\NhanVienPhucVu.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Profile.css",
+      "PackagePath": "staticwebassets\\css\\Profile.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy.css",
+      "PackagePath": "staticwebassets\\css\\QuanLy.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",
@@ -29,12 +57,48 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\bgh1.jpg",
+      "PackagePath": "staticwebassets\\image\\bgh1.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\h1.jpg",
+      "PackagePath": "staticwebassets\\image\\h1.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\h2.jpg",
+      "PackagePath": "staticwebassets\\image\\h2.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\h3.jpg",
+      "PackagePath": "staticwebassets\\image\\h3.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\h4.jpg",
+      "PackagePath": "staticwebassets\\image\\h4.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\h5.jpg",
+      "PackagePath": "staticwebassets\\image\\h5.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\logo.jpg",
       "PackagePath": "staticwebassets\\image\\logo.jpg"
     },
     {
-      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\nen.jpg",
-      "PackagePath": "staticwebassets\\image\\nen.jpg"
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\m1.jpg",
+      "PackagePath": "staticwebassets\\image\\m1.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\m2.jpg",
+      "PackagePath": "staticwebassets\\image\\m2.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\m3.jpg",
+      "PackagePath": "staticwebassets\\image\\m3.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\m4.jpg",
+      "PackagePath": "staticwebassets\\image\\m4.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\js\\site.js",

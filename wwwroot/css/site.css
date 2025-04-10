@@ -18,53 +18,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
-.khachhang-container {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
 
-    .khachhang-container h2 {
-        color: #2c3e50;
-        font-size: 26px;
-        font-weight: bold;
-    }
 
-.Profile {
-    display: flex;
-    background-color: #f8f9fa;
-}
-.Profile h2 {
-    align-content:center;
-    color: #2c3e50;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.logo-wrapper {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    object-position: 58% ;
-}
 
 
 

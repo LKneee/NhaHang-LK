@@ -1,5 +1,4 @@
-﻿
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
 
 
 * {
@@ -11,17 +10,17 @@
 
 
 body {
-    background: url('/image/nen.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 70vh;
 }
 
 .register-container {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     height: 100vh;
     padding-top: 10%;
@@ -30,7 +29,6 @@ body {
 
 
 .register-form {
-    
     padding: 10px 35px;
     border-radius: 15px;
     width: 420px;
@@ -39,7 +37,7 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
-    /* Tiêu đề */
+
     .register-form h2 {
         font-size: 38px;
         font-weight: bold;
@@ -109,17 +107,18 @@ body {
         transform: translateY(0);
     }
 }
+
 header {
-    position: fixed; 
+    position: fixed;
     top: 0;
-    left: 0; 
-    right: 0; 
-    z-index: 1000; 
-    width: 100%; 
-    background-color: white; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 body {
-    margin-top: 70px; 
+    margin-top: 70px;
 }
