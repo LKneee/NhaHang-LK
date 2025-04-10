@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "D:\\DACNA\\NhaHang\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\shared\\_layout_quanly.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\shared\\_layout_quanly.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\shared\\_layout_nhanvienphucvu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\shared\\_layout_nhanvienphucvu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\shared\\_layout_nhanvienbep.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\shared\\_layout_nhanvienbep.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\shared\\_layout_khachhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\shared\\_layout_khachhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\quanly\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\quanly\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -29,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\nhanvienbep\\kitchenview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\nhanvienbep\\kitchenview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -79,10 +107,6 @@
       "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -94,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,7 +126,85 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout_QuanLy.cshtml",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout_QuanLy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout_QuanLy.cshtml",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout_QuanLy.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout_QuanLy.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADMAAABkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T07:45:51.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "_Layout_NhanVienPhucVu.cshtml",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout_NhanVienPhucVu.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout_NhanVienPhucVu.cshtml",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout_NhanVienPhucVu.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout_NhanVienPhucVu.cshtml",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAwCMAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T07:45:12.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout_NhanVienBep.cshtml",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout_NhanVienBep.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout_NhanVienBep.cshtml",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout_NhanVienBep.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout_NhanVienBep.cshtml",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAAwGQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T07:43:31.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout_KhachHang.cshtml",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout_KhachHang.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout_KhachHang.cshtml",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout_KhachHang.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout_KhachHang.cshtml",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAwEUAAABvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T05:46:20.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T05:42:41.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T05:36:54.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "QuanLy.css",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\QuanLy.css",
@@ -110,12 +212,11 @@
               "RelativeToolTip": "wwwroot\\css\\QuanLy.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-10T04:07:41.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T04:07:41.155Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\QuanLy\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "Views\\QuanLy\\Dashboard.cshtml",
@@ -128,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "NhanVienPhucVu.css",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\NhanVienPhucVu.css",
@@ -136,12 +237,11 @@
               "RelativeToolTip": "wwwroot\\css\\NhanVienPhucVu.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-10T04:04:43.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T04:04:43.776Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "ServiceView.cshtml",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\NhanVienPhucVu\\ServiceView.cshtml",
               "RelativeDocumentMoniker": "Views\\NhanVienPhucVu\\ServiceView.cshtml",
@@ -149,12 +249,11 @@
               "RelativeToolTip": "Views\\NhanVienPhucVu\\ServiceView.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T20:08:54.045Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T20:08:54.045Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "KitchenView.cshtml",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\NhanVienBep\\KitchenView.cshtml",
               "RelativeDocumentMoniker": "Views\\NhanVienBep\\KitchenView.cshtml",
@@ -162,12 +261,11 @@
               "RelativeToolTip": "Views\\NhanVienBep\\KitchenView.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T20:08:39.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T20:08:39.123Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "NhanVienBep.css",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienBep.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\NhanVienBep.css",
@@ -175,12 +273,11 @@
               "RelativeToolTip": "wwwroot\\css\\NhanVienBep.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-08T20:08:25.317Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T20:08:25.317Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "KhachHang.css",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\wwwroot\\css\\KhachHang.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\KhachHang.css",
@@ -192,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "Profile.css",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Profile.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\Profile.css",
@@ -204,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\Auth\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Auth\\Login.cshtml",
@@ -216,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\Auth\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Auth\\Register.cshtml",
@@ -228,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\KhachHang\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\KhachHang\\Index.cshtml",
@@ -236,12 +333,11 @@
               "RelativeToolTip": "Views\\KhachHang\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T19:18:19.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T19:18:19.402Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "NhaHang.css",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhaHang.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\NhaHang.css",
@@ -253,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "Register.css",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\Register.css",
@@ -265,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "Login.css",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Login.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\Login.css",
@@ -277,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "Home.css",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Home.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\Home.css",
@@ -289,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -301,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
@@ -313,19 +409,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 7,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "D:\\DACNA\\NhaHang\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFMAAAANAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAswEoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T08:03:25.509Z"
+              "WhenOpened": "2025-04-08T08:03:25.509Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\Profile\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Profile\\Index.cshtml",
@@ -337,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
@@ -349,13 +446,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\DACNA\\NhaHang\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAA0AAAAGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-06T18:36:14.94Z",
               "EditorCaption": ""

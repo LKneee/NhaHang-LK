@@ -1,3 +1,15 @@
-﻿@{
-    Layout = "_Layout";
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var vaiTro = HttpContextAccessor.HttpContext.Session.GetString("UserVaiTro");
+
+    Layout = vaiTro switch
+    {
+        "KhachHang" => "~/Views/Shared/_Layout_KhachHang.cshtml",
+        "NhanVienBep" => "~/Views/Shared/_Layout_NhanVienBep.cshtml",
+        "NhanVienPhucVu" => "~/Views/Shared/_Layout_NhanVienPhucVu.cshtml",
+        "QuanLy" => "~/Views/Shared/_Layout_QuanLy.cshtml",
+        _ => "~/Views/Shared/_Layout.cshtml" 
+    };
 }

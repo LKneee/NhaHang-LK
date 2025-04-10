@@ -71,6 +71,7 @@ namespace NhaHang.Controllers
             HttpContext.Session.SetString("UserDiaChi", diaChi);
             HttpContext.Session.SetString("UserGioiTinh", gioiTinh);
             HttpContext.Session.SetString("UserImage", user.Image ?? "");
+            HttpContext.Session.SetString("UserVaiTro", user.VaiTro);
 
             return RedirectToAction("Index", "Home");
         }
