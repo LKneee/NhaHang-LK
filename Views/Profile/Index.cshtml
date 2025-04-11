@@ -12,48 +12,32 @@
     <link rel="stylesheet" href="~/css/Profile.css">
 </head>
 <body>
+
     <div class="Profile">
         <h2>Thông Tin Cá Nhân</h2>
 
-
         @if (Model.Image != null)
         {
-            <div style="margin-bottom: 20px;">
-                <img src="@Model.Image" alt="Ảnh đại diện" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; border: 2px solid #ccc;" />
+            <div>
+                <img src="@Model.Image" alt="Ảnh đại diện" />
             </div>
         }
 
-
-        <form asp-controller="Profile" asp-action="UploadImage" method="post" enctype="multipart/form-data" style="margin-bottom: 20px;">
+        <form asp-controller="Profile" asp-action="UploadImage" method="post" enctype="multipart/form-data">
             <input type="file" name="image" accept="image/*" />
             <button type="submit" class="btn btn-success">Tải Ảnh Lên</button>
         </form>
 
         <table class="table">
-            <tr>
-                <th>Họ Tên:</th>
-                <td>@Model.HoTen</td>
-            </tr>
-            <tr>
-                <th>Số Điện Thoại:</th>
-                <td>@Model.SDT</td>
-            </tr>
-            <tr>
-                <th>Email:</th>
-                <td>@Model.Email</td>
-            </tr>
-            <tr>
-                <th>Địa Chỉ:</th>
-                <td>@Model.DiaChi</td>
-            </tr>
-            <tr>
-                <th>Giới Tính:</th>
-                <td>@Model.GioiTinh</td>
-            </tr>
+            <tr><th>Họ Tên:</th><td>@Model.HoTen</td></tr>
+            <tr><th>Số Điện Thoại:</th><td>@Model.SDT</td></tr>
+            <tr><th>Email:</th><td>@Model.Email</td></tr>
+            <tr><th>Địa Chỉ:</th><td>@Model.DiaChi</td></tr>
+            <tr><th>Giới Tính:</th><td>@Model.GioiTinh</td></tr>
         </table>
+
+        <a class="btn btn-primary" asp-controller="Auth" asp-action="Logout">Đăng Xuất</a>
     </div>
 
-    <a class="btn btn-primary" asp-controller="Auth" asp-action="Logout">Đăng Xuất</a>
+
 </body>
-
-
