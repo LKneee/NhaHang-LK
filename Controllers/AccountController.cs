@@ -76,9 +76,9 @@ public class AccountController : Controller
         return user.VaiTro switch
         {
             "KhachHang" => RedirectToAction("Index", "KhachHang"),
-            "QuanLy" => RedirectToAction("Dashboard", "QuanLy"),
-            "NhanVienPhucVu" => RedirectToAction("ServiceView", "NhanVienPhucVu"),
-            "NhanVienBep" => RedirectToAction("KitchenView", "NhanVienBep"),
+            "QuanLy" => RedirectToAction("Index", "QuanLy"),
+            "NhanVienPhucVu" => RedirectToAction("Index", "NhanVienPhucVu"),
+            "NhanVienBep" => RedirectToAction("Index", "NhanVienBep"),
             _ => RedirectToAction("Index", "Home") // Nếu VaiTro không hợp lệ, về Home
         };
     }

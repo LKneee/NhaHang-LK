@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     @using Microsoft.AspNetCore.Http
     @inject IHttpContextAccessor HttpContextAccessor
+
 </head>
 <body>
     <header>
@@ -33,11 +34,13 @@
 
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ khách hàng </a>
+                            <a class="nav-link" asp-area="" asp-controller="KhachHang" asp-action="Index">Trang chủ khách hàng </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Menu" asp-action="Index">Menu</a>
+                            <a class="nav-link" asp-area="" asp-controller="KhachHang" asp-action="Menu">Menu</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="About" asp-action="Index">Giới thiệu</a>
                         </li>

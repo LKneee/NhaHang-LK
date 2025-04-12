@@ -8,5 +8,8 @@ namespace NhaHang.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Users> Users { get; set; }
+        public DbSet<Menu> Menu { get; set; } 
+
+
     }
 }

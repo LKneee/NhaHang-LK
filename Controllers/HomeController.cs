@@ -22,9 +22,9 @@ namespace NhaHang.Controllers
                 return userRole switch
                 {
                     "KhachHang" => RedirectToAction("Index", "KhachHang"),
-                    "QuanLy" => RedirectToAction("Dashboard", "QuanLy"),
-                    "NhanVienPhucVu" => RedirectToAction("ServiceView", "NhanVienPhucVu"),
-                    "NhanVienBep" => RedirectToAction("KitchenView", "NhanVienBep"),
+                    "QuanLy" => RedirectToAction("Index", "QuanLy"),
+                    "NhanVienPhucVu" => RedirectToAction("Index", "NhanVienPhucVu"),
+                    "NhanVienBep" => RedirectToAction("Index", "NhanVienBep"),
                     _ => View()
                 };
             }

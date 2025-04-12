@@ -46,20 +46,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/NhanVienBep/KitchenView.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5CZXBcS2l0Y2hlblZpZXcuY3NodG1s
+[D:/DACNA/NhaHang/Views/KhachHang/Menu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXE1lbnVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/NhanVienPhucVu/ServiceView.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5QaHVjVnVcU2VydmljZVZpZXcuY3NodG1s
+[D:/DACNA/NhaHang/Views/NhanVienBep/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5CZXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DACNA/NhaHang/Views/NhanVienPhucVu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5QaHVjVnVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DACNA/NhaHang/Views/Profile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DACNA/NhaHang/Views/QuanLy/Dashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERhc2hib2FyZC5jc2h0bWw=
+[D:/DACNA/NhaHang/Views/QuanLy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DACNA/NhaHang/Views/Shared/Error.cshtml]

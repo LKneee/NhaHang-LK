@@ -1,0 +1,47 @@
+﻿@model IEnumerable<NhaHang.Models.Menu>
+<link rel="stylesheet" href="~/css/KhachHang/MenuKhachHang.css" />
+@{
+    Layout = "~/Views/Shared/_Layout_KhachHang.cshtml";
+}
+
+<h2>Thực Đơn Tất Cả</h2>
+
+<div class="btn-group mb-3">
+    <a asp-action="Combo" asp-route-size="2" class="btn btn-primary">Combo 2 người</a>
+    <a asp-action="Combo" asp-route-size="3" class="btn btn-primary">Combo 3 người</a>
+    <a asp-action="Combo" asp-route-size="4" class="btn btn-primary">Combo 4 người</a>
+    <a asp-action="GiamGia" class="btn btn-warning">Món Giảm Giá</a>
+    <a asp-action="SpecialDay" class="btn btn-success">Món Ngon Trong Ngày</a>
+</div>
+
+<hr />
+
+<div class="row">
+    @if (Model != null && Model.Any())
+    {
+        foreach (var pro in Model)
+        {
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    @if (!string.IsNullOrEmpty(pro.Image))
+                    {
+                        <img src="~/image/@pro.Image" class="card-img-top" alt="@pro.TenMon" style="height: 200px; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <img src="~/image/default.jpg" class="card-img-top" alt="No Image" style="height: 200px; object-fit: cover;" />
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@pro.TenMon</h5>
+                        <p class="card-text">@pro.MoTa</p>
+                        <p class="card-text"><strong>@pro.Gia.ToString("N0")</strong> VND</p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Không có dữ liệu món ăn.</p>
+    }
+</div>
