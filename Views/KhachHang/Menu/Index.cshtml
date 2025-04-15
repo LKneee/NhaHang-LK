@@ -4,15 +4,18 @@
     Layout = "~/Views/Shared/_Layout_KhachHang.cshtml";
 }
 
-<h2>Thực Đơn Tất Cả</h2>
+<h2>Menu</h2>
 
 <div class="btn-group mb-3">
-    <a asp-action="Combo" asp-route-size="2" class="btn btn-primary">Combo 2 người</a>
-    <a asp-action="Combo" asp-route-size="3" class="btn btn-primary">Combo 3 người</a>
-    <a asp-action="Combo" asp-route-size="4" class="btn btn-primary">Combo 4 người</a>
-    <a asp-action="GiamGia" class="btn btn-warning">Món Giảm Giá</a>
-    <a asp-action="SpecialDay" class="btn btn-success">Món Ngon Trong Ngày</a>
+    <a href="/Menu" class="btn btn-secondary">Tất Cả</a>
+    <a href="/Menu/HaiSan" class="btn btn-primary">Hải Sản</a>
+    <a href="/Menu/Ga" class="btn btn-primary">Gà</a>
+    <a href="/Menu/Bo" class="btn btn-primary">Bò</a>
+    <a href="/Menu/Salad" class="btn btn-primary">Salad</a>
+    <a href="/Menu/TrangMieng" class="btn btn-primary">Tráng Miệng</a>
+
 </div>
+
 
 <hr />
 
@@ -21,11 +24,13 @@
     {
         foreach (var pro in Model)
         {
+            var tenMon = pro.TenMon.Replace(" ", "");
             <div class="col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
+                    <a href="@Url.Action("ChiTiet", "Menu", new { tenMonAn = tenMon })">
                     @if (!string.IsNullOrEmpty(pro.Image))
                     {
-                        <img src="~/image/@pro.Image" class="card-img-top" alt="@pro.TenMon" style="height: 200px; object-fit: cover;" />
+                        <img src="~/Menu/@pro.Image" class="card-img-top" alt="@pro.TenMon" style="height: 200px; object-fit: cover;" />
                     }
                     else
                     {
@@ -36,6 +41,7 @@
                         <p class="card-text">@pro.MoTa</p>
                         <p class="card-text"><strong>@pro.Gia.ToString("N0")</strong> VND</p>
                     </div>
+                    </a>
                 </div>
             </div>
         }

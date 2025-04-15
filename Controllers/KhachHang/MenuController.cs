@@ -6,8 +6,10 @@ using System.Linq;
 
 namespace NhaHang.Controllers.KhachHang
 {
+
     public class MenuController : Controller
     {
+
         private readonly AppDbContext _context;
 
         public MenuController(AppDbContext context)
@@ -15,8 +17,7 @@ namespace NhaHang.Controllers.KhachHang
             _context = context;
         }
 
-
-        // GET: KhachHang/Menu
+        // Danh Muc
         public async Task<IActionResult> Index(int? categoryId)
         {
             var menu = _context.Menu.AsQueryable();
@@ -26,8 +27,73 @@ namespace NhaHang.Controllers.KhachHang
                 menu = menu.Where(m => m.CategoryId == categoryId);
             }
 
-            return View("Views/Menu/Index.cshtml", await menu.ToListAsync());
+            return View("Views/KhachHang/Menu/Index.cshtml", await menu.ToListAsync());
         }
+
+        [Route("Menu/HaiSan")]
+        public async Task<IActionResult> HaiSan()
+        {
+            var items = await _context.Menu
+                .Where(m => m.CategoryId == 1)
+                .ToListAsync();
+            return View("Views/KhachHang/Menu/Index.cshtml", items);
+        }
+
+        [Route("Menu/Ga")]
+        public async Task<IActionResult> Ga()
+        {
+            var items = await _context.Menu
+                .Where(m => m.CategoryId == 2)
+                .ToListAsync();
+            return View("Views/KhachHang/Menu/Index.cshtml", items);
+        }
+
+        [Route("Menu/Bo")]
+        public async Task<IActionResult> Bo()
+        {
+            var items = await _context.Menu
+                .Where(m => m.CategoryId == 3)
+                .ToListAsync();
+            return View("Views/KhachHang/Menu/Index.cshtml", items);
+        }
+
+        [Route("Menu/Salad")]
+        public async Task<IActionResult> Salad()
+        {
+            var items = await _context.Menu
+                .Where(m => m.CategoryId == 4)
+                .ToListAsync();
+            return View("Views/KhachHang/Menu/Index.cshtml", items);
+        }
+
+        [Route("Menu/TrangMieng")]
+        public async Task<IActionResult> TrangMieng()
+        {
+            var items = await _context.Menu
+                .Where(m => m.CategoryId == 5)
+                .ToListAsync();
+            return View("Views/KhachHang/Menu/Index.cshtml", items);
+        }
+
+        //Chi Tiet
+        [Route("Menu/{tenMonAn}/ChiTiet")]
+        public async Task<IActionResult> ChiTiet(string tenMonAn)
+        {
+            if (string.IsNullOrEmpty(tenMonAn))
+                return NotFound();
+
+            var monAn = await _context.Menu
+                .FirstOrDefaultAsync(m => m.TenMon.Replace(" ", "").ToLower() == tenMonAn.ToLower());
+
+            if (monAn == null)
+            {
+                return NotFound();
+            }
+
+            return View("Views/KhachHang/Menu/ChiTiet.cshtml", monAn);
+        }
+
+
 
         // GET: KhachHang/Menu/GiamGia
         public async Task<IActionResult> GiamGia()

@@ -21,9 +21,9 @@ namespace NhaHang.Controllers.KhachHang
 
         public IActionResult Menu()
         {
-            var list = _context.Menu.ToList();
-            return View("Menu/Index", list);
+            return RedirectToAction("Index", "Menu");
         }
+
 
         public IActionResult Combo()
         {
