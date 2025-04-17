@@ -89,6 +89,14 @@
       "PackagePath": "staticwebassets\\css\\NhanVienBep\\NhanVienBep.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\ChiTiet.css",
+      "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\ChiTiet.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\MenuNvpv.css",
+      "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\MenuNvpv.css"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\NhanVienPhucVu.css",
       "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\NhanVienPhucVu.css"
     },

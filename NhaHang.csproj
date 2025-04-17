@@ -9,6 +9,7 @@
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\Home.css" />
     <_ContentIncludedByDefault Remove="wwwroot\css\NhanVienPhucVu.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\NhanVienPhucVu\ChiTiet.css" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,6 +4,40 @@
 <link rel="stylesheet" href="~/css/NhanVienPhucVu/NhanVienPhucVu.css" />
 
 <div class="nhanvienphucvu-container">
-    <h2>Chào mừng bạn là nhân viên  </h2>
+    <div class="floor-buttons">
+        <button class="btn-floor" onclick="showTables('tangTret')">Tầng trệt</button>
+        <button class="btn-floor" onclick="showTables('phongVip')">Phòng VIP</button>
+        <button class="btn-floor" onclick="showTables('phongGiaDinh')">Phòng cho gia đình</button>
+    </div>
 
+    <div id="tables" class="tables-container">
+        //Bàn sẽ được hiển thị ở đây
+    </div>
 </div>
+
+<script>
+    const floorTables = {
+        tangTret: { start: 1, end: 5 },
+        phongVip: { start: 6, end: 10 },
+        phongGiaDinh: { start: 11, end: 15 }
+    };
+
+    function showTables(floor) {
+        const container = document.getElementById("tables");
+        container.innerHTML = "";
+
+        const { start, end } = floorTables[floor];
+        for (let i = start; i <= end; i++) {
+            const btn = document.createElement("button");
+            btn.className = "btn-table";
+            btn.textContent = i;
+            btn.onclick = () => {
+                window.location.href = "/MenuNvpv?ban=" + i;
+            };
+            container.appendChild(btn);
+        }
+    }
+
+    // Mặc định hiển thị tầng trệt
+    showTables('tangTret');
+</script>

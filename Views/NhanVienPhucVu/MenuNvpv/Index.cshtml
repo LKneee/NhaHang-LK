@@ -1,0 +1,156 @@
+﻿@model IEnumerable<NhaHang.Models.Menu>
+<link rel="stylesheet" href="~/css/NhanVienPhucVu/" />
+@{
+    Layout = "~/Views/Shared/_Layout_NhanVienPhucVu.cshtml";
+    var ban = Context.Request.Query["ban"];
+
+}
+
+<h2>Menu</h2>
+
+<div class="btn-group mb-3">
+    <a href="/MenuNvpv" class="btn btn-secondary">Tất Cả</a>
+    <a href="/MenuNvpv/HaiSan" class="btn btn-primary">Hải Sản</a>
+    <a href="/MenuNvpv/Ga" class="btn btn-primary">Gà</a>
+    <a href="/MenuNvpv/Bo" class="btn btn-primary">Bò</a>
+    <a href="/MenuNvpv/Salad" class="btn btn-primary">Salad</a>
+    <a href="/MenuNvpv/TrangMieng" class="btn btn-primary">Tráng Miệng</a>
+
+</div>
+
+
+<hr />
+
+<div class="row">
+    @if (Model != null && Model.Any())
+    {
+        foreach (var pro in Model)
+        {
+            var tenMon = pro.TenMon.Replace(" ", "");
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">                   
+                        @if (!string.IsNullOrEmpty(pro.Image))
+                        {
+                            <a href="@Url.Action("ChiTiet", "MenuNvpv", new { tenMonAn = tenMon })">
+                                <img src="~/Menu/@pro.Image" class="card-img-top" alt="@pro.TenMon" style="height: 200px; object-fit: cover;" />
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("ChiTiet", "MenuNvpv", new { tenMonAn = tenMon })">
+                                <img src="~/image/default.jpg" class="card-img-top" alt="No Image" style="height: 200px; object-fit: cover;" />
+                            </a>
+                        }
+                        <div class="card-body">
+                        <a href="@Url.Action("ChiTiet", "MenuNvpv", new { tenMonAn = tenMon })">
+                            <h5 class="card-title">@pro.TenMon</h5>
+                        </a>
+                            <p class="card-text">@pro.MoTa</p>
+                            <p class="card-text"><strong>@pro.Gia.ToString("N0")</strong> VND</p>
+                            <button class="btn btn-success" onclick="themVaoPhieu('@pro.TenMon', @pro.Gia)">Chọn</button>
+                        </div>
+                 
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Không có dữ liệu món ăn.</p>
+    }
+</div>
+
+
+<div class="col-md-4">
+    <div class="card" id="phieu-goi-mon">
+        <div class="card-header bg-info text-white">
+            <h5>Phiếu gọi món (Bàn @ban)</h5>
+        </div>
+        <div class="card-body">
+            <ul id="phieu-list" class="list-group mb-3"></ul>
+
+            <!-- Order cho ai -->
+            <div class="mb-3">
+                <label for="orderType" class="form-label"><strong>Order:</strong></label>
+                <select id="orderType" class="form-select">
+                    <option value="Khách Hàng" selected>Khách Hàng</option>
+                    <option value="Nhân Viên">Nhân Viên</option>
+                </select>
+            </div>
+
+            <!-- Ghi chú -->
+            <div class="mb-3">
+                <label for="ghiChu" class="form-label"><strong>Ghi chú:</strong></label>
+                <textarea id="ghiChu" class="form-control" rows="2" placeholder=""></textarea>
+            </div>
+
+            <p><strong>Tổng cộng: </strong><span id="tongCong">0</span> VND</p>
+            <button class="btn btn-primary" onclick="xacNhanGoiMon()">Gửi lên bếp</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    let phieu = [];
+
+    function themVaoPhieu(tenMon, gia) {
+        const existing = phieu.find(item => item.ten === tenMon);
+        if (existing) {
+            existing.soluong += 1;
+        } else {
+            phieu.push({ ten: tenMon, gia: gia, soluong: 1 });
+        }
+        renderPhieu();
+    }
+
+    function renderPhieu() {
+        const list = document.getElementById("phieu-list");
+        const tongCong = document.getElementById("tongCong");
+        list.innerHTML = "";
+        let tong = 0;
+
+        phieu.forEach((item, index) => {
+            const li = document.createElement("li");
+            li.className = "list-group-item d-flex justify-content-between align-items-center";
+
+            li.innerHTML = `
+                    <div>
+                        ${item.ten} x ${item.soluong}
+                        <button class="btn btn-sm btn-outline-success ms-2" onclick="tangSoLuong(${index})">+</button>
+                        <button class="btn btn-sm btn-outline-danger ms-1" onclick="giamSoLuong(${index})">-</button>
+                    </div>
+                    <span>${(item.gia * item.soluong).toLocaleString()} VND</span>
+                `;
+            list.appendChild(li);
+            tong += item.gia * item.soluong;
+        });
+
+        tongCong.textContent = tong.toLocaleString();
+    }
+
+    function tangSoLuong(index) {
+        phieu[index].soluong += 1;
+        renderPhieu();
+    }
+
+    function giamSoLuong(index) {
+        phieu[index].soluong -= 1;
+        if (phieu[index].soluong <= 0) {
+            phieu.splice(index, 1);
+        }
+        renderPhieu();
+    }
+
+    function xacNhanGoiMon() {
+        const ghiChu = document.getElementById("ghiChu").value.trim();
+        console.log("Gửi món:", phieu);
+        console.log("Ghi chú:", ghiChu);
+        console.log("Order cho:", orderType);
+
+        alert("Gọi món thành công cho bàn này!\nGhi chú: " + ghiChu);
+        // Bạn có thể gửi dữ liệu phieu và ghiChu về server tại đây
+    }
+</script>
+
+

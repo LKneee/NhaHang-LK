@@ -1,15 +1,75 @@
-﻿.nhanvienphucvu-container {
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.nhanvienphucvu-container {
+    max-width: 1000px;
     margin: 50px auto;
-    padding: 30%;
-    max-width: 800px;
-    background-color: #f9f9f9;
+    padding: 100px;
+    background-color: #ffffff;
     border-radius: 12px;
-    text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
     .nhanvienphucvu-container h2 {
         color: #2c3e50;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+.floor-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-floor {
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-floor:hover {
+        background-color: #2980b9;
+    }
+
+.tables-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-table {
+    width: 80px;
+    height: 80px;
+    background-color: #2ecc71;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border: none;
+}
+
+    .btn-table:hover {
+        background-color: #27ae60;
+        transform: scale(1.05);
     }
