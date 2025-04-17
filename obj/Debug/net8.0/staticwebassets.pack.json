@@ -53,8 +53,16 @@
       "PackagePath": "staticwebassets\\avatar\\cf37a074-b737-4ead-8224-35b34409f21b.jpg"
     },
     {
-      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Home.css",
-      "PackagePath": "staticwebassets\\css\\Home.css"
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Home\\ChiTiet.css",
+      "PackagePath": "staticwebassets\\css\\Home\\ChiTiet.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Home\\Home.css",
+      "PackagePath": "staticwebassets\\css\\Home\\Home.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Home\\MenuHome.css",
+      "PackagePath": "staticwebassets\\css\\Home\\MenuHome.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\KhachHang\\ChiTiet.css",
