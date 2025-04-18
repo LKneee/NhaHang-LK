@@ -1,8 +1,50 @@
-﻿@{
-    ViewData["Title"] = "Trang Nhân Viên Bếp ";
+﻿@model List<NhaHang.Models.Order>
+
+@{
+    ViewData["Title"] = "Trang Nhân Viên Bếp";
 }
+
 <link rel="stylesheet" href="~/css/NhanVienBep/NhanVienBep.css" />
 
 <div class="nhanvienbep-container">
-    <h2>Chào mừng bạn là nhân viên bếp </h2>
+    <h2>Chào mừng bạn là nhân viên bếp</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Bàn</th>
+                <th>Nhân viên</th>
+                <th>Thời gian</th>
+                <th>Món ăn</th>
+                <th>Ghi chú</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.Ban</td>
+                    <td>@order.NhanVienHoTen</td>
+                    <td>@order.NgayDat.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        <ul>
+                            @foreach (var item in order.OrderItem)
+                            {
+                                <li>@item.TenMon x @item.SoLuong</li>
+                            }
+                        </ul>
+                    </td>
+                    <td>@order.GhiChu</td>
+                    <td>@order.TrangThai</td>
+                    <td>
+                        <form asp-action="HoanTat" asp-route-id="@order.OrderId" method="post">
+                            <button type="submit" class="btn btn-success">Hoàn tất</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

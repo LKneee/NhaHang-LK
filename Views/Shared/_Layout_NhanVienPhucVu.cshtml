@@ -45,6 +45,20 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="News" asp-action="Index">Tin tức</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="NhanVienPhucVu" asp-action="ThongBao">
+
+                                Thông Báo
+
+                                @if (ViewBag.ThongBaoCount > 0)
+                                {
+                                    <span class="badge bg-danger">@ViewBag.ThongBaoCount</span>
+                                }
+                            </a>
+
+                        </li>
+
                     </ul>
 
 

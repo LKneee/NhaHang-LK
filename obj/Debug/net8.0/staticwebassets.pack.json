@@ -101,6 +101,10 @@
       "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\NhanVienPhucVu.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\ThongBao.css",
+      "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\ThongBao.css"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Profile\\Profile.css",
       "PackagePath": "staticwebassets\\css\\Profile\\Profile.css"
     },

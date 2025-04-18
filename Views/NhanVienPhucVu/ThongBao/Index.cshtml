@@ -1,0 +1,47 @@
+﻿@model List<NhaHang.Models.Order>
+<link rel="stylesheet" href="~/css/NhanVienPhucVu/ThongBao.css" />
+@{
+    ViewData["Title"] = "Thông Báo Đơn Hàng";
+}
+
+<h2>Danh sách đơn hàng từ bếp</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Bàn</th>
+            <th>Thời gian</th>
+            <th>Ghi chú</th>
+            <th>Món ăn</th>
+            <th>Trạng thái</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr class="@(order.TrangThai == "Đã hoàn tất" ? "table-success" : "table-warning")">
+                <td>@order.Ban</td>
+                <td>@order.NgayDat</td>
+                <td>@order.GhiChu</td>
+                <td>
+                    <ul>
+                        @foreach (var item in order.OrderItem)
+                        {
+                            <li>@item.TenMon x @item.SoLuong</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+                    @if (order.TrangThai == "Đã hoàn tất")
+                    {
+                        <span class="badge bg-success">Đã hoàn tất</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning text-dark">Đang chờ bếp</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xGkES8ihfeSDAG3XHDeo47ocegRsOCz7xTC/sgqYHt0=",
+  "Hash": "RE3nyacxEqe7TFV3d1y8atMcFpmLgmMPLgYBWGu1Mqw=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -338,6 +338,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\NhanVienPhucVu\\NhanVienPhucVu.css"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\ThongBao.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/NhanVienPhucVu/ThongBao.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\NhanVienPhucVu\\ThongBao.css"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Profile\\Profile.css",
