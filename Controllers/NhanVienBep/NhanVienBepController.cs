@@ -27,11 +27,45 @@ namespace NhaHang.Controllers.NhanVienBep
         [HttpPost]
         public IActionResult HoanTat(int id)
         {
-            var order = _context.Orders.FirstOrDefault(o => o.OrderId == id);
+            var order = _context.Orders
+                .Include(o => o.OrderItem)
+                .FirstOrDefault(o => o.OrderId == id);
+
             if (order != null)
             {
+                // Cập nhật tất cả các món trong đơn hàng thành "Hoàn tất"
+                foreach (var item in order.OrderItem)
+                {
+                    item.TrangThai = "Hoàn tất";
+                }
+
+                // Sau đó cập nhật trạng thái đơn hàng
                 order.TrangThai = "Đã hoàn tất";
                 _context.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult HoanTatMon(int itemId)
+        {
+            var item = _context.OrderItem.FirstOrDefault(i => i.OrderItemId == itemId);
+            if (item != null)
+            {
+                item.TrangThai = "Hoàn tất";
+                _context.SaveChanges();
+
+                // Nếu tất cả món của đơn hàng đã hoàn tất thì cập nhật luôn trạng thái đơn
+                var order = _context.Orders
+                    .Include(o => o.OrderItem)
+                    .FirstOrDefault(o => o.OrderId == item.OrderId);
+
+                if (order != null && order.OrderItem.All(i => i.TrangThai == "Hoàn tất"))
+                {
+                    order.TrangThai = "Đã hoàn tất";
+                    _context.SaveChanges();
+                }
             }
 
             return RedirectToAction("Index");

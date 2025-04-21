@@ -27,7 +27,18 @@
                     <ul>
                         @foreach (var item in order.OrderItem)
                         {
-                            <li>@item.TenMon x @item.SoLuong</li>
+                            <li>
+                                @item.TenMon x @item.SoLuong
+                                -
+                                @if (item.TrangThai == "Hoàn tất")
+                                {
+                                    <span class="badge bg-success">Đã hoàn tất</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Đang chờ bếp</span>
+                                }
+                            </li>
                         }
                     </ul>
                 </td>
@@ -45,3 +56,5 @@
         }
     </tbody>
 </table>
+
+

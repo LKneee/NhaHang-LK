@@ -6,7 +6,7 @@ using System.Text;
 using System.Linq;
 
 
-namespace NhaHang.Controllers
+namespace NhaHang.Controllers.NhaHang
 {
     public class AuthController : Controller
     {

@@ -32,10 +32,25 @@
                         <ul>
                             @foreach (var item in order.OrderItem)
                             {
-                                <li>@item.TenMon x @item.SoLuong</li>
+                                <li>
+                                    @item.TenMon x @item.SoLuong -
+                                    @if (item.TrangThai == "Hoàn tất")
+                                    {
+                                        <span class="badge bg-success">Đã hoàn tất</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-warning text-dark">Đang chờ bếp</span>
+                                        <form asp-action="HoanTatMon" method="post" style="display:inline;">
+                                            <input type="hidden" name="itemId" value="@item.OrderItemId" />
+                                            <button type="submit" class="btn btn-sm btn-outline-success ms-2">Hoàn tất món</button>
+                                        </form>
+                                    }
+                                </li>
                             }
                         </ul>
                     </td>
+
                     <td>@order.GhiChu</td>
                     <td>@order.TrangThai</td>
                     <td>
