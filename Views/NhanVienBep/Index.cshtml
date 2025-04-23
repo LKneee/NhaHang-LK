@@ -21,7 +21,7 @@
                 <th>Hành động</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="donHangBody">
             @foreach (var order in Model)
             {
                 <tr>
@@ -61,5 +61,65 @@
                 </tr>
             }
         </tbody>
+
+        <script>
+            function loadDonHangMoi() {
+                fetch('/NhanVienBep/GetDonHangMoi')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.getElementById("donHangBody");
+                        tableBody.innerHTML = "";
+
+                        data.forEach(order => {
+                            const row = document.createElement("tr");
+
+                            // Tạo HTML món ăn
+                            let monAnHtml = "<ul>";
+                            order.orderItems.forEach(item => {
+                                if (item.trangThai === "Hoàn tất") {
+                                    monAnHtml += `<li>${item.tenMon} x ${item.soLuong} - <span class="badge bg-success">Đã hoàn tất</span></li>`;
+                                } else {
+                                    monAnHtml += `
+                                            <li>
+                                                ${item.tenMon} x ${item.soLuong} -
+                                                <span class="badge bg-warning text-dark">Đang chờ bếp</span>
+                                                <form method="post" action="/NhanVienBep/HoanTatMon" style="display:inline;">
+                                                    <input type="hidden" name="itemId" value="${item.orderItemId}" />
+                                                    <button type="submit" class="btn btn-sm btn-outline-success ms-2">Hoàn tất món</button>
+                                                </form>
+                                            </li>
+                                        `;
+                                }
+                            });
+                            monAnHtml += "</ul>";
+
+                            // HTML từng dòng đơn hàng
+                            row.innerHTML = `
+                                    <td>${order.ban}</td>
+                                    <td>${order.nhanVienHoTen}</td>
+                                    <td>${order.ngayDat}</td>
+                                    <td>${monAnHtml}</td>
+                                    <td>${order.ghiChu ?? ""}</td>
+                                    <td>${order.trangThai}</td>
+                                    <td>
+                                        <form method="post" action="/NhanVienBep/HoanTat/${order.orderId}">
+                                            <button type="submit" class="btn btn-success">Hoàn tất</button>
+                                        </form>
+                                    </td>
+                                `;
+
+                            tableBody.appendChild(row);
+                        });
+                    })
+                    .catch(error => console.error("Lỗi khi load đơn hàng mới:", error));
+            }
+
+            // Gọi mỗi 5 giây
+            setInterval(loadDonHangMoi, 5000);
+            window.onload = loadDonHangMoi;
+        </script>
+
+
+
     </table>
 </div>

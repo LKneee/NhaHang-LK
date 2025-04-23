@@ -48,5 +48,31 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             return Json(new { count });
         }
 
+        [HttpGet]
+        public IActionResult GetThongBaoMoi()
+        {
+            var orders = _context.Orders
+                .Include(o => o.OrderItem)
+                .OrderByDescending(o => o.NgayDat)
+                .Select(o => new
+                {
+                    ban = o.Ban,
+                    ngayDat = o.NgayDat.ToString("dd/MM/yyyy HH:mm"),
+                    ghiChu = o.GhiChu,
+                    trangThai = o.TrangThai,
+                    orderItems = o.OrderItem.Select(i => new
+                    {
+                        tenMon = i.TenMon,
+                        soLuong = i.SoLuong,
+                        trangThai = i.TrangThai
+                    })
+                })
+                .ToList();
+
+            return Json(orders);
+        }
+
+
+
     }
 }

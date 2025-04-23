@@ -70,5 +70,35 @@ namespace NhaHang.Controllers.NhanVienBep
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+        public IActionResult GetDonHangMoi()
+        {
+            var orders = _context.Orders
+                .Include(o => o.OrderItem)
+                .Where(o => o.TrangThai == "Chờ bếp")
+                .OrderByDescending(o => o.NgayDat)
+                .Select(o => new {
+                    o.OrderId,
+                    o.Ban,
+                    NhanVienHoTen = o.NhanVienHoTen ?? "", // lấy trực tiếp từ cột đã lưu
+                    NgayDat = o.NgayDat.ToString("dd/MM/yyyy HH:mm"),
+                    o.GhiChu,
+                    o.TrangThai,
+                    OrderItems = o.OrderItem.Select(i => new {
+                        i.OrderItemId,
+                        i.TenMon,
+                        i.SoLuong,
+                        i.TrangThai
+                    }).ToList()
+                })
+                .ToList();
+
+            return Json(orders);
+        }
+
+
+
     }
 }

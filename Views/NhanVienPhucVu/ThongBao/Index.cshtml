@@ -55,6 +55,50 @@
             </tr>
         }
     </tbody>
+
+    <script>
+        function loadThongBaoMoi() {
+            fetch('/NhanVienPhucVu/GetThongBaoMoi')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector("table tbody");
+                    tbody.innerHTML = "";
+
+                    data.forEach(order => {
+                        const row = document.createElement("tr");
+                        row.className = order.trangThai === "Đã hoàn tất" ? "table-success" : "table-warning";
+
+                        // Món ăn
+                        let monAnHtml = "<ul>";
+                        order.orderItems.forEach(item => {
+                            monAnHtml += `<li>${item.tenMon} x ${item.soLuong} - ` +
+                                (item.trangThai === "Hoàn tất"
+                                    ? `<span class="badge bg-success">Đã hoàn tất</span>`
+                                    : `<span class="badge bg-secondary">Đang chờ bếp</span>`) +
+                                `</li>`;
+                        });
+                        monAnHtml += "</ul>";
+
+                        row.innerHTML = `
+                                <td>${order.ban}</td>
+                                <td>${order.ngayDat}</td>
+                                <td>${order.ghiChu ?? ""}</td>
+                                <td>${monAnHtml}</td>
+                                <td>${order.trangThai === "Đã hoàn tất"
+                                ? '<span class="badge bg-success">Đã hoàn tất</span>'
+                                : '<span class="badge bg-warning text-dark">Đang chờ bếp</span>'}</td>
+                            `;
+                        tbody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error("Lỗi khi tải thông báo mới:", error));
+        }
+
+        setInterval(loadThongBaoMoi, 5000);
+        window.onload = loadThongBaoMoi;
+    </script>
+
+
 </table>
 
 
