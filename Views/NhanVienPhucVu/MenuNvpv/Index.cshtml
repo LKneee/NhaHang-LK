@@ -100,6 +100,15 @@
 <script>
     let phieu = [];
 
+    // Lấy phiếu từ localStorage khi trang được load
+    window.onload = function () {
+        const savedPhieu = localStorage.getItem("phieu");
+        if (savedPhieu) {
+            phieu = JSON.parse(savedPhieu);
+            renderPhieu();
+        }
+    };
+
     function themVaoPhieu(tenMon, gia) {
         const existing = phieu.find(item => item.ten === tenMon);
         if (existing) {
@@ -108,6 +117,7 @@
             phieu.push({ ten: tenMon, gia: gia, soluong: 1 });
         }
         renderPhieu();
+        savePhieu();
     }
 
     function renderPhieu() {
@@ -121,13 +131,13 @@
             li.className = "list-group-item d-flex justify-content-between align-items-center";
 
             li.innerHTML = `
-                    <div>
-                        ${item.ten} x ${item.soluong}
-                        <button class="btn btn-sm btn-outline-success ms-2" onclick="tangSoLuong(${index})">+</button>
-                        <button class="btn btn-sm btn-outline-danger ms-1" onclick="giamSoLuong(${index})">-</button>
-                    </div>
-                    <span>${(item.gia * item.soluong).toLocaleString()} VND</span>
-                `;
+                        <div>
+                            ${item.ten} x ${item.soluong}
+                            <button class="btn btn-sm btn-outline-success ms-2" onclick="tangSoLuong(${index})">+</button>
+                            <button class="btn btn-sm btn-outline-danger ms-1" onclick="giamSoLuong(${index})">-</button>
+                        </div>
+                        <span>${(item.gia * item.soluong).toLocaleString()} VND</span>
+                    `;
             list.appendChild(li);
             tong += item.gia * item.soluong;
         });
@@ -138,6 +148,7 @@
     function tangSoLuong(index) {
         phieu[index].soluong += 1;
         renderPhieu();
+        savePhieu();
     }
 
     function giamSoLuong(index) {
@@ -145,6 +156,17 @@
         if (phieu[index].soluong <= 0) {
             phieu.splice(index, 1);
         }
+        renderPhieu();
+        savePhieu();
+    }
+
+    function savePhieu() {
+        localStorage.setItem("phieu", JSON.stringify(phieu));
+    }
+
+    function clearPhieu() {
+        phieu = [];
+        localStorage.removeItem("phieu");
         renderPhieu();
     }
 
@@ -161,20 +183,19 @@
                 banSo: "@ban",
                 ghiChu: ghiChu,
                 orderType: orderType,
-                phieu: phieu // Mảng món ăn
+                phieu: phieu
             })
         })
             .then(response => {
                 if (response.ok) {
                     alert("Đã gửi đơn lên bếp!");
-                    phieu = [];
-                    renderPhieu();
+                    clearPhieu(); // Reset sau khi gửi thành công
                 } else {
                     alert("Gửi đơn thất bại!");
                 }
             });
     }
-
 </script>
+
 
 
