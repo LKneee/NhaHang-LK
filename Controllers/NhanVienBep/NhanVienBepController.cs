@@ -17,7 +17,7 @@ namespace NhaHang.Controllers.NhanVienBep
             // Lấy tất cả đơn hàng có trạng thái "Chờ bếp" và include OrderItems
             var orders = _context.Orders
                 .Include(o => o.OrderItem)
-                .Where(o => o.TrangThai == "Chờ bếp")
+                .Where(o => o.TrangThai == "Chờ bếp" || o.TrangThai == "Đã hoàn tất")
                 .OrderByDescending(o => o.NgayDat)
                 .ToList();
 
@@ -77,13 +77,14 @@ namespace NhaHang.Controllers.NhanVienBep
         {
             var orders = _context.Orders
                 .Include(o => o.OrderItem)
-                .Where(o => o.TrangThai == "Chờ bếp")
+                .Where(o => o.TrangThai == "Chờ bếp" || o.TrangThai == "Đã hoàn tất")
                 .OrderByDescending(o => o.NgayDat)
                 .Select(o => new {
                     o.OrderId,
                     o.Ban,
                     NhanVienHoTen = o.NhanVienHoTen ?? "", // lấy trực tiếp từ cột đã lưu
                     NgayDat = o.NgayDat.ToString("dd/MM/yyyy HH:mm"),
+                    orderType = o.OrderType,
                     o.GhiChu,
                     o.TrangThai,
                     OrderItems = o.OrderItem.Select(i => new {

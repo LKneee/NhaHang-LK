@@ -58,6 +58,7 @@ namespace NhaHang.Controllers.NhanVienPhucVu
                 {
                     ban = o.Ban,
                     ngayDat = o.NgayDat.ToString("dd/MM/yyyy HH:mm"),
+                    orderType = o.OrderType,
                     ghiChu = o.GhiChu,
                     trangThai = o.TrangThai,
                     orderItems = o.OrderItem.Select(i => new

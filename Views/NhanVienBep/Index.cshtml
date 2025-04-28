@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="~/css/NhanVienBep/NhanVienBep.css" />
 
 <div class="nhanvienbep-container">
-    <h2>Chào mừng bạn là nhân viên bếp</h2>
+    <h2>Danh sách món ăn</h2>
 
     <table class="table">
         <thead>
@@ -15,6 +15,7 @@
                 <th>Bàn</th>
                 <th>Nhân viên</th>
                 <th>Thời gian</th>
+                <th>Người </th>
                 <th>Món ăn</th>
                 <th>Ghi chú</th>
                 <th>Trạng thái</th>
@@ -26,8 +27,9 @@
             {
                 <tr>
                     <td>@order.Ban</td>
-                    <td>@order.NhanVienHoTen</td>
+                    <td>@order.NhanVienHoTen</td>                   
                     <td>@order.NgayDat.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@order.OrderType</td>
                     <td>
                         <ul>
                             @foreach (var item in order.OrderItem)
@@ -98,17 +100,20 @@
                                     <td>${order.ban}</td>
                                     <td>${order.nhanVienHoTen}</td>
                                     <td>${order.ngayDat}</td>
+                                    <td>${order.orderType ?? ""}</td>
                                     <td>${monAnHtml}</td>
                                     <td>${order.ghiChu ?? ""}</td>
                                     <td>${order.trangThai}</td>
+
                                     <td>
                                         <form method="post" action="/NhanVienBep/HoanTat/${order.orderId}">
-                                            <button type="submit" class="btn btn-success">Hoàn tất</button>
+                                             <button type="submit" class="btn btn-success" ${order.trangThai === 'Đã hoàn tất' ? 'style="display:none;"' : ''}>Hoàn tất</button>
                                         </form>
                                     </td>
                                 `;
-
+                           
                             tableBody.appendChild(row);
+                           
                         });
                     })
                     .catch(error => console.error("Lỗi khi load đơn hàng mới:", error));
