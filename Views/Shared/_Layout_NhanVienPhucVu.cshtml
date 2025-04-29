@@ -34,11 +34,11 @@
 
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="NhanVienPhucVu" asp-action="Index">Trang chủ </a>
+                            <a class="nav-link" asp-area="" asp-controller="NhanVienPhucVu" asp-action="Index"> Danh sách bàn </a>
                         </li>
-                        <li class="nav-item">
+ @*                        <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="NhanVienPhucVu" asp-action="Menu">Menu</a>
-                        </li>
+                        </li> *@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="About" asp-action="Index">Giới thiệu</a>
                         </li>
@@ -49,7 +49,7 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="NhanVienPhucVu" asp-action="ThongBao">
 
-                                Thông Báo
+                                Danh sách món
 
                                 @if (ViewBag.ThongBaoCount > 0)
                                 {

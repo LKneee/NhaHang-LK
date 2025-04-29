@@ -142,6 +142,13 @@
             tong += item.gia * item.soluong;
         });
 
+
+        // Kiểm tra Order: Nhân Viên -> giảm 50%
+        const orderType = document.getElementById("orderType").value;
+        if (orderType === "Nhân Viên") {
+            tong = tong / 2;
+        }
+
         tongCong.textContent = tong.toLocaleString();
     }
 
@@ -195,6 +202,12 @@
                 }
             });
     }
+
+    document.getElementById("orderType").addEventListener("change", function () {
+        renderPhieu();
+    });
+
+
 </script>
 
 

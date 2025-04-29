@@ -56,10 +56,14 @@
                     <td>@order.GhiChu</td>
                     <td>@order.TrangThai</td>
                     <td>
-                        <form asp-action="HoanTat" asp-route-id="@order.OrderId" method="post">
-                            <button type="submit" class="btn btn-success">Hoàn tất</button>
-                        </form>
+                        @if (order.TrangThai != "Đã hoàn tất")
+                        {
+                            <form asp-action="HoanTat" asp-route-id="@order.OrderId" method="post">
+                                <button type="submit" class="btn btn-success">Hoàn tất</button>
+                            </form>
+                        }
                     </td>
+
                 </tr>
             }
         </tbody>
