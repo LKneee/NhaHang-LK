@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RE3nyacxEqe7TFV3d1y8atMcFpmLgmMPLgYBWGu1Mqw=",
+  "Hash": "EWEv8SMXI/Xqijvq6BRNVqzymzP1g3CjqPNkZI0zsq0=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\avatar\\70c285c9-1785-459e-ad53-75874909672e.jpg"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\8998e125-ae31-43eb-a122-1025522348f8.jpg",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "avatar/8998e125-ae31-43eb-a122-1025522348f8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avatar\\8998e125-ae31-43eb-a122-1025522348f8.jpg"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\cf37a074-b737-4ead-8224-35b34409f21b.jpg",
@@ -378,6 +397,25 @@
       "OriginalItemSpec": "wwwroot\\css\\Profile\\Profile.css"
     },
     {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\MenuForm.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/QuanLy/MenuForm.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\QuanLy\\MenuForm.css"
+    },
+    {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLy.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
@@ -395,6 +433,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\QuanLy\\QuanLy.css"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyMenu.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/QuanLy/QuanLyMenu.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\QuanLy\\QuanLyMenu.css"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",
@@ -1839,6 +1896,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Menu\\cahoisotchanhday.jpg"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\chococake.jpg",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "Menu/chococake.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Menu\\chococake.jpg"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\ganuongcomlam.jpg",

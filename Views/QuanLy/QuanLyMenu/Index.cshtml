@@ -1,0 +1,38 @@
+﻿@model IEnumerable<NhaHang.Models.Menu>
+
+<link rel="stylesheet" href="~/css/QuanLy/QuanLyMenu.css" />
+<h2>Quản lý Menu</h2>
+<a asp-action="Create" class="btn-create">Thêm món mới</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên món</th>
+            <th>Mô tả</th>
+            <th>Giá</th>
+            <th>Ảnh</th>
+            <th>Giảm giá</th>
+            <th>Special Day</th>
+            <th>Combo</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TenMon</td>
+                <td>@item.MoTa</td>
+                <td>@item.Gia</td>
+                <td><img src="~/Menu/@item.Image" asp-append-version="true" class="menu-img" width="100" alt="@item.TenMon" /></td>
+                <td>@item.GiamGia</td>
+                <td>@(item.SpecialDay?.ToString("dd/MM/yyyy") ?? "-")</td>
+                <td>@item.Combo</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Sửa</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Xác nhận xóa?')">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

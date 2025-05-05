@@ -1,0 +1,123 @@
+﻿
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 30px 0 20px 0;
+    font-size: 28px;
+    padding:80px;
+}
+
+a[asp-action="Create"] {
+    display: inline-block;
+    margin: 0 0 20px 30px;
+    padding: 1px 18px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+    a[asp-action="Create"]:hover {
+        background-color: #218838;
+    }
+
+// kiểu cho bảng
+table.table {
+    width: 95%;
+    margin: 0 auto 40px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    // header bảng
+    table.table thead {
+        background-color: #007bff;
+        color: white;
+    }
+
+        table.table thead th {
+            padding: 14px 12px;
+            font-size: 16px;
+            text-align: left;
+        }
+
+   // nội dung
+    table.table tbody tr {
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease;
+    }
+
+        table.table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+    table.table tbody td {
+        padding: 12px;
+        vertical-align: middle;
+        font-size: 15px;
+    }
+
+        //ảnh món ăn
+        table.table tbody td img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+   //thao tac xoa sua
+    table.table td a {
+        margin: 0 5px;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 6px 10px;
+        border-radius: 4px;
+        color: red;
+        transition: background-color 0.2s ease;
+    }
+
+        table.table td a[asp-action="Edit"] {
+            background-color: #ffc107;
+        }
+
+            table.table td a[asp-action="Edit"]:hover {
+                background-color: #e0a800;
+            }
+
+        table.table td a[asp-action="Delete"] {
+            background-color: #dc3545;
+        }
+
+            table.table td a[asp-action="Delete"]:hover {
+                background-color: #c82333;
+            }
+
+.btn-create {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-create:hover {
+        background-color: #218838;
+    }
+
+.menu-img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #4CAF50; 
+}
+

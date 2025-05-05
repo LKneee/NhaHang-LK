@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\Menu\\cahoisotchanhday.jpg"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\chococake.jpg",
+      "PackagePath": "staticwebassets\\Menu\\chococake.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\ganuongcomlam.jpg",
       "PackagePath": "staticwebassets\\Menu\\ganuongcomlam.jpg"
     },
@@ -47,6 +51,10 @@
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\70c285c9-1785-459e-ad53-75874909672e.jpg",
       "PackagePath": "staticwebassets\\avatar\\70c285c9-1785-459e-ad53-75874909672e.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\8998e125-ae31-43eb-a122-1025522348f8.jpg",
+      "PackagePath": "staticwebassets\\avatar\\8998e125-ae31-43eb-a122-1025522348f8.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\cf37a074-b737-4ead-8224-35b34409f21b.jpg",
@@ -109,8 +117,16 @@
       "PackagePath": "staticwebassets\\css\\Profile\\Profile.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\MenuForm.css",
+      "PackagePath": "staticwebassets\\css\\QuanLy\\MenuForm.css"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLy.css",
       "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLy.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyMenu.css",
+      "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLyMenu.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",
