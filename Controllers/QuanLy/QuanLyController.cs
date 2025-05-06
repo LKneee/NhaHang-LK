@@ -6,7 +6,7 @@ namespace NhaHang.Controllers.QuanLy
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "DonHangQuanLy");
         }
     }
 }

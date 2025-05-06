@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\Menu\\ganuongcomlam.jpg"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\kem.jpg",
+      "PackagePath": "staticwebassets\\Menu\\kem.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladcahoi.jpg",
       "PackagePath": "staticwebassets\\Menu\\saladcahoi.jpg"
     },
@@ -123,6 +127,10 @@
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLy.css",
       "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLy.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyDonHang.css",
+      "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLyDonHang.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyMenu.css",

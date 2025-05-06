@@ -1,0 +1,124 @@
+﻿@model List<NhaHang.Models.Order>
+
+@{
+    ViewData["Title"] = "Quản Lý Đơn Hàng";
+}
+
+<link rel="stylesheet" href="~/css/QuanLy/QuanLyDonHang.css" />
+
+<div class="quanlydonhang-container">
+    <h2>Danh sách đơn hàng</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Bàn</th>
+                <th>Nhân viên</th>
+                <th>Thời gian</th>
+                <th>Người</th>
+                <th>Món ăn</th>
+                <th>Ghi chú</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="donHangQLBody">
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.Ban</td>
+                    <td>@order.NhanVienHoTen</td>
+                    <td>@order.NgayDat.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@order.OrderType</td>
+                    <td>
+                        <ul>
+                            @foreach (var item in order.OrderItem)
+                            {
+                                <li>@item.TenMon x @item.SoLuong</li>
+                            }
+                        </ul>
+                    </td>
+                    <td>@order.GhiChu</td>
+                    <td>@string.Format("{0:N0} VND", order.TongTien)</td>
+                    <td>
+                        @if (order.TrangThai == "Đã thanh toán")
+                        {
+                            <span class="badge bg-success">Đã thanh toán</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">Chưa thanh toán</span>
+                        }
+                    </td>
+                    <td>
+                        @if (order.TrangThai != "Đã thanh toán")
+                        {
+                            <form asp-action="ThanhToan" asp-route-id="@order.OrderId" method="post" style="margin-bottom:5px;">
+                                <button type="submit" class="btn btn-primary">Thanh toán</button>
+                            </form>
+                        }
+
+                        <form asp-action="InHoaDon" asp-route-id="@order.OrderId" method="post" target="_blank">
+                            <button type="submit" class="btn btn-secondary">In Hóa Đơn</button>
+                        </form>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function loadDonHangQuanLy() {
+        fetch('/QuanLy/DonHangMoi')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById("donHangQLBody");
+                tableBody.innerHTML = "";
+
+                data.forEach(order => {
+                    const row = document.createElement("tr");
+
+                    // Món ăn
+                    let monAnHtml = "<ul>";
+                    order.orderItems.forEach(item => {
+                        monAnHtml += `<li>${item.tenMon} x ${item.soLuong}</li>`;
+                    });
+                    monAnHtml += "</ul>";
+
+                    // Trạng thái
+                    let trangThaiHtml = order.trangThai === "Đã thanh toán"
+                        ? `<span class="badge bg-success">Đã thanh toán</span>`
+                        : `<span class="badge bg-warning text-dark">Chưa thanh toán</span>`;
+
+                    // Hành động
+                    let actionHtml = "";
+                    if (order.trangThai !== "Đã thanh toán") {
+                        actionHtml = `
+                                <form method="post" action="/QuanLy/ThanhToan/${order.orderId}">
+                                    <button type="submit" class="btn btn-primary">Thanh toán</button>
+                                </form>`;
+                    }
+
+                    row.innerHTML = `
+                            <td>${order.ban}</td>
+                            <td>${order.nhanVienHoTen}</td>
+                            <td>${order.ngayDat}</td>
+                            <td>${order.orderType ?? ""}</td>
+                            <td>${monAnHtml}</td>
+                            <td>${order.ghiChu ?? ""}</td>
+                            <td>${Number(order.tongtien).toLocaleString('vi-VN')} VND</td>
+                            <td>${trangThaiHtml}</td>
+                            <td>${actionHtml}</td>
+                        `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error("Lỗi khi load đơn hàng quản lý:", error));
+    }
+
+    setInterval(loadDonHangQuanLy, 5000);
+    window.onload = loadDonHangQuanLy;
+</script>

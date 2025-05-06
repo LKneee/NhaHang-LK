@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EWEv8SMXI/Xqijvq6BRNVqzymzP1g3CjqPNkZI0zsq0=",
+  "Hash": "sDoRMvHkQhddGiETW7Zg54xEsfHXA2oiZMnVVV5smD8=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -433,6 +433,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\QuanLy\\QuanLy.css"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyDonHang.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/QuanLy/QuanLyDonHang.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\QuanLy\\QuanLyDonHang.css"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyMenu.css",
@@ -1934,6 +1953,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Menu\\ganuongcomlam.jpg"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\kem.jpg",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "Menu/kem.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Menu\\kem.jpg"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladcahoi.jpg",

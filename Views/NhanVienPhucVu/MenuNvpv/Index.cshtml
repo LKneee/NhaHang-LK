@@ -90,8 +90,9 @@
             </div>
 
             <p><strong>Tổng cộng: </strong><span id="tongCong">0</span> VND</p>
-            <button class="btn btn-primary" onclick="xacNhanGoiMon()">Gửi lên bếp</button>
-            <button class="btn btn-primary" onclick="xacNhanGoiMon()">Thanh Toán </button>
+
+            <button class="btn btn-primary" onclick="xacNhanGoiMon()">Gửi</button>
+           
         </div>
     </div>
 </div>
@@ -195,7 +196,7 @@
         })
             .then(response => {
                 if (response.ok) {
-                    alert("Đã gửi đơn lên bếp!");
+                    alert("Đã gửi");
                     clearPhieu(); // Reset sau khi gửi thành công
                 } else {
                     alert("Gửi đơn thất bại!");
