@@ -182,6 +182,20 @@
         const ghiChu = document.getElementById("ghiChu").value.trim();
         const orderType = document.getElementById("orderType").value;
 
+        // Tạo bản sao của phiếu để không làm thay đổi mảng gốc
+        let phieuGui = phieu.map(item => {
+            let giaFinal = item.gia;
+            if (orderType === "Nhân Viên") {
+                giaFinal = giaFinal / 2; // Giảm 50% cho nhân viên
+            }
+
+            return {
+                ten: item.ten,
+                gia: giaFinal, // ✅ Lưu giá đã giảm
+                soluong: item.soluong
+            };
+        });
+
         fetch('/Order/Create', {
             method: 'POST',
             headers: {
@@ -191,18 +205,19 @@
                 banSo: "@ban",
                 ghiChu: ghiChu,
                 orderType: orderType,
-                phieu: phieu
+                phieu: phieuGui // ✅ Dùng giá đã giảm nếu là nhân viên
             })
         })
             .then(response => {
                 if (response.ok) {
                     alert("Đã gửi");
-                    clearPhieu(); // Reset sau khi gửi thành công
+                    clearPhieu();
                 } else {
                     alert("Gửi đơn thất bại!");
                 }
             });
     }
+
 
     document.getElementById("orderType").addEventListener("change", function () {
         renderPhieu();

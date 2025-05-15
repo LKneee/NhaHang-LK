@@ -15,6 +15,7 @@
     </div>
 </div>
 
+
 <script>
     const floorTables = {
         tangTret: { start: 1, end: 5 },
@@ -22,7 +23,10 @@
         phongGiaDinh: { start: 11, end: 15 }
     };
 
+    let currentFloor = 'tangTret';
+
     function showTables(floor) {
+        currentFloor = floor;
         const container = document.getElementById("tables");
         container.innerHTML = "";
 
@@ -30,14 +34,57 @@
         for (let i = start; i <= end; i++) {
             const btn = document.createElement("button");
             btn.className = "btn-table";
+            btn.id = `btn-ban-${i}`;
             btn.textContent = i;
-            btn.onclick = () => {
-                window.location.href = "/MenuNvpv?ban=" + i;
-            };
+            btn.dataset.ban = i;
+            btn.onclick = handleTableClick;
             container.appendChild(btn);
+        }
+
+        updateTableColors(); 
+    }
+
+    function updateTableColors() {
+        fetch('/NhanVienPhucVu/GetTableStatuses')
+            .then(response => response.json())
+            .then(data => {
+                const { start, end } = floorTables[currentFloor];
+                for (let i = start; i <= end; i++) {
+                    const btn = document.getElementById(`btn-ban-${i}`);
+                    if (!btn) continue;
+
+                    const status = data[i];
+                    if (status === "Chưa thanh toán") {
+                        btn.style.backgroundColor = "red";
+                        btn.style.color = "white";
+                        btn.dataset.status = "busy";
+                    } else {
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.dataset.status = "free";
+                    }
+                }
+            });
+    }
+
+    function handleTableClick(event) {
+        const btn = event.currentTarget;
+        const ban = btn.dataset.ban;
+        const status = btn.dataset.status;
+
+        if (status === "busy") {
+            alert("Bàn đã có khách, vui lòng chọn bàn khác.");
+        } else {
+            window.location.href = "/MenuNvpv?ban=" + ban;
         }
     }
 
-    // Mặc định hiển thị tầng trệt
+
     showTables('tangTret');
+
+
+    setInterval(updateTableColors, 5000);
 </script>
+
+
+

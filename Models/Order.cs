@@ -32,6 +32,9 @@ namespace NhaHang.Models
         public DateTime NgayDat { get; set; } = DateTime.Now;
         public string TrangThai { get; set; }
 
+        [Column(TypeName = "NVARCHAR(50)")]
+        public string ThanhToan { get; set; } = "Chưa thanh toán";
+
         // Quan hệ 1-n
         public List<OrderItem> OrderItem { get; set; } = new List<OrderItem>();
     }

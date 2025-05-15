@@ -95,7 +95,7 @@ namespace NhaHang.Controllers.NhanVienPhucVu
 
 
 
-        // GET: KhachHang/Menu/GiamGia
+
         public async Task<IActionResult> GiamGia()
         {
             var items = await _context.Menu
@@ -105,7 +105,7 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             return View("Views/NhanVienPhucVu/MenuNvpv/GiamGia.cshtml", items);
         }
 
-        // GET: KhachHang/Menu/SpecialDay
+
         public async Task<IActionResult> SpecialDay()
         {
             var today = DateTime.Today;
@@ -116,7 +116,7 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             return View("Views/NhanVienPhucVu/MenuNvpv/SpecialDay.cshtml", items);
         }
 
-        // GET: KhachHang/Menu/Combo?size=2
+
         public async Task<IActionResult> Combo(int size = 2)
         {
             var items = await _context.Menu

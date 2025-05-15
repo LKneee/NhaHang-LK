@@ -18,8 +18,8 @@
                 <th>Người</th>
                 <th>Món ăn</th>
                 <th>Ghi chú</th>
-                <th>Tổng tiền</th>
-                <th>Trạng thái</th>
+                <th>Tổng Tiền </th>
+                <th>Thanh Toán</th>
                 <th>Hành động</th>
             </tr>
         </thead>
@@ -42,7 +42,7 @@
                     <td>@order.GhiChu</td>
                     <td>@string.Format("{0:N0} VND", order.TongTien)</td>
                     <td>
-                        @if (order.TrangThai == "Đã thanh toán")
+                        @if (order.ThanhToan == "Đã thanh toán")
                         {
                             <span class="badge bg-success">Đã thanh toán</span>
                         }
@@ -52,10 +52,10 @@
                         }
                     </td>
                     <td>
-                        @if (order.TrangThai != "Đã thanh toán")
+                        @if (order.ThanhToan != "Đã thanh toán")
                         {
                             <form asp-action="ThanhToan" asp-route-id="@order.OrderId" method="post" style="margin-bottom:5px;">
-                                <button type="submit" class="btn btn-primary">Thanh toán</button>
+                                <button type="submit" class="btn btn-primary"> Đã Thanh toán</button>
                             </form>
                         }
 
@@ -72,7 +72,7 @@
 
 <script>
     function loadDonHangQuanLy() {
-        fetch('/QuanLy/DonHangMoi')
+        fetch('/DonHangQuanLy/DonHangMoi')
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById("donHangQLBody");
@@ -88,37 +88,44 @@
                     });
                     monAnHtml += "</ul>";
 
-                    // Trạng thái
-                    let trangThaiHtml = order.trangThai === "Đã thanh toán"
+                    // Thanh Toán
+                    let thanhToanHtml = order.thanhToan === "Đã thanh toán"
                         ? `<span class="badge bg-success">Đã thanh toán</span>`
                         : `<span class="badge bg-warning text-dark">Chưa thanh toán</span>`;
 
                     // Hành động
                     let actionHtml = "";
-                    if (order.trangThai !== "Đã thanh toán") {
-                        actionHtml = `
-                                <form method="post" action="/QuanLy/ThanhToan/${order.orderId}">
-                                    <button type="submit" class="btn btn-primary">Thanh toán</button>
+                    if (order.thanhToan !== "Đã thanh toán") {
+                        actionHtml += `
+                                <form method="post" action="/DonHangQuanLy/ThanhToan/${order.orderId}" style="margin-bottom:5px;">
+                                    <button type="submit" class="btn btn-primary"> Đã Thanh toán</button>
                                 </form>`;
                     }
+                    actionHtml += `
+                            <form method="post" action="/DonHangQuanLy/InHoaDon/${order.orderId}" target="_blank">
+                                <button type="submit" class="btn btn-secondary">In Hóa Đơn</button>
+                            </form>`;
 
                     row.innerHTML = `
                             <td>${order.ban}</td>
                             <td>${order.nhanVienHoTen}</td>
                             <td>${order.ngayDat}</td>
-                            <td>${order.orderType ?? ""}</td>
+                            <td>${order.orderType || ""}</td>
                             <td>${monAnHtml}</td>
-                            <td>${order.ghiChu ?? ""}</td>
-                            <td>${Number(order.tongtien).toLocaleString('vi-VN')} VND</td>
-                            <td>${trangThaiHtml}</td>
+                            <td>${order.ghiChu || ""}</td>
+                            <td>${Number(order.tongTien).toLocaleString('vi-VN')} VND</td>
+                            <td>${thanhToanHtml}</td>
                             <td>${actionHtml}</td>
                         `;
+
                     tableBody.appendChild(row);
                 });
             })
             .catch(error => console.error("Lỗi khi load đơn hàng quản lý:", error));
     }
 
-    setInterval(loadDonHangQuanLy, 5000);
+
     window.onload = loadDonHangQuanLy;
+    setInterval(loadDonHangQuanLy, 5000);
 </script>
+

@@ -14,15 +14,37 @@ namespace NhaHang.Controllers.NhanVienPhucVu
         }
         public IActionResult Index()
         {
+            var orders = _context.Orders
+                .Where(o => o.ThanhToan == "Chưa thanh toán" || o.ThanhToan == "Đã thanh toán")
+                .GroupBy(o => o.Ban)
+                .Select(g => g.OrderByDescending(o => o.NgayDat).FirstOrDefault())
+                .ToList();
+
+            var tableStatus = orders.ToDictionary(o => o.Ban, o => o.ThanhToan);
+
+            ViewBag.TableStatus = tableStatus;
             return View();
         }
+
+        [HttpGet]
+        public IActionResult GetTableStatuses()
+        {
+            var orders = _context.Orders
+                .Where(o => o.ThanhToan == "Chưa thanh toán" || o.ThanhToan == "Đã thanh toán")
+                .GroupBy(o => o.Ban)
+                .Select(g => g.OrderByDescending(o => o.NgayDat).FirstOrDefault())
+                .ToList();
+
+            var tableStatus = orders.ToDictionary(o => o.Ban, o => o.ThanhToan);
+
+            return Json(tableStatus);
+        }
+
 
         public IActionResult Menu()
         {
             return RedirectToAction("Index", "MenuNvpv");
         }
-
-        // Gọi từ layout để đếm số thông báo
         public IActionResult ThongBao()
         {
             var hoTen = HttpContext.Session.GetString("UserName");
@@ -36,7 +58,6 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             return View("ThongBao/Index", order);
         }
 
-        // Đếm số đơn "Đã xong" để hiển thị badge
         public IActionResult GetThongBaoCount()
         {
             var hoTen = HttpContext.Session.GetString("UserName");
@@ -72,8 +93,5 @@ namespace NhaHang.Controllers.NhanVienPhucVu
 
             return Json(orders);
         }
-
-
-
     }
 }

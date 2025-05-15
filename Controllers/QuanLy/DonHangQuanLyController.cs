@@ -17,7 +17,7 @@ namespace NhaHang.Controllers.QuanLy
             _context = context;
         }
 
-        // Trang hiển thị đơn hàng cho Quản Lý
+       
         public IActionResult Index()
         {
             var orders = _context.Orders
@@ -28,7 +28,7 @@ namespace NhaHang.Controllers.QuanLy
             return View("~/Views/QuanLy/QuanLyDonHang/Index.cshtml", orders);
         }
 
-        // Cập nhật trạng thái thanh toán cho đơn hàng
+        
         [HttpPost]
         public IActionResult ThanhToan(int id)
         {
@@ -38,14 +38,14 @@ namespace NhaHang.Controllers.QuanLy
 
             if (order != null)
             {
-                order.TrangThai = "Đã thanh toán";
+                order.ThanhToan = "Đã thanh toán";
                 _context.SaveChanges();
             }
 
             return RedirectToAction("Index");
         }
 
-        // Lấy danh sách đơn hàng mới cho tự động cập nhật bằng JavaScript
+        
         [HttpGet]
         public IActionResult DonHangMoi()
         {
@@ -60,7 +60,8 @@ namespace NhaHang.Controllers.QuanLy
                     ngayDat = o.NgayDat.ToString("dd/MM/yyyy HH:mm"),
                     orderType = o.OrderType,
                     ghiChu = o.GhiChu,
-                    trangThai = o.TrangThai,
+                    thanhToan = o.ThanhToan,
+                    tongTien = o.OrderItem.Sum(i => i.DonGia * i.SoLuong),
                     orderItems = o.OrderItem.Select(i => new
                     {
                         tenMon = i.TenMon,
@@ -88,23 +89,23 @@ namespace NhaHang.Controllers.QuanLy
                 PdfWriter.GetInstance(doc, ms);
                 doc.Open();
 
-                // ✅ Load font Unicode hỗ trợ tiếng Việt
+              
                 string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "times.ttf");
                 BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font font = new Font(baseFont, 12, Font.NORMAL);
 
-                // Header
+              
                 doc.Add(new Paragraph("--- Nhà Hàng LK ---", font));
                 doc.Add(new Paragraph("HÓA ĐƠN TÍNH TIỀN", font));
                 doc.Add(new Paragraph($"Thời Gian Vào: {order.NgayDat:dd/MM/yyyy HH:mm}", font));
                 doc.Add(new Paragraph($"Nhân Viên: {order.NhanVienHoTen}", font));
                 doc.Add(new Paragraph(" ", font));
 
-                // Bảng món ăn
+               
                 PdfPTable table = new PdfPTable(4);
                 table.WidthPercentage = 100;
 
-                // Header bảng
+                
                 table.AddCell(new PdfPCell(new Phrase("Tên Món", font)));
                 table.AddCell(new PdfPCell(new Phrase("Số Lượng", font)));
                 table.AddCell(new PdfPCell(new Phrase("Đơn Giá", font)));

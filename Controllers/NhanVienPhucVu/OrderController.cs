@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using NhaHang.Data; // namespace chứa ApplicationDbContext
-using NhaHang.Models; // namespace chứa Order, OrderItem, DonHangModel
+using NhaHang.Data; 
+using NhaHang.Models;
 using System;
 using System.Linq;
 
