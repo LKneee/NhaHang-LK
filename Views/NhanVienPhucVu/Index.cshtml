@@ -70,13 +70,8 @@
     function handleTableClick(event) {
         const btn = event.currentTarget;
         const ban = btn.dataset.ban;
-        const status = btn.dataset.status;
 
-        if (status === "busy") {
-            alert("Bàn đã có khách, vui lòng chọn bàn khác.");
-        } else {
-            window.location.href = "/MenuNvpv?ban=" + ban;
-        }
+        window.location.href = "/MenuNvpv?ban=" + ban;
     }
 
 

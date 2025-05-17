@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\DACNA\\NhaHang\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\controllers\\nhanvienphucvu\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:controllers\\nhanvienphucvu\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\nhanvienphucvu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\nhanvienphucvu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\controllers\\nhanvienphucvu\\menunvpvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:controllers\\nhanvienphucvu\\menunvpvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\controllers\\nhanvienphucvu\\nhanvienphucvucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:controllers\\nhanvienphucvu\\nhanvienphucvucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Controllers\\NhanVienPhucVu\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NhanVienPhucVu\\OrderController.cs",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Controllers\\NhanVienPhucVu\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\NhanVienPhucVu\\OrderController.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAgwEwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T17:43:04.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NhanVienPhucVuController.cs",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Controllers\\NhanVienPhucVu\\NhanVienPhucVuController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NhanVienPhucVu\\NhanVienPhucVuController.cs",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Controllers\\NhanVienPhucVu\\NhanVienPhucVuController.cs",
+              "RelativeToolTip": "Controllers\\NhanVienPhucVu\\NhanVienPhucVuController.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAowGEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T17:25:39.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MenuNvpvController.cs",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Controllers\\NhanVienPhucVu\\MenuNvpvController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NhanVienPhucVu\\MenuNvpvController.cs",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Controllers\\NhanVienPhucVu\\MenuNvpvController.cs",
+              "RelativeToolTip": "Controllers\\NhanVienPhucVu\\MenuNvpvController.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAgwIEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T17:25:29.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\NhanVienPhucVu\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\NhanVienPhucVu\\Index.cshtml",
+              "ToolTip": "D:\\DACNA\\NhaHang\\Views\\NhanVienPhucVu\\Index.cshtml",
+              "RelativeToolTip": "Views\\NhanVienPhucVu\\Index.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAuwEQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-17T17:20:03.8Z"
             }
           ]
         }
