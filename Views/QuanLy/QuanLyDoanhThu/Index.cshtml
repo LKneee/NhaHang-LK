@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Quản Lý Doanh Thu";
+}
+<link rel="stylesheet" href="~/css/QuanLy/QuanLyDoanhThu.css" />
+<h2>Quản Lý Doanh Thu</h2>
+
+<select id="chonThoiGian" class="form-select" style="width: 300px; margin-bottom: 20px;">
+    <option value="ngay">Theo Ngày</option>
+    <option value="tuan">Theo Tuần</option>
+    <option value="thang">Theo Tháng</option>
+    <option value="nam">Theo Năm</option>
+</select>
+
+<canvas id="doanhThuChart" width="1000" height="400"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    let chart;
+
+    function taiDuLieu(loai) {
+        let url = '';
+
+        if (loai === "ngay") {
+            url = '/DoanhThuQuanLy/GetDoanhThuTheoNgay';
+        } else if (loai === "thang") {
+            url = '/DoanhThuQuanLy/GetDoanhThuTheoThang';
+        } else if (loai === "nam") {
+            url = '/DoanhThuQuanLy/GetDoanhThuTheoNam';
+        } else if (loai === "tuan") {
+            url = '/DoanhThuQuanLy/GetDoanhThuTheoTuan';
+        }
+
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                const labels = data.map(d => d.ngay || d.tuan || d.thang || d.nam);
+                const doanhThu = data.map(d => d.tongTien);
+
+                if (chart) chart.destroy();
+
+                const ctx = document.getElementById('doanhThuChart').getContext('2d');
+                chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Doanh thu (VND)',
+                            data: doanhThu,
+                            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function (value) {
+                                        return value.toLocaleString('vi-VN') + ' VND';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+    }
+
+    document.getElementById("chonThoiGian").addEventListener("change", function () {
+        taiDuLieu(this.value);
+    });
+
+    window.onload = function () {
+        taiDuLieu("ngay");
+    }
+</script>

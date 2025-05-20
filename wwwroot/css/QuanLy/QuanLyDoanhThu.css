@@ -1,0 +1,20 @@
+﻿
+canvas {
+    margin: 20px auto;
+    display: block;
+}
+
+#doanhThuChart {
+    display: block !important;
+    width: 1000px !important;
+    height: 400px !important;
+}
+
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 30px 0 20px 0;
+    font-size: 28px;
+    padding: 80px;
+}

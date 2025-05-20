@@ -129,6 +129,10 @@
       "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLy.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyDoanhThu.css",
+      "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLyDoanhThu.css"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyDonHang.css",
       "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLyDonHang.css"
     },
