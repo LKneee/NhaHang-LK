@@ -20,95 +20,119 @@ namespace NhaHang.Controllers.QuanLy
         }
 
         [HttpGet]
-        public IActionResult GetDoanhThuTheoNgay()
+        public IActionResult GetDoanhThuTheoNgayChon(string date)
         {
-            var doanhThuTheoNgay = _context.Orders
-                .Where(o => o.ThanhToan == "Đã thanh toán")
-                .GroupBy(o => o.NgayDat.Date)
-                .Select(g => new
-                {
-                    Ngay = g.Key,
-                    TongTien = g.Sum(o => o.OrderItem.Sum(i => i.DonGia * i.SoLuong))
-                })
-                .OrderBy(g => g.Ngay)
-                .Select(g => new
-                {
-                    Ngay = g.Ngay.ToString("dd/MM/yyyy"),
-                    TongTien = g.TongTien
-                })
-                .ToList();
+            if (!DateTime.TryParse(date, out DateTime ngayChon))
+                return BadRequest("Ngày không hợp lệ");
 
-            return Json(doanhThuTheoNgay);
-        }
-
-        [HttpGet]
-        public IActionResult GetDoanhThuTheoTuan()
-        {
-            var today = _context.Orders
-                .Where(o => o.ThanhToan == "Đã thanh toán")
-                .Select(o => o.NgayDat.Date)
-                .OrderByDescending(d => d)
-                .FirstOrDefault();
-
-            var startDate = today.AddDays(-6);
+            var startDate = ngayChon.AddDays(-6);
+            var endDate = ngayChon;
 
             var orders = _context.Orders
-                .Where(o => o.ThanhToan == "Đã thanh toán" && o.NgayDat.Date >= startDate && o.NgayDat.Date <= today)
+                .Where(o => o.ThanhToan == "Đã thanh toán" && o.NgayDat.Date >= startDate && o.NgayDat.Date <= endDate)
                 .Include(o => o.OrderItem)
                 .AsEnumerable();
 
-            var doanhThuTheoTuan = orders
+            var doanhThuTheoNgay = orders
                 .GroupBy(o => o.NgayDat.Date)
                 .Select(g => new
                 {
                     Ngay = g.Key.ToString("dd/MM/yyyy"),
                     TongTien = g.Sum(o => o.OrderItem.Sum(i => i.DonGia * i.SoLuong))
                 })
-                .OrderBy(g => DateTime.ParseExact(g.Ngay, "dd/MM/yyyy", CultureInfo.InvariantCulture))
                 .ToList();
 
-            return Json(doanhThuTheoTuan);
+            var ketQuaDayDu = new List<object>();
+            for (int i = 6; i >= 0; i--)
+            {
+                var ngay = endDate.AddDays(-i).Date;
+                var item = doanhThuTheoNgay.FirstOrDefault(d => d.Ngay == ngay.ToString("dd/MM/yyyy"));
+                ketQuaDayDu.Add(new
+                {
+                    Ngay = ngay.ToString("dd/MM/yyyy"),
+                    TongTien = item?.TongTien ?? 0
+                });
+            }
+
+            return Json(ketQuaDayDu);
         }
 
-
-
         [HttpGet]
-        public IActionResult GetDoanhThuTheoThang()
+        public IActionResult GetDoanhThuTheoThang(string date)
         {
-            var ordersDaThanhToan = _context.Orders
-                .Where(o => o.ThanhToan == "Đã thanh toán")
-                .Include(o => o.OrderItem)
-                .AsEnumerable();  
+            if (!DateTime.TryParse(date, out DateTime ngayChon))
+                return BadRequest("Ngày không hợp lệ");
 
-            var doanhThuTheoThang = ordersDaThanhToan
-                .GroupBy(o => new DateTime(o.NgayDat.Year, o.NgayDat.Month, 1))
+            int nam = ngayChon.Year;
+            int thangHienTai = ngayChon.Month;
+
+            var orders = _context.Orders
+                .Where(o => o.ThanhToan == "Đã thanh toán" && o.NgayDat.Year == nam && o.NgayDat.Month <= thangHienTai)
+                .Include(o => o.OrderItem)
+                .AsEnumerable();
+
+            var doanhThuTheoThang = orders
+                .GroupBy(o => o.NgayDat.Month)
                 .Select(g => new
                 {
-                    thang = g.Key.ToString("MM/yyyy"),
-                    tongTien = g.Sum(o => o.OrderItem.Sum(i => i.DonGia * i.SoLuong))
+                    Thang = $"Tháng {g.Key}",
+                    TongTien = g.Sum(o => o.OrderItem.Sum(i => i.DonGia * i.SoLuong))
                 })
-                .OrderBy(g => g.thang)
+                .OrderBy(g => g.Thang)
                 .ToList();
 
-            return Json(doanhThuTheoThang);
+            var ketQuaDayDu = new List<object>();
+            for (int thang = 1; thang <= thangHienTai; thang++)
+            {
+                var item = doanhThuTheoThang.FirstOrDefault(d => d.Thang == $"Tháng {thang}");
+                ketQuaDayDu.Add(new
+                {
+                    Thang = $"Tháng {thang}",
+                    TongTien = item?.TongTien ?? 0
+                });
+            }
+
+            return Json(ketQuaDayDu);
         }
 
 
         [HttpGet]
-        public IActionResult GetDoanhThuTheoNam()
+        public IActionResult GetDoanhThuTheoNam(string date)
         {
-            var doanhThuTheoNam = _context.Orders
-                .Where(o => o.ThanhToan == "Đã thanh toán")
+            if (!DateTime.TryParse(date, out DateTime ngayChon))
+                return BadRequest("Ngày không hợp lệ");
+
+            int nam = ngayChon.Year;
+            int namBatDau = nam - 10;
+
+            var orders = _context.Orders
+                .Where(o => o.ThanhToan == "Đã thanh toán" && o.NgayDat.Year >= namBatDau && o.NgayDat.Year <= nam)
+                .Include(o => o.OrderItem)
+                .AsEnumerable();
+
+            var doanhThuTheoNam = orders
                 .GroupBy(o => o.NgayDat.Year)
                 .Select(g => new
                 {
                     Nam = g.Key,
                     TongTien = g.Sum(o => o.OrderItem.Sum(i => i.DonGia * i.SoLuong))
                 })
-                .OrderBy(g => g.Nam)
                 .ToList();
 
-            return Json(doanhThuTheoNam);
+            var ketQua = new List<object>();
+            for (int i = namBatDau; i <= nam; i++)
+            {
+                var item = doanhThuTheoNam.FirstOrDefault(d => d.Nam == i);
+                ketQua.Add(new
+                {
+                    Nam = i.ToString(),
+                    TongTien = item?.TongTien ?? 0
+                });
+            }
+
+            return Json(ketQua);
         }
+
+
     }
 }
