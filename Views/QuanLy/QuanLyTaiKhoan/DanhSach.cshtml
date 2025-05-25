@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Users>
+
+<h4>Hoạt Động</h4>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Họ Tên</th>
+            <th>Email</th>
+            <th>SĐT</th>
+            <th>Địa Chỉ</th>
+            <th>Giới Tính</th>
+            <th>Ảnh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Where(u => u.TrangThai == "Đang Hoạt Động"))
+        {
+            <tr>
+                <td>@user.HoTen</td>
+                <td>@user.Email</td>
+                <td>@user.SDT</td>
+                <td>@user.DiaChi</td>
+                <td>@user.GioiTinh</td>
+                <td><img src="@user.Image" width="50" height="50" /></td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="suaNguoiDung('@user.Email')">Sửa</button>
+                    <button class="btn btn-danger btn-sm" onclick="xoaNguoiDung('@user.Email')">Xóa</button>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Không Hoạt Động</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Họ Tên</th>
+            <th>Email</th>
+            <th>SĐT</th>
+            <th>Địa Chỉ</th>
+            <th>Giới Tính</th>
+            <th>Ảnh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Where(u => u.TrangThai != "Đang Hoạt Động"))
+        {
+            <tr>
+                <td>@user.HoTen</td>
+                <td>@user.Email</td>
+                <td>@user.SDT</td>
+                <td>@user.DiaChi</td>
+                <td>@user.GioiTinh</td>
+                <td><img src="@user.Image" width="50" height="50" /></td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="suaNguoiDung('@user.Email')">Sửa</button>
+                    <button class="btn btn-danger btn-sm" onclick="xoaNguoiDung('@user.Email')">Xóa</button>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

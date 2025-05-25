@@ -29,5 +29,7 @@ namespace NhaHang.Models
 
         public string? Image { get; set; }
 
+        public string? TrangThai { get; set; }
+
     }
 }

@@ -141,6 +141,10 @@
       "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLyMenu.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyTaiKhoan.css",
+      "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLyTaiKhoan.css"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",
       "PackagePath": "staticwebassets\\css\\Register.css"
     },

@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Quản Lý Tài Khoản";
+}
+<link rel="stylesheet" href="~/css/QuanLy/QuanLyTaiKhoan.css" />
+
+<h2>Quản Lý Tài Khoản</h2>
+
+<!-- Tabs cho từng VaiTro -->
+<ul class="nav nav-tabs" id="vaiTroTabs">
+    <li class="nav-item"><a class="nav-link active" data-vaitro="NhanVienPhucVu">Nhân Viên Phục Vụ</a></li>
+    <li class="nav-item"><a class="nav-link" data-vaitro="NhanVienBep">Nhân Viên Bếp</a></li>
+    <li class="nav-item"><a class="nav-link" data-vaitro="KhachHang">Khách Hàng</a></li>
+    <li class="nav-item"><a class="nav-link" data-vaitro="QuanLy">Quản Lý</a></li>
+</ul>
+
+<div id="danhSachTaiKhoan" style="margin-top: 20px;">
+    <!-- Nội dung AJAX sẽ được đổ vào đây -->
+</div>
+
+<script>
+    function taiDuLieuTaiKhoan(vaiTro) {
+        fetch(`/TaiKhoanQuanLy/VaiTroNguoiDung?vaiTro=${vaiTro}`)
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("danhSachTaiKhoan").innerHTML = html;
+            });
+    }
+
+    // Xử lý khi nhấn tab
+    document.querySelectorAll("#vaiTroTabs .nav-link").forEach(tab => {
+        tab.addEventListener("click", function () {
+            document.querySelectorAll("#vaiTroTabs .nav-link").forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+            const vaiTro = this.getAttribute("data-vaitro");
+            taiDuLieuTaiKhoan(vaiTro);
+        });
+    });
+
+    // Load mặc định tab đầu tiên
+    window.onload = function () {
+        taiDuLieuTaiKhoan("NhanVienPhucVu");
+    };
+
+    // Auto reload mỗi 10 giây (tùy chỉnh nếu muốn)
+    setInterval(() => {
+        const activeTab = document.querySelector("#vaiTroTabs .nav-link.active");
+        if (activeTab) {
+            const vaiTro = activeTab.getAttribute("data-vaitro");
+            taiDuLieuTaiKhoan(vaiTro);
+        }
+    }, 4000);
+</script>

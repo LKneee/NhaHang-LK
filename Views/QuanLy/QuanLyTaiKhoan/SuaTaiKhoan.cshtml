@@ -1,0 +1,30 @@
+﻿@model NhaHang.Models.Users
+
+<h3>Sửa Tài Khoản</h3>
+<form asp-action="CapNhatTaiKhoan" method="post">
+    <input type="hidden" name="Email" value="@Model.Email" />
+    <div>
+        <label>Họ tên</label>
+        <input type="text" name="HoTen" value="@Model.HoTen" required />
+    </div>
+    <div>
+        <label>Giới tính</label>
+        <select name="GioiTinh">
+            <option value="Nam" selected="@(Model.GioiTinh == "Nam")">Nam</option>
+            <option value="Nữ" selected="@(Model.GioiTinh == "Nữ")">Nữ</option>
+            <option value="Khác" selected="@(Model.GioiTinh == "Khác")">Khác</option>
+        </select>
+    </div>
+    <div>
+        <label>SĐT</label>
+        <input type="text" name="SDT" value="@Model.SDT" required />
+    </div>
+    <div>
+        <label>Địa chỉ</label>
+        <input type="text" name="DiaChi" value="@Model.DiaChi" required />
+    </div>
+    <br />
+    <button type="submit">Cập Nhật</button>
+    <a href="/TaiKhoanQuanLy/Index">Quay lại</a>
+</form>
+

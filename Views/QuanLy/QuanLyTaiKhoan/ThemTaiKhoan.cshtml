@@ -1,0 +1,21 @@
+﻿@model NhaHang.Models.Users
+<!-- Modal Thêm -->
+<div id="formThemNguoiDung" style="display:none; background:#fff; padding:20px; border:1px solid #ccc;">
+    <h4>Thêm Tài Khoản</h4>
+    <form id="formThem" onsubmit="return themTaiKhoan(event)">
+        <input type="text" name="HoTen" placeholder="Họ tên" required />
+        <select name="GioiTinh">
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
+        </select>
+        <input type="text" name="SDT" placeholder="Số điện thoại" required />
+        <input id="emailInput" type="text" name="Email" placeholder="Email (chỉ nhập tên)" required />
+        <input type="password" name="MatKhau" placeholder="Mật khẩu" required />
+        <input type="text" name="DiaChi" placeholder="Địa chỉ" required />
+        <input type="hidden" name="VaiTro" id="vaiTroInput" />
+        <br />
+        <button type="submit">Thêm</button>
+        <button type="button" onclick="dongForm()">Hủy</button>
+    </form>
+</div>

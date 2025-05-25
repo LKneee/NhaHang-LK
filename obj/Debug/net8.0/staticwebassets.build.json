@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YDwj7kxAGtoaRnzoJzIcRcb+ujotUA7IubJ0dssj8fk=",
+  "Hash": "A+58i1YCLscmqLVlxim4lUgwa7E2aEsdPzzl1qmpIIU=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -490,6 +490,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\QuanLy\\QuanLyMenu.css"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyTaiKhoan.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/QuanLy/QuanLyTaiKhoan.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\QuanLy\\QuanLyTaiKhoan.css"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",

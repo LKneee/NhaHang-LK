@@ -29,6 +29,17 @@ namespace NhaHang.Controllers.NhaHang
 
         public IActionResult Logout()
         {
+            var email = HttpContext.Session.GetString("UserEmail");
+            if (!string.IsNullOrEmpty(email))
+            {
+                var user = _context.Users.FirstOrDefault(u => u.Email == email);
+                if (user != null)
+                {
+                    user.TrangThai = "Không Hoạt Động"; 
+                    _context.SaveChanges();
+                }
+            }
+
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
@@ -58,6 +69,10 @@ namespace NhaHang.Controllers.NhaHang
                 ModelState.AddModelError("Error", "Sai email hoặc mật khẩu!");
                 return View();
             }
+
+            user.TrangThai = "Đang Hoạt Động";
+            _context.Update(user);
+            _context.SaveChanges();
 
             string hoTen = user.HoTen ?? "Chưa cập nhật";
             string sdt = user.SDT ?? "Chưa cập nhật";
