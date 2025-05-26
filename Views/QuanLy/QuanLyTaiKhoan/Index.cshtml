@@ -5,7 +5,10 @@
 
 <h2>Quản Lý Tài Khoản</h2>
 
-<!-- Tabs cho từng VaiTro -->
+<div style="margin-top: 20px;">
+    <button id="btnThemTaiKhoan" class="btn btn-primary">Thêm Tài Khoản</button>
+</div>
+
 <ul class="nav nav-tabs" id="vaiTroTabs">
     <li class="nav-item"><a class="nav-link active" data-vaitro="NhanVienPhucVu">Nhân Viên Phục Vụ</a></li>
     <li class="nav-item"><a class="nav-link" data-vaitro="NhanVienBep">Nhân Viên Bếp</a></li>
@@ -14,11 +17,14 @@
 </ul>
 
 <div id="danhSachTaiKhoan" style="margin-top: 20px;">
-    <!-- Nội dung AJAX sẽ được đổ vào đây -->
+
 </div>
 
 <script>
+    let vaiTroHienTai = "NhanVienPhucVu"; // biến toàn cục
+
     function taiDuLieuTaiKhoan(vaiTro) {
+        vaiTroHienTai = vaiTro; 
         fetch(`/TaiKhoanQuanLy/VaiTroNguoiDung?vaiTro=${vaiTro}`)
             .then(res => res.text())
             .then(html => {
@@ -26,7 +32,11 @@
             });
     }
 
-    // Xử lý khi nhấn tab
+    document.querySelector("#btnThemTaiKhoan").addEventListener("click", function () {
+        window.location.href = `/TaiKhoanQuanLy/ThemTaiKhoanView?vaiTro=${vaiTroHienTai}`;
+    });
+
+
     document.querySelectorAll("#vaiTroTabs .nav-link").forEach(tab => {
         tab.addEventListener("click", function () {
             document.querySelectorAll("#vaiTroTabs .nav-link").forEach(t => t.classList.remove("active"));
@@ -36,12 +46,12 @@
         });
     });
 
-    // Load mặc định tab đầu tiên
+
     window.onload = function () {
         taiDuLieuTaiKhoan("NhanVienPhucVu");
     };
 
-    // Auto reload mỗi 10 giây (tùy chỉnh nếu muốn)
+
     setInterval(() => {
         const activeTab = document.querySelector("#vaiTroTabs .nav-link.active");
         if (activeTab) {

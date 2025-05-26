@@ -25,7 +25,7 @@ namespace NhaHang.Models
         public string DiaChi { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public string VaiTro { get; private set; }
+        public string VaiTro { get; set; }
 
         public string? Image { get; set; }
 

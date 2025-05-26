@@ -1,0 +1,38 @@
+﻿@model NhaHang.Models.Users
+@{
+    ViewData["Title"] = "Chỉnh Sửa Tài Khoản";
+}
+<link rel="stylesheet" href="~/css/QuanLy/ChinhSuaTaiKhoan.css">
+<h2>Cập Nhật tài khoản</h2>
+<form asp-action="ChinhSuaTaiKhoan" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="hidden" name="VaiTro" value="@Model.VaiTro" />
+
+    <input type="text" name="HoTen" value="@Model.HoTen" required />
+    <select name="GioiTinh" class="form-control">
+        @if (Model.GioiTinh == "Nam")
+        {
+            <option value="Nam" selected>Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
+        }
+        else if (Model.GioiTinh == "Nữ")
+        {
+            <option value="Nam">Nam</option>
+            <option value="Nữ" selected>Nữ</option>
+            <option value="Khác">Khác</option>
+        }
+        else
+        {
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác" selected>Khác</option>
+        }
+    </select>
+    <input type="text" name="SDT" value="@Model.SDT" required />
+    <input type="text" name="Email" value="@Model.Email" required />
+    <input type="password" name="MatKhau" placeholder="Mật khẩu mới (nếu muốn đổi)" />
+    <input type="text" name="DiaChi" value="@Model.DiaChi" required />
+
+    <button type="submit">Lưu Thay Đổi</button>
+</form>

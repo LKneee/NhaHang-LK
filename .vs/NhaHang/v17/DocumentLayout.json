@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\DACNA\\NhaHang\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\quanly\\quanlytaikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\quanly\\quanlytaikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\controllers\\quanly\\taikhoanquanlycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:controllers\\quanly\\taikhoanquanlycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|d:\\dacna\\nhahang\\views\\quanly\\quanlytaikhoan\\danhsach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B4211453-20B4-4690-8322-E31A3991AF07}|NhaHang.csproj|solutionrelative:views\\quanly\\quanlytaikhoan\\danhsach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,47 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DanhSach.cshtml",
-              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\QuanLy\\QuanLyTaiKhoan\\DanhSach.cshtml",
-              "RelativeDocumentMoniker": "Views\\QuanLy\\QuanLyTaiKhoan\\DanhSach.cshtml",
-              "ToolTip": "D:\\DACNA\\NhaHang\\Views\\QuanLy\\QuanLyTaiKhoan\\DanhSach.cshtml",
-              "RelativeToolTip": "Views\\QuanLy\\QuanLyTaiKhoan\\DanhSach.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-25T17:33:11.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TaiKhoanQuanLyController.cs",
-              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Controllers\\QuanLy\\TaiKhoanQuanLyController.cs",
-              "RelativeDocumentMoniker": "Controllers\\QuanLy\\TaiKhoanQuanLyController.cs",
-              "ToolTip": "D:\\DACNA\\NhaHang\\Controllers\\QuanLy\\TaiKhoanQuanLyController.cs",
-              "RelativeToolTip": "Controllers\\QuanLy\\TaiKhoanQuanLyController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAgwCYAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T16:59:14.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\DACNA\\NhaHang\\Views\\QuanLy\\QuanLyTaiKhoan\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\QuanLy\\QuanLyTaiKhoan\\Index.cshtml",
-              "ToolTip": "D:\\DACNA\\NhaHang\\Views\\QuanLy\\QuanLyTaiKhoan\\Index.cshtml",
-              "RelativeToolTip": "Views\\QuanLy\\QuanLyTaiKhoan\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-25T16:53:18.939Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"

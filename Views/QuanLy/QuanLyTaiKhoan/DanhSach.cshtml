@@ -24,8 +24,11 @@
                 <td>@user.GioiTinh</td>
                 <td><img src="@user.Image" width="50" height="50" /></td>
                 <td>
-                    <button class="btn btn-warning btn-sm" onclick="suaNguoiDung('@user.Email')">Sửa</button>
-                    <button class="btn btn-danger btn-sm" onclick="xoaNguoiDung('@user.Email')">Xóa</button>
+                    <a href="/TaiKhoanQuanLy/ChinhSuaTaiKhoanView?id=@user.Id" class="btn btn-sm btn-warning">Sửa</a>
+                    <form asp-action="XoaTaiKhoan" method="post" style="display:inline;" onsubmit="return confirm('Bạn chắc chắn muốn xóa?');">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+                    </form>
                 </td>
 
             </tr>
@@ -56,8 +59,11 @@
                 <td>@user.GioiTinh</td>
                 <td><img src="@user.Image" width="50" height="50" /></td>
                 <td>
-                    <button class="btn btn-warning btn-sm" onclick="suaNguoiDung('@user.Email')">Sửa</button>
-                    <button class="btn btn-danger btn-sm" onclick="xoaNguoiDung('@user.Email')">Xóa</button>
+                    <a href="/TaiKhoanQuanLy/ChinhSuaTaiKhoanView?id=@user.Id" class="btn btn-sm btn-warning">Sửa</a>
+                    <form asp-action="XoaTaiKhoan" method="post" style="display:inline;" onsubmit="return confirm('Bạn chắc chắn muốn xóa?');">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+                    </form>
                 </td>
 
             </tr>

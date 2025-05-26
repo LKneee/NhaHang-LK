@@ -1,21 +1,52 @@
 ﻿@model NhaHang.Models.Users
-<!-- Modal Thêm -->
-<div id="formThemNguoiDung" style="display:none; background:#fff; padding:20px; border:1px solid #ccc;">
-    <h4>Thêm Tài Khoản</h4>
-    <form id="formThem" onsubmit="return themTaiKhoan(event)">
-        <input type="text" name="HoTen" placeholder="Họ tên" required />
-        <select name="GioiTinh">
-            <option value="Nam">Nam</option>
-            <option value="Nữ">Nữ</option>
-            <option value="Khác">Khác</option>
-        </select>
-        <input type="text" name="SDT" placeholder="Số điện thoại" required />
-        <input id="emailInput" type="text" name="Email" placeholder="Email (chỉ nhập tên)" required />
-        <input type="password" name="MatKhau" placeholder="Mật khẩu" required />
-        <input type="text" name="DiaChi" placeholder="Địa chỉ" required />
-        <input type="hidden" name="VaiTro" id="vaiTroInput" />
-        <br />
-        <button type="submit">Thêm</button>
-        <button type="button" onclick="dongForm()">Hủy</button>
-    </form>
-</div>
+@{
+    ViewData["Title"] = "Đăng Kí Tài Khoản ";
+    string vaiTro = ViewBag.VaiTro as string ?? "";
+    string emailSuffix = vaiTro switch
+    {
+        "NhanVienPhucVu" => "@nvpv.com",
+        "NhanVienBep" => "@nvb.com",
+        "QuanLy" => "@admin.com",
+        "KhachHang" => "@gmail.com",
+        _ => "@default"
+    };
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Tài Khoản</title>
+    <link rel="stylesheet" href="~/css/QuanLy/ThemTaiKhoan.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-form">
+            <h2>THÊM TÀI KHOẢN</h2>
+            <form asp-action="ThemTaiKhoan" method="post">
+                <input type="hidden" name="VaiTro" value="@vaiTro" />
+
+                <input type="text" name="HoTen" placeholder="Họ tên" required />
+
+                <select name="GioiTinh">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                    <option value="Khác">Khác</option>
+                </select>
+
+                <input type="text" name="SDT" placeholder="Số điện thoại" required />
+
+                <div style="display:flex;">
+                    <input type="text" name="EmailPrefix" placeholder="Nhập tên email" required style="flex:1;" />
+                    <span style="align-self:center; padding-left:5px;">@emailSuffix</span>
+                </div>
+
+                <input type="password" name="MatKhau" placeholder="Mật khẩu" required />
+                <input type="text" name="DiaChi" placeholder="Địa chỉ" required />
+
+                <button type="submit">Tạo Tài Khoản</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

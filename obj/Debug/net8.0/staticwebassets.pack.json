@@ -121,6 +121,10 @@
       "PackagePath": "staticwebassets\\css\\Profile\\Profile.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\ChinhSuaTaiKhoan.css",
+      "PackagePath": "staticwebassets\\css\\QuanLy\\ChinhSuaTaiKhoan.css"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\MenuForm.css",
       "PackagePath": "staticwebassets\\css\\QuanLy\\MenuForm.css"
     },
@@ -143,6 +147,10 @@
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\QuanLyTaiKhoan.css",
       "PackagePath": "staticwebassets\\css\\QuanLy\\QuanLyTaiKhoan.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\ThemTaiKhoan.css",
+      "PackagePath": "staticwebassets\\css\\QuanLy\\ThemTaiKhoan.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",

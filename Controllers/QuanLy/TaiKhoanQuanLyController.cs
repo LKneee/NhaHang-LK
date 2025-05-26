@@ -1,16 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NhaHang.Data;
 using NhaHang.Models;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace NhaHang.Controllers.QuanLy
 {
     public class TaiKhoanQuanLyController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly PasswordHasher<Users> _passwordHasher;
         public TaiKhoanQuanLyController(AppDbContext context)
         {
             _context = context;
+            _passwordHasher = new PasswordHasher<Users>();
         }
+
 
         public IActionResult Index()
         {
@@ -28,50 +34,105 @@ namespace NhaHang.Controllers.QuanLy
         }
 
         [HttpPost]
-        public IActionResult ThemTaiKhoan(Users user)
+        public IActionResult ThemTaiKhoan(IFormCollection form)
         {
+            string emailPrefix = form["EmailPrefix"];
+            string vaiTro = form["VaiTro"];
+            string emailSuffix = vaiTro switch
+            {
+                "NhanVienPhucVu" => "@nvpv.com",
+                "NhanVienBep" => "@nvb.com",
+                "QuanLy" => "@admin.com",
+                "KhachHang" => "@gmail.com",
+                _ => "@default"
+            };
+
+            string emailFull = emailPrefix + emailSuffix;
+
+            var user = new Users
+            {
+                HoTen = form["HoTen"],
+                GioiTinh = form["GioiTinh"],
+                SDT = form["SDT"],
+                DiaChi = form["DiaChi"],
+                Email = emailFull,
+                VaiTro = vaiTro,
+                TrangThai = "Đang Hoạt Động",
+                Image = "/images/default_user.png",
+                MatKhau = HashPassword(form["MatKhau"])  
+            };
+
             if (ModelState.IsValid)
             {
                 _context.Users.Add(user);
                 _context.SaveChanges();
-                return Content("Success");
+                return RedirectToAction("Index");
             }
-            return BadRequest("Lỗi dữ liệu");
+
+            ViewBag.Error = "Vui lòng nhập đầy đủ và đúng thông tin!";
+            return View("~/Views/QuanLy/QuanLyTaiKhoan/ThemTaiKhoan.cshtml", user);
         }
 
-        [HttpDelete]
-        public IActionResult XoaTaiKhoan(string email)
+        private string HashPassword(string password)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Email == email);
-            if (user == null) return NotFound();
-
-            _context.Users.Remove(user);
-            _context.SaveChanges();
-            return Ok("Đã xóa");
+            using (var sha256 = SHA256.Create())
+            {
+                var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return Convert.ToBase64String(bytes);
+            }
         }
 
-        public IActionResult SuaTaiKhoan(string email)
+        [HttpGet]
+        public IActionResult ThemTaiKhoanView(string vaiTro)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Email == email);
-            if (user == null) return NotFound();
-
-            return View("SuaTaiKhoan", user);
+            ViewBag.VaiTro = vaiTro;
+            return View("~/Views/QuanLy/QuanLyTaiKhoan/ThemTaiKhoan.cshtml");
         }
 
         [HttpPost]
-        public IActionResult CapNhatTaiKhoan(Users user)
+        public IActionResult XoaTaiKhoan(int id)
         {
-            var existing = _context.Users.FirstOrDefault(u => u.Email == user.Email);
-            if (existing == null) return NotFound();
+            var user = _context.Users.FirstOrDefault(u => u.Id == id);
+            if (user != null)
+            {
+                _context.Users.Remove(user);
+                _context.SaveChanges();
+            }
 
-            existing.HoTen = user.HoTen;
-            existing.GioiTinh = user.GioiTinh;
-            existing.SDT = user.SDT;
-            existing.DiaChi = user.DiaChi;
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult ChinhSuaTaiKhoan(Users updatedUser)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Id == updatedUser.Id);
+            if (user == null) return NotFound();
+
+            user.HoTen = updatedUser.HoTen;
+            user.GioiTinh = updatedUser.GioiTinh;
+            user.SDT = updatedUser.SDT;
+            user.DiaChi = updatedUser.DiaChi;
+            user.Email = updatedUser.Email;
+            user.VaiTro = updatedUser.VaiTro;
+            user.TrangThai = updatedUser.TrangThai;
+
+            if (!string.IsNullOrWhiteSpace(updatedUser.MatKhau))
+            {
+                user.MatKhau = HashPassword(updatedUser.MatKhau);
+            }
 
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult ChinhSuaTaiKhoanView(int id)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Id == id);
+            if (user == null) return NotFound();
+
+            ViewBag.VaiTro = user.VaiTro;
+            return View("~/Views/QuanLy/QuanLyTaiKhoan/ChinhSuaTaiKhoan.cshtml", user);
+        }
     }
 }

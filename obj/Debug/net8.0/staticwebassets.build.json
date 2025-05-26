@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A+58i1YCLscmqLVlxim4lUgwa7E2aEsdPzzl1qmpIIU=",
+  "Hash": "cs4mOLo8D5xEQh2TU/Gc92SOA/XFnRmp4ycDNclAedk=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -397,6 +397,25 @@
       "OriginalItemSpec": "wwwroot\\css\\Profile\\Profile.css"
     },
     {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\ChinhSuaTaiKhoan.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/QuanLy/ChinhSuaTaiKhoan.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\QuanLy\\ChinhSuaTaiKhoan.css"
+    },
+    {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\MenuForm.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
@@ -509,6 +528,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\QuanLy\\QuanLyTaiKhoan.css"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\QuanLy\\ThemTaiKhoan.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/QuanLy/ThemTaiKhoan.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\QuanLy\\ThemTaiKhoan.css"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",
