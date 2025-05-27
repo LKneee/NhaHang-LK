@@ -57,7 +57,7 @@ namespace NhaHang.Controllers.QuanLy
                 DiaChi = form["DiaChi"],
                 Email = emailFull,
                 VaiTro = vaiTro,
-                TrangThai = "Đang Hoạt Động",
+                TrangThai = "Không Hoạt Động",
                 Image = "/images/default_user.png",
                 MatKhau = HashPassword(form["MatKhau"])  
             };

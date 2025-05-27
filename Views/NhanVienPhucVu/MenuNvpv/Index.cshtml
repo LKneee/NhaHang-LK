@@ -101,7 +101,7 @@
 <script>
     let phieu = [];
 
-    // Lấy phiếu từ localStorage khi trang được load
+    
     window.onload = function () {
         const savedPhieu = localStorage.getItem("phieu");
         if (savedPhieu) {
@@ -144,7 +144,7 @@
         });
 
 
-        // Kiểm tra Order: Nhân Viên -> giảm 50%
+        
         const orderType = document.getElementById("orderType").value;
         if (orderType === "Nhân Viên") {
             tong = tong / 2;
@@ -182,16 +182,16 @@
         const ghiChu = document.getElementById("ghiChu").value.trim();
         const orderType = document.getElementById("orderType").value;
 
-        // Tạo bản sao của phiếu để không làm thay đổi mảng gốc
+      
         let phieuGui = phieu.map(item => {
             let giaFinal = item.gia;
             if (orderType === "Nhân Viên") {
-                giaFinal = giaFinal / 2; // Giảm 50% cho nhân viên
+                giaFinal = giaFinal / 2; 
             }
 
             return {
                 ten: item.ten,
-                gia: giaFinal, // ✅ Lưu giá đã giảm
+                gia: giaFinal, 
                 soluong: item.soluong
             };
         });
@@ -205,7 +205,7 @@
                 banSo: "@ban",
                 ghiChu: ghiChu,
                 orderType: orderType,
-                phieu: phieuGui // ✅ Dùng giá đã giảm nếu là nhân viên
+                phieu: phieuGui // 
             })
         })
             .then(response => {

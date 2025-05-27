@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cs4mOLo8D5xEQh2TU/Gc92SOA/XFnRmp4ycDNclAedk=",
+  "Hash": "UXDZkLL0FA99rboHCuWz+zDXGZIau6+9wHUif1BWO7I=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -74,6 +74,25 @@
       "OriginalItemSpec": "wwwroot\\avatar\\4a139375-f656-4a50-b2bc-42882badc931.jpg"
     },
     {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\6f0cd4dd-98c8-4554-82a7-a13616eb1f3d.jpg",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "avatar/6f0cd4dd-98c8-4554-82a7-a13616eb1f3d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avatar\\6f0cd4dd-98c8-4554-82a7-a13616eb1f3d.jpg"
+    },
+    {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\70c285c9-1785-459e-ad53-75874909672e.jpg",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\avatar\\cf37a074-b737-4ead-8224-35b34409f21b.jpg"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\e15627b0-6556-42ad-813b-209ee6d1c8a4.jpg",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "avatar/e15627b0-6556-42ad-813b-209ee6d1c8a4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avatar\\e15627b0-6556-42ad-813b-209ee6d1c8a4.jpg"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Home\\ChiTiet.css",
