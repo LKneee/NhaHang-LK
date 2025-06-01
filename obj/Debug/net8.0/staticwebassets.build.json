@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UXDZkLL0FA99rboHCuWz+zDXGZIau6+9wHUif1BWO7I=",
+  "Hash": "zemR3WTuLgOBFTxHeRCPhj09LLvZCZZ61vPPgHIpnsE=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -245,6 +245,25 @@
       "OriginalItemSpec": "wwwroot\\css\\KhachHang\\ChiTiet.css"
     },
     {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\KhachHang\\DatBan.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/KhachHang/DatBan.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\KhachHang\\DatBan.css"
+    },
+    {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\KhachHang\\KhachHang.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
@@ -357,6 +376,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\NhanVienPhucVu\\ChiTiet.css"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\DanhSachDatBan.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/NhanVienPhucVu/DanhSachDatBan.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\NhanVienPhucVu\\DanhSachDatBan.css"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\MenuNvpv.css",

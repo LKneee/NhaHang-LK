@@ -1,0 +1,107 @@
+﻿@model NhaHang.Models.DatBan
+
+@{
+    ViewData["Title"] = "Đặt Bàn";
+}
+
+<h1 style="text-align: center; padding: 100px">Đặt Bàn</h1>
+
+@if (TempData["ThongBao"] != null)
+{
+    <div class="alert alert-success text-center">
+        @TempData["ThongBao"]
+    </div>
+}
+
+<form asp-action="Index" asp-controller="DatBan" method="post" id="formDatBan">
+    <div class="form-group">
+        <label asp-for="HoTen"></label>
+        <input asp-for="HoTen" class="form-control" />
+        <span asp-validation-for="HoTen" class="error-message"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SoDienThoai"></label>
+        <input asp-for="SoDienThoai" class="form-control" />
+        <span asp-validation-for="SoDienThoai" class="error-message"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NgayDat"></label>
+        <input asp-for="NgayDat" type="date" class="form-control" id="NgayDat" />
+        <span asp-validation-for="NgayDat" class="error-message"></span>
+        <p id="thongBao" class="error-message"></p>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GioNhanBan"></label>
+        <select asp-for="GioNhanBan" class="form-control" id="gioNhanBan"></select>
+        <span class="clock-icon">🕒</span>
+        <span asp-validation-for="GioNhanBan" class="error-message"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LoaiTiec"></label>
+        <select asp-for="LoaiTiec" class="form-control">
+            <option value="">--Chọn loại tiệc--</option>
+            <option value="Sinh Nhật">Sinh Nhật</option>
+            <option value="Kỷ Niệm">Kỷ Niệm</option>
+            <option value="Gia Đình">Gia Đình</option>
+            <option value="Hẹn Hò">Hẹn Hò</option>
+        </select>
+        <span asp-validation-for="LoaiTiec" class="error-message"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SoNguoi"></label>
+        <input asp-for="SoNguoi" type="number" class="form-control" min="1" />
+        <span asp-validation-for="SoNguoi" class="error-message"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Xác Nhận Đặt Bàn</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        function generateTimeOptions() {
+            const select = document.getElementById('gioNhanBan');
+            let start = 9 * 60;
+            const end = 21 * 60;
+
+            while (start <= end) {
+                const hours = Math.floor(start / 60);
+                const minutes = start % 60;
+                const time = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+                const option = document.createElement('option');
+                option.value = time;
+                option.textContent = time;
+                select.appendChild(option);
+                start += 15;
+            }
+        }
+
+        generateTimeOptions();
+
+        document.getElementById('NgayDat').addEventListener('change', function () {
+            const selectedDate = new Date(this.value);
+            const now = new Date();
+
+            if (
+                selectedDate.getDate() === now.getDate() &&
+                selectedDate.getMonth() === now.getMonth() &&
+                selectedDate.getFullYear() === now.getFullYear()
+            ) {
+                const hourNow = now.getHours();
+                if (hourNow >= 21) {
+                    document.getElementById('thongBao').textContent = "Không còn chỗ cho ngày bạn đặt.";
+                } else {
+                    document.getElementById('thongBao').textContent = "";
+                }
+            } else {
+                document.getElementById('thongBao').textContent = "";
+            }
+        });
+    </script>
+}

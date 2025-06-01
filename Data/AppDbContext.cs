@@ -13,11 +13,13 @@ namespace NhaHang.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItem { get; set; }
 
+        public DbSet<DatBan> DatBan { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Cấu hình mối quan hệ 1 Order - nhiều OrderItem
             modelBuilder.Entity<OrderItem>()
                 .HasOne(o => o.Order)
                 .WithMany(o => o.OrderItem)
