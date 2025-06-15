@@ -1,2 +1,189 @@
 ﻿body {
+    background: url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeInBody 1.5s ease-in;
+}
+
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    margin-top: 140px;
+    margin-bottom: 30px;
+    animation: fadeInTitle 1s ease-in;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.thong-tin-wrapper {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+    animation: fadeInBox 1s ease-in-out;
+}
+
+@keyframes fadeInBox {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.thong-tin-nha-hang {
+    color: white;
+}
+
+.nha-hang-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    width: 80%;
+}
+
+.nha-hang-ten {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.nha-hang-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.rating {
+    font-size: 1rem;
+    margin-top: 5px;
+    color: gold;
+}
+
+.danh-gia {
+    color: #87cefa;
+    font-size: 0.9rem;
+    margin-left: 8px;
+}
+
+.nha-hang-mo-ta {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #eee;
+}
+
+.nha-hang-diem-noi-bat {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+    .nha-hang-diem-noi-bat li {
+        margin-bottom: 6px;
+        font-size: 0.95rem;
+    }
+
+.nha-hang-card .btn {
+    margin-top: 15px;
+    background: linear-gradient(to right, #f5af19, #f12711);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+    .nha-hang-card .btn:hover {
+        background: linear-gradient(to right, #f12711, #f5af19);
+    }
+
+/* Giao diện form */
+.form-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    color: white;
+    animation: fadeInBox 1.5s ease-in-out;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+    .form-control::placeholder {
+        color: #eee;
+    }
+
+.btn-primary {
+    align-self: flex-end;
+    background-color: #d4af37;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+    .btn-primary:hover {
+        background-color: #bfa333;
+    }
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+.clock-icon {
+    margin-left: 10px;
 }

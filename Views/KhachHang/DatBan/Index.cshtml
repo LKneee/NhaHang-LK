@@ -1,65 +1,103 @@
 ﻿@model NhaHang.Models.DatBan
-
+<link rel="stylesheet" href="~/css/KhachHang/DatBan.css?v=100" />
 @{
     ViewData["Title"] = "Đặt Bàn";
 }
 
-<h1 style="text-align: center; padding: 100px">Đặt Bàn</h1>
 
-@if (TempData["ThongBao"] != null)
-{
-    <div class="alert alert-success text-center">
-        @TempData["ThongBao"]
-    </div>
-}
+<h1>Đặt Bàn</h1>
 
-<form asp-action="Index" asp-controller="DatBan" method="post" id="formDatBan">
-    <div class="form-group">
-        <label asp-for="HoTen"></label>
-        <input asp-for="HoTen" class="form-control" />
-        <span asp-validation-for="HoTen" class="error-message"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="SoDienThoai"></label>
-        <input asp-for="SoDienThoai" class="form-control" />
-        <span asp-validation-for="SoDienThoai" class="error-message"></span>
+<div class="thong-tin-wrapper">
+    <div class="thong-tin-nha-hang">
+        <p><strong>⏰ Thời gian hoạt động:</strong> 9:00 – 22:00</p>
+        <p><strong>✨ Điểm nổi bật:</strong></p>
+        <ul>
+            <li>  Một khu vườn nằm tách biệt trên đảo</li>
+            <li>  Trải nghiệm đi thuyền ra đảo giữa dòng sông</li>
+            <li>  Ngắm nhìn thành phố về đêm bên sông</li>
+            <li>  Ánh sáng nền thơ trong sân vườn ngập cây xanh</li>
+        </ul>
     </div>
 
-    <div class="form-group">
-        <label asp-for="NgayDat"></label>
-        <input asp-for="NgayDat" type="date" class="form-control" id="NgayDat" />
-        <span asp-validation-for="NgayDat" class="error-message"></span>
-        <p id="thongBao" class="error-message"></p>
-    </div>
+    <div class="nha-hang-card">
+        <div class="nha-hang-header">
+            <h2 class="nha-hang-ten"> LK Restaurant</h2>
+            <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span>
+                <span class="danh-gia"> 3.982 đánh giá</span>
+            </div>
+        </div>
 
-    <div class="form-group">
-        <label asp-for="GioNhanBan"></label>
-        <select asp-for="GioNhanBan" class="form-control" id="gioNhanBan"></select>
-        <span class="clock-icon">🕒</span>
-        <span asp-validation-for="GioNhanBan" class="error-message"></span>
-    </div>
+        <p class="nha-hang-mo-ta">
+            Nhà hàng phong cách Việt Nam quê hương đất nước.
+            Phù hợp cho hẹn hò, sinh nhật, hoặc tiệc gia đình.
+        </p>
 
-    <div class="form-group">
-        <label asp-for="LoaiTiec"></label>
-        <select asp-for="LoaiTiec" class="form-control">
-            <option value="">--Chọn loại tiệc--</option>
-            <option value="Sinh Nhật">Sinh Nhật</option>
-            <option value="Kỷ Niệm">Kỷ Niệm</option>
-            <option value="Gia Đình">Gia Đình</option>
-            <option value="Hẹn Hò">Hẹn Hò</option>
-        </select>
-        <span asp-validation-for="LoaiTiec" class="error-message"></span>
+        <ul class="nha-hang-diem-noi-bat">
+            <li>🌆 View thành phố về đêm cực đẹp</li>
+            <li>🎼 Nhạc sống mỗi tối cuối tuần</li>
+            <li>🌿 Không gian thoáng mát, nhiều cây xanh</li>
+            <li>🍷 Thực đơn rượu vang đa dạng</li>
+        </ul>
     </div>
+</div>
 
-    <div class="form-group">
-        <label asp-for="SoNguoi"></label>
-        <input asp-for="SoNguoi" type="number" class="form-control" min="1" />
-        <span asp-validation-for="SoNguoi" class="error-message"></span>
-    </div>
+<div class="form-wrapper">
+    @if (TempData["ThongBao"] != null)
+    {
+        <div class="alert alert-success text-center">
+            @TempData["ThongBao"]
+        </div>
+    }
 
-    <button type="submit" class="btn btn-primary">Xác Nhận Đặt Bàn</button>
-</form>
+    <form asp-action="Index" asp-controller="DatBan" method="post" id="formDatBan">
+        <div class="form-group">
+            <label asp-for="HoTen"></label>
+            <input asp-for="HoTen" class="form-control" />
+            <span asp-validation-for="HoTen" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SoDienThoai"></label>
+            <input asp-for="SoDienThoai" class="form-control" />
+            <span asp-validation-for="SoDienThoai" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NgayDat"></label>
+            <input asp-for="NgayDat" type="date" class="form-control" id="NgayDat" />
+            <span asp-validation-for="NgayDat" class="error-message"></span>
+            <p id="thongBao" class="error-message"></p>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="GioNhanBan"></label>
+            <select asp-for="GioNhanBan" class="form-control" id="gioNhanBan"></select>
+            <span class="clock-icon">🕒</span>
+            <span asp-validation-for="GioNhanBan" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LoaiTiec"></label>
+            <select asp-for="LoaiTiec" class="form-control">
+                <option value="">--Chọn loại tiệc--</option>
+                <option value="Sinh Nhật">Sinh Nhật</option>
+                <option value="Kỷ Niệm">Kỷ Niệm</option>
+                <option value="Gia Đình">Gia Đình</option>
+                <option value="Hẹn Hò">Hẹn Hò</option>
+            </select>
+            <span asp-validation-for="LoaiTiec" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SoNguoi"></label>
+            <input asp-for="SoNguoi" type="number" class="form-control" min="1" />
+            <span asp-validation-for="SoNguoi" class="error-message"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Xác Nhận Đặt Bàn</button>
+    </form>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

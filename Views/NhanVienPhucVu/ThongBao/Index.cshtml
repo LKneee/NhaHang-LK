@@ -1,108 +1,94 @@
 ﻿@model List<NhaHang.Models.Order>
-<link rel="stylesheet" href="~/css/NhanVienPhucVu/ThongBao.css" />
+<link rel="stylesheet" href="~/css/NhanVienPhucVu/ThongBao.css?v=101" />
+
 @{
     ViewData["Title"] = "Thông Báo Đơn Hàng";
 }
 
 <h2>Danh sách đơn hàng từ bếp</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Bàn</th>
-            <th>Thời gian</th>
-            <th>Người</th>
-            <th>Ghi chú</th>
-            <th>Món ăn</th>
-            <th>Trạng thái</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var order in Model)
-        {
-            <tr class="@(order.TrangThai == "Đã hoàn tất" ? "table-success" : "table-warning")">
-                <td>@order.Ban</td>
-                <td>@order.NgayDat</td>
-                <td>@order.OrderType</td>
-                <td>@order.GhiChu</td>
-                <td>
-                    <ul>
-                        @foreach (var item in order.OrderItem)
-                        {
-                            <li>
-                                @item.TenMon x @item.SoLuong
-                                -
-                                @if (item.TrangThai == "Hoàn tất")
-                                {
-                                    <span class="badge bg-success">Đã hoàn tất</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-secondary">Đang chờ bếp</span>
-                                }
-                            </li>
-                        }
-                    </ul>
-                </td>
-                <td>
-                    @if (order.TrangThai == "Đã hoàn tất")
+<div class="order-container">
+    @foreach (var order in Model)
+    {
+        <div class="order-card @(order.TrangThai == "Đã hoàn tất" ? "success" : "waiting")">
+            <div class="order-header">
+                <div><strong>Bàn:</strong> @order.Ban</div>
+                <div><strong>Thời gian:</strong> @order.NgayDat</div>
+                <div><strong>Người:</strong> @order.OrderType</div>
+            </div>
+            <div><strong>Ghi chú:</strong> @order.GhiChu</div>
+            <div>
+                <strong>Món ăn:</strong>
+                <ul>
+                    @foreach (var item in order.OrderItem)
                     {
-                        <span class="badge bg-success">Đã hoàn tất</span>
+                        <li>
+                            <span>@item.TenMon x @item.SoLuong</span>
+                            <span class="badge @(item.TrangThai == "Hoàn tất" ? "bg-success" : "bg-secondary")">
+                                @(item.TrangThai == "Hoàn tất" ? "Đã hoàn tất" : "Đang chờ bếp")
+                            </span>
+                        </li>
                     }
-                    else
-                    {
-                        <span class="badge bg-warning text-dark">Đang chờ bếp</span>
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
+                </ul>
+            </div>
+            <div class="order-status">
+                @if (order.TrangThai == "Đã hoàn tất")
+                {
+                    <span class="badge bg-success">Đã hoàn tất</span>
+                }
+                else
+                {
+                    <span class="badge bg-warning text-dark">Đang chờ bếp</span>
+                }
+            </div>
+        </div>
+    }
+</div>
 
-    <script>
-        function loadThongBaoMoi() {
-            fetch('/NhanVienPhucVu/GetThongBaoMoi')
-                .then(response => response.json())
-                .then(data => {
-                    const tbody = document.querySelector("table tbody");
-                    tbody.innerHTML = "";
+<script>
+    function loadThongBaoMoi() {
+        fetch('/NhanVienPhucVu/GetThongBaoMoi')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.querySelector(".order-container");
+                container.innerHTML = "";
 
-                    data.forEach(order => {
-                        const row = document.createElement("tr");
-                        row.className = order.trangThai === "Đã hoàn tất" ? "table-success" : "table-warning";
+                data.forEach(order => {
+                    const card = document.createElement("div");
+                    card.className = `order-card ${order.trangThai === "Đã hoàn tất" ? "success" : "waiting"}`;
 
-                        // Món ăn
-                        let monAnHtml = "<ul>";
-                        order.orderItems.forEach(item => {
-                            monAnHtml += `<li>${item.tenMon} x ${item.soLuong} - ` +
-                                (item.trangThai === "Hoàn tất"
-                                    ? `<span class="badge bg-success">Đã hoàn tất</span>`
-                                    : `<span class="badge bg-secondary">Đang chờ bếp</span>`) +
-                                `</li>`;
-                        });
-                        monAnHtml += "</ul>";
-
-                        row.innerHTML = `
-                                <td>${order.ban}</td>
-                                <td>${order.ngayDat}</td>
-                                <td>${order.orderType ?? ""}</td>
-                                <td>${order.ghiChu ?? ""}</td>
-                                <td>${monAnHtml}</td>
-                                <td>${order.trangThai === "Đã hoàn tất"
-                                ? '<span class="badge bg-success">Đã hoàn tất</span>'
-                                : '<span class="badge bg-warning text-dark">Đang chờ bếp</span>'}</td>
-                            `;
-                        tbody.appendChild(row);
-                       
+                    let monAnHtml = "<ul>";
+                    order.orderItems.forEach(item => {
+                        monAnHtml += `<li>
+                                    <span>${item.tenMon} x ${item.soLuong}</span>
+                                    <span class="badge ${item.trangThai === "Hoàn tất" ? "bg-success" : "bg-secondary"}">
+                                        ${item.trangThai === "Hoàn tất" ? "Đã hoàn tất" : "Đang chờ bếp"}
+                                    </span>
+                                </li>`;
                     });
-                })
-                .catch(error => console.error("Lỗi khi tải thông báo mới:", error));
-        }
+                    monAnHtml += "</ul>";
 
-        setInterval(loadThongBaoMoi, 5000);
-        window.onload = loadThongBaoMoi;
-    </script>
+                    card.innerHTML = `
+                                <div class="order-header">
+                                    <div><strong>Bàn:</strong> ${order.ban}</div>
+                                    <div><strong>Thời gian:</strong> ${order.ngayDat}</div>
+                                    <div><strong>Người:</strong> ${order.orderType ?? ""}</div>
+                                </div>
+                                <div><strong>Ghi chú:</strong> ${order.ghiChu ?? ""}</div>
+                                <div><strong>Món ăn:</strong>${monAnHtml}</div>
+                                <div class="order-status">
+                                    ${order.trangThai === "Đã hoàn tất"
+                            ? '<span class="badge bg-success">Đã hoàn tất</span>'
+                            : '<span class="badge bg-warning text-dark">Đang chờ bếp</span>'}
+                                </div>
+                            `;
 
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => console.error("Lỗi khi tải thông báo mới:", error));
+    }
 
-</table>
-
-
+    setInterval(loadThongBaoMoi, 3000);
+    window.onload = loadThongBaoMoi;
+</script>

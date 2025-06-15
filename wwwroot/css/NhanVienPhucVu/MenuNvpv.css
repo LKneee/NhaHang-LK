@@ -1,73 +1,184 @@
-﻿
+﻿.row {
+    margin-top: 59px;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
-
-h2 {
-    text-align: center;
-    margin: 30px 0;
-    color: #343a40;
-    padding-top: 100px;
+/* Cố định categories bên trái */
+#categories-fixed {
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    width: 200px;
+    z-index: 1000;
 }
 
+/* Cố định phiếu gọi món bên phải */
+#phieu-fixed {
+    position: fixed;
+    top: 120px;
+    right: 30px;
+    width: 350px;
+    z-index: 1000;
+}
 
-.btn-group {
+/* Nút danh mục */
+.btn-group-vertical {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
-    margin-bottom: 20px;
+    padding-right: 20px;
 }
 
-    .btn-group .btn {
-        padding: 10px 20px;
-        border-radius: 20px;
+    .btn-group-vertical .btn {
+        width: 100%;
         font-weight: bold;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid #28a745;
+        transition: all 0.3s;
     }
 
+        .btn-group-vertical .btn:hover,
+        .btn-group-vertical .btn.active {
+            background-color: #28a745;
+            color: #212529;
+            border-color: #28a745;
+        }
 
+
+/* Card món ăn */
 .card {
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    transition: transform 0.2s ease-in-out;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 500px;
 }
-
-    .card:hover {
-        transform: scale(1.03);
-    }
-
 
 .card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 
 .card-body {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .card-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    color: #212529;
-    margin-bottom: 10px;
+    color: white;
 }
 
-.card-text {
-    color: #6c757d;
-    margin-bottom: 5px;
+/* Phiếu gọi món */
+#phieu-goi-mon {
+    /* giữ nguyên style của bạn */
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    /* Có thể đặt chiều cao tổng cho card */
+    height: 600px; /* hoặc auto tùy ý, nhưng nên cố định để kiểm soát */
+    display: flex;
+    flex-direction: column;
 }
 
-    .card-text strong {
-        color: #e74c3c;
-        font-size: 18px;
+    #phieu-goi-mon .card-header {
+        background-color: #28a745cc !important; /* màu có chút trong suốt */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+    }
+
+    #phieu-goi-mon .card-body {
+        flex-grow: 1; /* Phần nội dung chiếm không gian còn lại */
+        overflow-y: auto; /* Cho phép cuộn dọc */
+        padding: 15px;
+        /* Nếu muốn có max-height thì có thể chỉnh thêm */
+    }
+
+
+
+    #phieu-goi-mon .tong-cong {
+        margin-bottom: 0px;
+    }
+
+    #phieu-goi-mon .btn-group {
+        display: flex;
+        gap: 10px;
+        margin-top: -55px;
+    }
+
+
+#phieu-list {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+    #phieu-list .btn-outline-success,
+    #phieu-list .btn-outline-danger {
+        padding: 2px 3px;
+        font-size: 12px;
+        min-width: 24px;
+    }
+
+#phieu-goi-mon button.btn-primary {
+    flex-shrink: 0;
+    /* điều chỉnh kích thước nút nếu cần */
+    font-size: 16px;
+    padding: 6px 12px;
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+/* Scroll */
+.scroll-box {
+    max-height: 90vh;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+    .scroll-box::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scroll-box::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+    }
+
+.nut-chon {
+    background-color: #28a745 !important; /* Màu xanh lá tươi */
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+    .nut-chon:hover {
+        background-color: #218838; /* Màu xanh đậm hơn khi hover */
+        cursor: pointer;
     }

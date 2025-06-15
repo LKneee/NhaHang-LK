@@ -4,50 +4,56 @@
     Layout = "~/Views/Shared/_Layout_KhachHang.cshtml";
 }
 
-<h2>Menu</h2>
-
-<div class="btn-group mb-3">
-    <a href="/Menu" class="btn btn-secondary">Tất Cả</a>
-    <a href="/Menu/HaiSan" class="btn btn-primary">Hải Sản</a>
-    <a href="/Menu/Ga" class="btn btn-primary">Gà</a>
-    <a href="/Menu/Bo" class="btn btn-primary">Bò</a>
-    <a href="/Menu/Salad" class="btn btn-primary">Salad</a>
-    <a href="/Menu/TrangMieng" class="btn btn-primary">Tráng Miệng</a>
-
-</div>
-
-
-<hr />
-
 <div class="row">
-    @if (Model != null && Model.Any())
-    {
-        foreach (var pro in Model)
-        {
-            var tenMon = pro.TenMon.Replace(" ", "");
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="@Url.Action("ChiTiet", "Menu", new { tenMonAn = tenMon })">
-                    @if (!string.IsNullOrEmpty(pro.Image))
-                    {
-                        <img src="~/Menu/@pro.Image" class="card-img-top" alt="@pro.TenMon" style="height: 200px; object-fit: cover;" />
-                    }
-                    else
-                    {
-                        <img src="~/image/default.jpg" class="card-img-top" alt="No Image" style="height: 200px; object-fit: cover;" />
-                    }
-                    <div class="card-body">
-                        <h5 class="card-title">@pro.TenMon</h5>
-                        <p class="card-text">@pro.MoTa</p>
-                        <p class="card-text"><strong>@pro.Gia.ToString("N0")</strong> VND</p>
+    <!-- Categories bên trái -->
+    <div id="categories-fixed" class="col-md-2">
+        <div class="btn-group-vertical w-100">
+            <a href="/Menu" class="btn btn-secondary">Tất Cả</a>
+            <a href="/Menu/HaiSan" class="btn btn-primary">Hải Sản</a>
+            <a href="/Menu/Ga" class="btn btn-primary">Gà</a>
+            <a href="/Menu/Bo" class="btn btn-primary">Bò</a>
+            <a href="/Menu/Salad" class="btn btn-primary">Salad</a>
+            <a href="/Menu/TrangMieng" class="btn btn-primary">Tráng Miệng</a>
+        </div>
+    </div>
+
+    <!-- Danh sách món ăn ở giữa -->
+    <div class="col-md-10 offset-md-2">
+        <div class="row scroll-box">
+            @if (Model != null && Model.Any())
+            {
+                foreach (var pro in Model)
+                {
+                    var tenMon = pro.TenMon.Replace(" ", "");
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-lg">
+                            <a href="@Url.Action("ChiTiet", "Menu", new { tenMonAn = tenMon })">
+                                @if (!string.IsNullOrEmpty(pro.Image))
+                                {
+                                    <img src="~/Menu/@pro.Image" class="card-img-top" alt="@pro.TenMon" style="height: 300px; object-fit: cover;" />
+                                }
+                                else
+                                {
+                                    <img src="~/image/default.jpg" class="card-img-top" alt="No Image" style="height: 300px; object-fit: cover;" />
+                                }
+                            </a>
+                            <div class="card-body">
+                                <a href="@Url.Action("ChiTiet", "Menu", new { tenMonAn = tenMon })" class="text-decoration-none text-dark">
+                                    <h5 class="card-title" style="font-size: 24px;">@pro.TenMon</h5>
+                                </a>
+                                <p class="card-text">@pro.MoTa</p>
+                                <p class="card-text text-primary fw-bold" style="font-size: 20px;">@pro.Gia.ToString("N0") VND</p>
+                            </div>
+                        </div>
                     </div>
-                    </a>
-                </div>
-            </div>
-        }
-    }
-    else
-    {
-        <p>Không có dữ liệu món ăn.</p>
-    }
+                }
+            }
+            else
+            {
+                <p>Không có dữ liệu món ăn.</p>
+            }
+        </div>
+    </div>
+
+
 </div>

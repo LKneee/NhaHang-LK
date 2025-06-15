@@ -1,24 +1,162 @@
-﻿.nhanvienbep-container {
-    padding: 150px;
-    background-color: #fff;
+﻿@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
 }
 
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
 }
 
-    .table th, .table td {
-        border: 1px solid #ccc;
-        padding: 10px;
-        text-align: left;
+h2 {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.order-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.order-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 20px;
+    width: 360px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+    .order-card:hover {
+        transform: scale(1.03);
     }
 
-.btn-success {
-    background-color: green;
-    color: white;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
+.order-header {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 8px;
 }
+
+    .order-header div {
+        margin: 4px 0;
+    }
+
+.order-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.order-card li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bg-success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.bg-warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+.bg-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.order-status {
+    margin-top: 10px;
+}
+
+.btn-hoantat-mon,
+.btn-success {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: #4caf50;
+    color: white;
+    transition: background-color 0.3s ease;
+    margin-top: 8px;
+}
+
+    .btn-hoantat-mon:hover,
+    .btn-success:hover {
+        background-color: #388e3c;
+    }
+
+
+/* Trạng thái của card */
+.order-card.waiting {
+    border-left: 6px solid #ffc107;
+}
+
+.order-card.success {
+    border-left: 6px solid #4caf50;
+}
+
+.mon-an-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+    .mon-an-item .tenmon {
+        flex: 1;
+        font-weight: 500;
+    }
+
+    .mon-an-item .mon-action {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+.btn-hoantat-mon {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    height: auto;
+    line-height: 1;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-hoantat-mon:hover {
+        background-color: #388e3c;
+    }

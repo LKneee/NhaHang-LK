@@ -9,6 +9,9 @@
 <div class="quanlydonhang-container">
     <h2>Danh sách đơn hàng</h2>
 
+    <label for="ngayChon">Chọn Thời Gian:</label>
+    <input type="date" id="ngayChon" class="form-control" style="width: 300px; margin-bottom: 20px;" />
+
     <table class="table">
         <thead>
             <tr>
@@ -71,8 +74,21 @@
 </div>
 
 <script>
+    // Đặt ngày mặc định là hôm nay
+    document.addEventListener("DOMContentLoaded", function () {
+        const ngayChonInput = document.getElementById("ngayChon");
+        ngayChonInput.valueAsDate = new Date(); // Gán ngày hiện tại vào input
+    });
+
+    // Gọi lại loadDonHangQuanLy mỗi khi người dùng chọn ngày mới
+    document.getElementById("ngayChon").addEventListener("change", loadDonHangQuanLy);
+
+    // Ghi đè lại hàm fetch để thêm query ?ngay=yyyy-MM-dd
     function loadDonHangQuanLy() {
-        fetch('/DonHangQuanLy/DonHangMoi')
+        const selectedDate = document.getElementById("ngayChon").value; // yyyy-MM-dd
+        const url = `/DonHangQuanLy/DonHangMoi?ngay=${selectedDate}`;
+
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById("donHangQLBody");
@@ -97,26 +113,26 @@
                     let actionHtml = "";
                     if (order.thanhToan !== "Đã thanh toán") {
                         actionHtml += `
-                                <form method="post" action="/DonHangQuanLy/ThanhToan/${order.orderId}" style="margin-bottom:5px;">
-                                    <button type="submit" class="btn btn-primary"> Đã Thanh toán</button>
-                                </form>`;
+                                    <form method="post" action="/DonHangQuanLy/ThanhToan/${order.orderId}" style="margin-bottom:5px;">
+                                        <button type="submit" class="btn btn-primary"> Đã Thanh toán</button>
+                                    </form>`;
                     }
                     actionHtml += `
-                            <form method="post" action="/DonHangQuanLy/InHoaDon/${order.orderId}" target="_blank">
-                                <button type="submit" class="btn btn-secondary">In Hóa Đơn</button>
-                            </form>`;
+                                <form method="post" action="/DonHangQuanLy/InHoaDon/${order.orderId}" target="_blank">
+                                    <button type="submit" class="btn btn-secondary">In Hóa Đơn</button>
+                                </form>`;
 
                     row.innerHTML = `
-                            <td>${order.ban}</td>
-                            <td>${order.nhanVienHoTen}</td>
-                            <td>${order.ngayDat}</td>
-                            <td>${order.orderType || ""}</td>
-                            <td>${monAnHtml}</td>
-                            <td>${order.ghiChu || ""}</td>
-                            <td>${Number(order.tongTien).toLocaleString('vi-VN')} VND</td>
-                            <td>${thanhToanHtml}</td>
-                            <td>${actionHtml}</td>
-                        `;
+                                <td>${order.ban}</td>
+                                <td>${order.nhanVienHoTen}</td>
+                                <td>${order.ngayDat}</td>
+                                <td>${order.orderType || ""}</td>
+                                <td>${monAnHtml}</td>
+                                <td>${order.ghiChu || ""}</td>
+                                <td>${Number(order.tongTien).toLocaleString('vi-VN')} VND</td>
+                                <td>${thanhToanHtml}</td>
+                                <td>${actionHtml}</td>
+                            `;
 
                     tableBody.appendChild(row);
                 });
@@ -124,8 +140,12 @@
             .catch(error => console.error("Lỗi khi load đơn hàng quản lý:", error));
     }
 
-
-    window.onload = loadDonHangQuanLy;
+    // Gọi hàm lần đầu và lặp lại mỗi 5 giây
+    window.onload = () => {
+        document.getElementById("ngayChon").valueAsDate = new Date();
+        loadDonHangQuanLy();
+    };
     setInterval(loadDonHangQuanLy, 5000);
 </script>
+
 

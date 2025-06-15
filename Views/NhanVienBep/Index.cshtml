@@ -4,131 +4,117 @@
     ViewData["Title"] = "Trang Nhân Viên Bếp";
 }
 
-<link rel="stylesheet" href="~/css/NhanVienBep/NhanVienBep.css" />
+<link rel="stylesheet" href="~/css/NhanVienBep/NhanVienBep.css?v=2" />
 
 <div class="nhanvienbep-container">
     <h2>Danh sách món ăn</h2>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Bàn</th>
-                <th>Nhân viên</th>
-                <th>Thời gian</th>
-                <th>Người </th>
-                <th>Món ăn</th>
-                <th>Ghi chú</th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
-            </tr>
-        </thead>
-        <tbody id="donHangBody">
+    <div class="donhang-wrapper">
+        <div class="order-container">
             @foreach (var order in Model)
             {
-                <tr>
-                    <td>@order.Ban</td>
-                    <td>@order.NhanVienHoTen</td>                   
-                    <td>@order.NgayDat.ToString("dd/MM/yyyy HH:mm")</td>
-                    <td>@order.OrderType</td>
-                    <td>
+                <div class="order-card @(order.TrangThai == "Đã hoàn tất" ? "success" : "waiting")">
+                    <div class="order-header">
+                        <div><strong>Bàn:</strong> @order.Ban</div>
+                        <div><strong>Nhân viên:</strong> @order.NhanVienHoTen</div>
+                        <div><strong>Thời gian:</strong> @order.NgayDat.ToString("dd/MM/yyyy HH:mm")</div>
+                        <div><strong>Người:</strong> @order.OrderType</div>
+                    </div>
+                    <div><strong>Ghi chú:</strong> @order.GhiChu</div>
+                    <div>
+                        <strong>Món ăn:</strong>
                         <ul>
                             @foreach (var item in order.OrderItem)
                             {
-                                <li>
-                                    @item.TenMon x @item.SoLuong -
-                                    @if (item.TrangThai == "Hoàn tất")
-                                    {
-                                        <span class="badge bg-success">Đã hoàn tất</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="badge bg-warning text-dark">Đang chờ bếp</span>
-                                        <form asp-action="HoanTatMon" method="post" style="display:inline;">
-                                            <input type="hidden" name="itemId" value="@item.OrderItemId" />
-                                            <button type="submit" class="btn btn-sm btn-outline-success ms-2">Hoàn tất món</button>
-                                        </form>
-                                    }
+                                <li class="mon-an-item">
+                                    <span class="tenmon">@item.TenMon x @item.SoLuong</span>
+                                    <div class="mon-action">
+                                        <span class="badge @(item.TrangThai == "Hoàn tất" ? "bg-success" : "bg-secondary")">
+                                            @(item.TrangThai == "Hoàn tất" ? "Đã hoàn tất" : "Đang chờ bếp")
+                                        </span>
+                                        @if (item.TrangThai != "Hoàn tất")
+                                        {
+                                            <form asp-action="HoanTatMon" method="post">
+                                                <input type="hidden" name="itemId" value="@item.OrderItemId" />
+                                                <button type="submit" class="btn-hoantat-mon">Hoàn tất</button>
+                                            </form>
+                                        }
+                                    </div>
                                 </li>
+
                             }
                         </ul>
-                    </td>
-
-                    <td>@order.GhiChu</td>
-                    <td>@order.TrangThai</td>
-                    <td>
-                        @if (order.TrangThai != "Đã hoàn tất")
+                    </div>
+                    <div class="order-status">
+                        @if (order.TrangThai == "Đã hoàn tất")
                         {
-                            <form asp-action="HoanTat" asp-route-id="@order.OrderId" method="post">
-                                <button type="submit" class="btn btn-success">Hoàn tất</button>
-                            </form>
+                            <span class="badge bg-success">Đã hoàn tất</span>
                         }
-                    </td>
-
-                </tr>
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">Đang chờ bếp</span>
+                        }
+                    </div>
+                    @if (order.TrangThai != "Đã hoàn tất")
+                    {
+                        <form asp-action="HoanTat" asp-route-id="@order.OrderId" method="post">
+                            <button type="submit" class="btn btn-success">Hoàn tất đơn</button>
+                        </form>
+                    }
+                </div>
             }
-        </tbody>
+        </div>
+    </div>
+    <script>
+        function loadDonHangMoi() {
+            fetch('/NhanVienBep/GetDonHangMoi')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.querySelector(".order-container");
+                    container.innerHTML = "";
 
-        <script>
-            function loadDonHangMoi() {
-                fetch('/NhanVienBep/GetDonHangMoi')
-                    .then(response => response.json())
-                    .then(data => {
-                        const tableBody = document.getElementById("donHangBody");
-                        tableBody.innerHTML = "";
-
-                        data.forEach(order => {
-                            const row = document.createElement("tr");
-
-                            // Tạo HTML món ăn
-                            let monAnHtml = "<ul>";
-                            order.orderItems.forEach(item => {
-                                if (item.trangThai === "Hoàn tất") {
-                                    monAnHtml += `<li>${item.tenMon} x ${item.soLuong} - <span class="badge bg-success">Đã hoàn tất</span></li>`;
-                                } else {
-                                    monAnHtml += `
-                                            <li>
-                                                ${item.tenMon} x ${item.soLuong} -
+                    data.forEach(order => {
+                        let monAnHtml = "<ul>";
+                        order.orderItems.forEach(item => {
+                            const badge = item.trangThai === "Hoàn tất"
+                                ? '<span class="badge bg-success">Đã hoàn tất</span>'
+                                : `
                                                 <span class="badge bg-warning text-dark">Đang chờ bếp</span>
                                                 <form method="post" action="/NhanVienBep/HoanTatMon" style="display:inline;">
                                                     <input type="hidden" name="itemId" value="${item.orderItemId}" />
-                                                    <button type="submit" class="btn btn-sm btn-outline-success ms-2">Hoàn tất món</button>
-                                                </form>
-                                            </li>
-                                        `;
-                                }
-                            });
-                            monAnHtml += "</ul>";
-
-                            // HTML từng dòng đơn hàng
-                            row.innerHTML = `
-                                    <td>${order.ban}</td>
-                                    <td>${order.nhanVienHoTen}</td>
-                                    <td>${order.ngayDat}</td>
-                                    <td>${order.orderType ?? ""}</td>
-                                    <td>${monAnHtml}</td>
-                                    <td>${order.ghiChu ?? ""}</td>
-                                    <td>${order.trangThai}</td>
-
-                                    <td>
-                                        <form method="post" action="/NhanVienBep/HoanTat/${order.orderId}">
-                                             <button type="submit" class="btn btn-success" ${order.trangThai === 'Đã hoàn tất' ? 'style="display:none;"' : ''}>Hoàn tất</button>
-                                        </form>
-                                    </td>
-                                `;
-                           
-                            tableBody.appendChild(row);
-                           
+                                                    <button type="submit" class="btn-hoantat-mon">Hoàn tất</button>
+                                                </form>`;
+                            monAnHtml += `<li class="mon-an-item"><span class="tenmon">${item.tenMon} x ${item.soLuong}</span><div class="mon-action">${badge}</div></li>`;
                         });
-                    })
-                    .catch(error => console.error("Lỗi khi load đơn hàng mới:", error));
-            }
+                        monAnHtml += "</ul>";
 
-            // Gọi mỗi 5 giây
-            setInterval(loadDonHangMoi, 5000);
-            window.onload = loadDonHangMoi;
-        </script>
+                        const html = `
+                                        <div class="order-card ${order.trangThai === "Đã hoàn tất" ? "success" : "waiting"}">
+                                            <div class="order-header">
+                                                <div><strong>Bàn:</strong> ${order.ban}</div>
+                                                <div><strong>Nhân viên:</strong> ${order.nhanVienHoTen}</div>
+                                                <div><strong>Thời gian:</strong> ${order.ngayDat}</div>
+                                                <div><strong>Người:</strong> ${order.orderType ?? ""}</div>
+                                            </div>
+                                            <div><strong>Ghi chú:</strong> ${order.ghiChu ?? ""}</div>
+                                            <div><strong>Món ăn:</strong> ${monAnHtml}</div>
+                                            <div class="order-status">
+                                                <span class="badge ${order.trangThai === "Đã hoàn tất" ? "bg-success" : "bg-warning text-dark"}">${order.trangThai}</span>
+                                            </div>
+                                            ${order.trangThai !== "Đã hoàn tất" ? `
+                                                <form method="post" action="/NhanVienBep/HoanTat/${order.orderId}">
+                                                    <button type="submit" class="btn btn-success">Hoàn tất đơn</button>
+                                                </form>` : ""}
+                                        </div>`;
 
+                        container.insertAdjacentHTML("beforeend", html);
+                    });
+                })
+                .catch(error => console.error("Lỗi khi load đơn hàng mới:", error));
+        }
 
+        setInterval(loadDonHangMoi, 3000);
+        window.onload = loadDonHangMoi;
+    </script>
 
-    </table>
 </div>

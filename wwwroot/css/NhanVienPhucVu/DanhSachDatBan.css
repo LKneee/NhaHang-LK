@@ -1,6 +1,184 @@
-﻿h2 {
+﻿@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body {
+    background: url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0 20px 50px 20px;
+    position: relative;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7); /* nền đen mờ hơn */
+        z-index: -1;
+    }
+
+.background-container {
+    position: relative;
+    padding: 40px 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.overlay {
+    display: none; /* tắt lớp phủ mờ trong container vì đã có body::before */
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 64px;
     text-align: center;
-    color: #333;
-    margin-bottom: -60px;
-    padding: 120px;
+    margin-bottom: 40px;
+    margin-top: 120px;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+}
+
+
+label[for="ngayChon"] {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #eee;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+input#ngayChon {
+    max-width: 300px;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    color: #222;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    outline: none;
+    display: block;
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+}
+
+    input#ngayChon:hover,
+    input#ngayChon:focus {
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        transform: none;
+    }
+
+    input#ngayChon::-webkit-calendar-picker-indicator {
+        filter: invert(0);
+        cursor: pointer;
+    }
+
+table {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+thead {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+    thead th {
+        color: #ddd;
+        padding: 15px;
+        font-weight: 600;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        font-size: 1rem;
+    }
+
+tbody tr {
+    background: rgba(255, 255, 255, 0.06);
+    transition: background-color 0.3s ease;
+    cursor: default;
+}
+
+    tbody tr:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+tbody td {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #eee;
+    text-shadow: none;
+}
+
+button.btn {
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+button.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+    button.btn-success:hover {
+        background-color: #218838;
+    }
+
+button.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+    button.btn-danger:hover {
+        background-color: #c82333;
+    }
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 42px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    input#ngayChon {
+        max-width: 100%;
+    }
 }

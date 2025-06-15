@@ -4,29 +4,34 @@
     ViewData["Title"] = "Danh Sách Đặt Bàn";
 }
 
-<h2 class="text-center mb-4">Danh Sách Đặt Bàn</h2>
+<div class="background-container">
+    <div class="overlay"></div> <!-- lớp phủ mờ -->
 
-<label for="ngayChon">Chọn ngày:</label>
-<input type="date" id="ngayChon" class="form-control" style="width: 300px; margin-bottom: 20px;" />
+    <div class="content">
+        <h2 class="page-title">Danh Sách Đặt Bàn</h2>
 
-<table class="table table-bordered table-striped">
-    <thead class="thead-dark">
-        <tr>
-            <th>Họ Tên</th>
-            <th>Số Điện Thoại</th>
-            <th>Ngày Đặt</th>
-            <th>Giờ Nhận Bàn</th>
-            <th>Loại Tiệc</th>
-            <th>Số Người</th>
-            <th>Ngày Tạo</th>
-            <th>Trạng Thái</th>
-            <th>Hành Động</th>
-        </tr>
-    </thead>
-    <tbody id="danhSachDatBanBody">
+        <label for="ngayChon">Chọn ngày:</label>
+        <input type="date" id="ngayChon" class="form-control" style="width: 300px; margin-bottom: 20px;" />
 
-    </tbody>
-</table>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Họ Tên</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Ngày Đặt</th>
+                    <th>Giờ Nhận Bàn</th>
+                    <th>Loại Tiệc</th>
+                    <th>Số Người</th>
+                    <th>Ngày Tạo</th>
+                    <th>Trạng Thái</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="danhSachDatBanBody">
+            </tbody>
+        </table>
+    </div>
+</div>
 
 @section Scripts {
     <script>
@@ -48,22 +53,23 @@
 
                 data.forEach(item => {
                     const row = document.createElement('tr');
+                    row.id = `row-${item.id}`; // thêm id cho dòng để hiệu ứng viền
                     row.innerHTML = `
-                            <td>${item.hoTen}</td>
-                            <td>${item.soDienThoai}</td>
-                            <td>${new Date(item.ngayDat).toLocaleDateString('vi-VN')}</td>
-                            <td>${item.gioNhanBan}</td>
-                            <td>${item.loaiTiec}</td>
-                            <td>${item.soNguoi}</td>
-                            <td>${new Date(item.ngayTao).toLocaleString('vi-VN')}</td>
-                            <td id="trangThai-${item.id}">${item.trangThai}</td>
-                            <td>
-                              ${item.trangThai === 'Chưa Đến' ? `
-                                <button onclick="capNhatTrangThai('${item.id}', 'Đã Đến')" class="btn btn-success btn-sm">Đã Đến</button>
-                                <button onclick="capNhatTrangThai('${item.id}', 'Không Đến')" class="btn btn-danger btn-sm">Không Đến</button>
-                              ` : ''}
-                            </td>
-                        `;
+                                    <td>${item.hoTen}</td>
+                                    <td>${item.soDienThoai}</td>
+                                    <td>${new Date(item.ngayDat).toLocaleDateString('vi-VN')}</td>
+                                    <td>${item.gioNhanBan}</td>
+                                    <td>${item.loaiTiec}</td>
+                                    <td>${item.soNguoi}</td>
+                                    <td>${new Date(item.ngayTao).toLocaleString('vi-VN')}</td>
+                                    <td id="trangThai-${item.id}">${item.trangThai}</td>
+                                    <td>
+                                      ${item.trangThai === 'Chưa Đến' ? `
+                                        <button onclick="capNhatTrangThai('${item.id}', 'Đã Đến')" class="btn btn-success btn-sm">Đã Đến</button>
+                                        <button onclick="capNhatTrangThai('${item.id}', 'Không Đến')" class="btn btn-danger btn-sm">Không Đến</button>
+                                      ` : ''}
+                                    </td>
+                                `;
                     tbody.appendChild(row);
                 });
             } catch (error) {
@@ -81,6 +87,13 @@
                     document.getElementById(`trangThai-${id}`).textContent = trangThai;
                     const btns = document.querySelectorAll(`button[onclick*="'${id}'"]`);
                     btns.forEach(btn => btn.style.display = 'none');
+
+                    // Hiệu ứng đổi viền đen cho dòng
+                    const row = document.getElementById(`row-${id}`);
+                    row.classList.add('active-border');
+                    setTimeout(() => {
+                        row.classList.remove('active-border');
+                    }, 1200);
                 } else {
                     const text = await response.text();
                     alert('Cập nhật trạng thái thất bại: ' + text);
@@ -91,10 +104,9 @@
             }
         }
 
-
-
         window.addEventListener('load', () => {
             const inputNgay = document.getElementById('ngayChon');
+            const content = document.querySelector('.content');
             const today = new Date();
             const yyyy = today.getFullYear();
             const mm = (today.getMonth() + 1).toString().padStart(2, '0');
@@ -103,8 +115,12 @@
 
             inputNgay.value = todayStr;
 
-            loadDanhSachDatBan(today);
+            // Hiệu ứng fade-in
+            setTimeout(() => {
+                content.classList.add('loaded');
+            }, 100);
 
+            loadDanhSachDatBan(today);
 
             setInterval(() => {
                 const value = inputNgay.value;
@@ -115,7 +131,6 @@
                 }
             }, 4000);
 
-
             inputNgay.addEventListener('change', (e) => {
                 const value = e.target.value;
                 if (value) {
@@ -125,7 +140,5 @@
                 }
             });
         });
-
     </script>
-
 }

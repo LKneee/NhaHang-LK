@@ -45,12 +45,20 @@ namespace NhaHang.Controllers.QuanLy
             return RedirectToAction("Index");
         }
 
-        
+
         [HttpGet]
-        public IActionResult DonHangMoi()
+        public IActionResult DonHangMoi(string ngay)
         {
+            DateTime parsedNgay;
+
+            if (!DateTime.TryParse(ngay, out parsedNgay))
+            {
+                parsedNgay = DateTime.Today; // Nếu không truyền hoặc lỗi format thì lấy hôm nay
+            }
+
             var orders = _context.Orders
                 .Include(o => o.OrderItem)
+                .Where(o => o.NgayDat.Date == parsedNgay.Date) // lọc theo ngày
                 .OrderByDescending(o => o.NgayDat)
                 .Select(o => new
                 {
@@ -72,6 +80,7 @@ namespace NhaHang.Controllers.QuanLy
 
             return Json(orders);
         }
+
 
         [HttpPost]
         public IActionResult InHoaDon(int id)

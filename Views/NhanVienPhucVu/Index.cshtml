@@ -5,16 +5,24 @@
 
 <div class="nhanvienphucvu-container">
     <div class="floor-buttons">
-        <button class="btn-floor" onclick="showTables('tangTret')">Tầng trệt</button>
-        <button class="btn-floor" onclick="showTables('phongVip')">Phòng VIP</button>
-        <button class="btn-floor" onclick="showTables('phongGiaDinh')">Phòng cho gia đình</button>
+        <button class="btn-floor active" onclick="showTables('tangTret', this)">
+            <img src="/image/t1.jpg" alt="Tầng trệt">
+            <span>Tầng trệt</span>
+        </button>
+        <button class="btn-floor" onclick="showTables('phongVip', this)">
+            <img src="/image/t2.jpg" alt="Phòng VIP">
+            <span>Phòng VIP</span>
+        </button>
+        <button class="btn-floor" onclick="showTables('phongGiaDinh', this)">
+            <img src="/image/t3.jpg" alt="Phòng Gia Đình">
+            <span>Phòng Gia Đình</span>
+        </button>
     </div>
 
     <div id="tables" class="tables-container">
-        //Bàn sẽ ở đây
+        <!-- Bàn sẽ ở đây -->
     </div>
 </div>
-
 
 <script>
     const floorTables = {
@@ -25,8 +33,13 @@
 
     let currentFloor = 'tangTret';
 
-    function showTables(floor) {
+    function showTables(floor, btnEl) {
         currentFloor = floor;
+
+        // Xoá active khỏi tất cả nút
+        document.querySelectorAll('.btn-floor').forEach(btn => btn.classList.remove('active'));
+        btnEl.classList.add('active');
+
         const container = document.getElementById("tables");
         container.innerHTML = "";
 
@@ -41,7 +54,7 @@
             container.appendChild(btn);
         }
 
-        updateTableColors(); 
+        updateTableColors();
     }
 
     function updateTableColors() {
@@ -68,18 +81,10 @@
     }
 
     function handleTableClick(event) {
-        const btn = event.currentTarget;
-        const ban = btn.dataset.ban;
-
+        const ban = event.currentTarget.dataset.ban;
         window.location.href = "/MenuNvpv?ban=" + ban;
     }
 
-
-    showTables('tangTret');
-
-
-    setInterval(updateTableColors, 5000);
+    showTables('tangTret', document.querySelector('.btn-floor.active'));
+    setInterval(updateTableColors, 3000);
 </script>
-
-
-
