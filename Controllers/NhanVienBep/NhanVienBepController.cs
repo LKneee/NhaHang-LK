@@ -14,7 +14,6 @@ namespace NhaHang.Controllers.NhanVienBep
         }
         public IActionResult Index()
         {
-            // Lấy tất cả đơn hàng có trạng thái "Chờ bếp" và include OrderItems
             var orders = _context.Orders
                 .Include(o => o.OrderItem)
                 .Where(o => o.TrangThai == "Chờ bếp" || o.TrangThai == "Đã hoàn tất")
@@ -33,13 +32,11 @@ namespace NhaHang.Controllers.NhanVienBep
 
             if (order != null)
             {
-                // Cập nhật tất cả các món trong đơn hàng thành "Hoàn tất"
                 foreach (var item in order.OrderItem)
                 {
                     item.TrangThai = "Hoàn tất";
                 }
 
-                // Sau đó cập nhật trạng thái đơn hàng
                 order.TrangThai = "Đã hoàn tất";
                 _context.SaveChanges();
             }
@@ -56,7 +53,6 @@ namespace NhaHang.Controllers.NhanVienBep
                 item.TrangThai = "Hoàn tất";
                 _context.SaveChanges();
 
-                // Nếu tất cả món của đơn hàng đã hoàn tất thì cập nhật luôn trạng thái đơn
                 var order = _context.Orders
                     .Include(o => o.OrderItem)
                     .FirstOrDefault(o => o.OrderId == item.OrderId);
@@ -73,21 +69,29 @@ namespace NhaHang.Controllers.NhanVienBep
 
         [HttpGet]
         [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
-        public IActionResult GetDonHangMoi()
+        public IActionResult GetDonHangMoi(string ngay)
         {
+            DateTime parsedDate;
+            if (!DateTime.TryParse(ngay, out parsedDate))
+            {
+                parsedDate = DateTime.Today;
+            }
+
             var orders = _context.Orders
                 .Include(o => o.OrderItem)
-                .Where(o => o.TrangThai == "Chờ bếp" || o.TrangThai == "Đã hoàn tất")
+                .Where(o =>
+                    (o.TrangThai == "Chờ bếp" || o.TrangThai == "Đã hoàn tất") &&
+                    o.NgayDat.Date == parsedDate.Date)
                 .OrderByDescending(o => o.NgayDat)
                 .Select(o => new {
                     o.OrderId,
                     o.Ban,
-                    NhanVienHoTen = o.NhanVienHoTen ?? "", // lấy trực tiếp từ cột đã lưu
-                    NgayDat = o.NgayDat.ToString("dd/MM/yyyy HH:mm"),
+                    nhanVienHoTen = o.NhanVienHoTen ?? "",
+                    ngayDat = o.NgayDat.ToString("dd/MM/yyyy HH:mm"),
                     orderType = o.OrderType,
                     o.GhiChu,
                     o.TrangThai,
-                    OrderItems = o.OrderItem.Select(i => new {
+                    orderItems = o.OrderItem.Select(i => new {
                         i.OrderItemId,
                         i.TenMon,
                         i.SoLuong,
@@ -98,8 +102,5 @@ namespace NhaHang.Controllers.NhanVienBep
 
             return Json(orders);
         }
-
-
-
     }
 }

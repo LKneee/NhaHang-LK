@@ -4,10 +4,13 @@
     ViewData["Title"] = "Trang Nhân Viên Bếp";
 }
 
-<link rel="stylesheet" href="~/css/NhanVienBep/NhanVienBep.css?v=2" />
+<link rel="stylesheet" href="~/css/NhanVienBep/NhanVienBep.css" />
 
 <div class="nhanvienbep-container">
-    <h2>Danh sách món ăn</h2>
+    <h2>Danh Sách Món Ăn</h2>
+
+    <label for="ngayChon">Chọn Thời Gian:</label>
+    <input type="date" id="ngayChon" class="form-control" style="width: 300px; margin-bottom: 20px;" />
 
     <div class="donhang-wrapper">
         <div class="order-container">
@@ -65,9 +68,13 @@
             }
         </div>
     </div>
+
     <script>
         function loadDonHangMoi() {
-            fetch('/NhanVienBep/GetDonHangMoi')
+            const selectedDate = document.getElementById("ngayChon").value;
+            const url = `/NhanVienBep/GetDonHangMoi?ngay=${selectedDate}`;
+
+            fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     const container = document.querySelector(".order-container");
@@ -79,33 +86,33 @@
                             const badge = item.trangThai === "Hoàn tất"
                                 ? '<span class="badge bg-success">Đã hoàn tất</span>'
                                 : `
-                                                <span class="badge bg-warning text-dark">Đang chờ bếp</span>
-                                                <form method="post" action="/NhanVienBep/HoanTatMon" style="display:inline;">
-                                                    <input type="hidden" name="itemId" value="${item.orderItemId}" />
-                                                    <button type="submit" class="btn-hoantat-mon">Hoàn tất</button>
-                                                </form>`;
+                                        <span class="badge bg-warning text-dark">Đang chờ bếp</span>
+                                        <form method="post" action="/NhanVienBep/HoanTatMon" style="display:inline;">
+                                            <input type="hidden" name="itemId" value="${item.orderItemId}" />
+                                            <button type="submit" class="btn-hoantat-mon">Hoàn tất</button>
+                                        </form>`;
                             monAnHtml += `<li class="mon-an-item"><span class="tenmon">${item.tenMon} x ${item.soLuong}</span><div class="mon-action">${badge}</div></li>`;
                         });
                         monAnHtml += "</ul>";
 
                         const html = `
-                                        <div class="order-card ${order.trangThai === "Đã hoàn tất" ? "success" : "waiting"}">
-                                            <div class="order-header">
-                                                <div><strong>Bàn:</strong> ${order.ban}</div>
-                                                <div><strong>Nhân viên:</strong> ${order.nhanVienHoTen}</div>
-                                                <div><strong>Thời gian:</strong> ${order.ngayDat}</div>
-                                                <div><strong>Người:</strong> ${order.orderType ?? ""}</div>
-                                            </div>
-                                            <div><strong>Ghi chú:</strong> ${order.ghiChu ?? ""}</div>
-                                            <div><strong>Món ăn:</strong> ${monAnHtml}</div>
-                                            <div class="order-status">
-                                                <span class="badge ${order.trangThai === "Đã hoàn tất" ? "bg-success" : "bg-warning text-dark"}">${order.trangThai}</span>
-                                            </div>
-                                            ${order.trangThai !== "Đã hoàn tất" ? `
-                                                <form method="post" action="/NhanVienBep/HoanTat/${order.orderId}">
-                                                    <button type="submit" class="btn btn-success">Hoàn tất đơn</button>
-                                                </form>` : ""}
-                                        </div>`;
+                                <div class="order-card ${order.trangThai === "Đã hoàn tất" ? "success" : "waiting"}">
+                                    <div class="order-header">
+                                        <div><strong>Bàn:</strong> ${order.ban}</div>
+                                        <div><strong>Nhân viên:</strong> ${order.nhanVienHoTen}</div>
+                                        <div><strong>Thời gian:</strong> ${order.ngayDat}</div>
+                                        <div><strong>Người:</strong> ${order.orderType ?? ""}</div>
+                                    </div>
+                                    <div><strong>Ghi chú:</strong> ${order.ghiChu ?? ""}</div>
+                                    <div><strong>Món ăn:</strong> ${monAnHtml}</div>
+                                    <div class="order-status">
+                                        <span class="badge ${order.trangThai === "Đã hoàn tất" ? "bg-success" : "bg-warning text-dark"}">${order.trangThai}</span>
+                                    </div>
+                                    ${order.trangThai !== "Đã hoàn tất" ? `
+                                        <form method="post" action="/NhanVienBep/HoanTat/${order.orderId}">
+                                            <button type="submit" class="btn btn-success">Hoàn tất đơn</button>
+                                        </form>` : ""}
+                                </div>`;
 
                         container.insertAdjacentHTML("beforeend", html);
                     });
@@ -113,8 +120,16 @@
                 .catch(error => console.error("Lỗi khi load đơn hàng mới:", error));
         }
 
+        window.onload = function () {
+            const ngayChonInput = document.getElementById("ngayChon");
+            ngayChonInput.valueAsDate = new Date();
+            loadDonHangMoi();
+        };
+
+        document.getElementById("ngayChon").addEventListener("change", loadDonHangMoi);
+
         setInterval(loadDonHangMoi, 3000);
-        window.onload = loadDonHangMoi;
+
     </script>
 
 </div>

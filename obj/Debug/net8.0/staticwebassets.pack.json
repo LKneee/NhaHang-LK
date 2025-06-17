@@ -225,6 +225,18 @@
       "PackagePath": "staticwebassets\\image\\m4.jpg"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\t1.jpg",
+      "PackagePath": "staticwebassets\\image\\t1.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\t2.jpg",
+      "PackagePath": "staticwebassets\\image\\t2.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\t3.jpg",
+      "PackagePath": "staticwebassets\\image\\t3.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

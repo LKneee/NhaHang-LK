@@ -2,10 +2,13 @@
 <link rel="stylesheet" href="~/css/NhanVienPhucVu/ThongBao.css?v=101" />
 
 @{
-    ViewData["Title"] = "Thông Báo Đơn Hàng";
+    ViewData["Title"] = "Danh Sách Món Ăn";
 }
 
-<h2>Danh sách đơn hàng từ bếp</h2>
+<h2>Danh Sách Món Ăn</h2>
+
+<label for="ngayChon">Chọn Thời Gian:</label>
+<input type="date" id="ngayChon" class="form-control" style="width: 300px; margin-bottom: 20px;" />
 
 <div class="order-container">
     @foreach (var order in Model)
@@ -47,7 +50,10 @@
 
 <script>
     function loadThongBaoMoi() {
-        fetch('/NhanVienPhucVu/GetThongBaoMoi')
+        const selectedDate = document.getElementById("ngayChon").value;
+        const url = `/NhanVienPhucVu/GetThongBaoMoi?ngay=${selectedDate}`;
+
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 const container = document.querySelector(".order-container");
@@ -60,28 +66,28 @@
                     let monAnHtml = "<ul>";
                     order.orderItems.forEach(item => {
                         monAnHtml += `<li>
-                                    <span>${item.tenMon} x ${item.soLuong}</span>
-                                    <span class="badge ${item.trangThai === "Hoàn tất" ? "bg-success" : "bg-secondary"}">
-                                        ${item.trangThai === "Hoàn tất" ? "Đã hoàn tất" : "Đang chờ bếp"}
-                                    </span>
-                                </li>`;
+                                        <span>${item.tenMon} x ${item.soLuong}</span>
+                                        <span class="badge ${item.trangThai === "Hoàn tất" ? "bg-success" : "bg-secondary"}">
+                                            ${item.trangThai === "Hoàn tất" ? "Đã hoàn tất" : "Đang chờ bếp"}
+                                        </span>
+                                    </li>`;
                     });
                     monAnHtml += "</ul>";
 
                     card.innerHTML = `
-                                <div class="order-header">
-                                    <div><strong>Bàn:</strong> ${order.ban}</div>
-                                    <div><strong>Thời gian:</strong> ${order.ngayDat}</div>
-                                    <div><strong>Người:</strong> ${order.orderType ?? ""}</div>
-                                </div>
-                                <div><strong>Ghi chú:</strong> ${order.ghiChu ?? ""}</div>
-                                <div><strong>Món ăn:</strong>${monAnHtml}</div>
-                                <div class="order-status">
-                                    ${order.trangThai === "Đã hoàn tất"
+                                    <div class="order-header">
+                                        <div><strong>Bàn:</strong> ${order.ban}</div>
+                                        <div><strong>Thời gian:</strong> ${order.ngayDat}</div>
+                                        <div><strong>Người:</strong> ${order.orderType ?? ""}</div>
+                                    </div>
+                                    <div><strong>Ghi chú:</strong> ${order.ghiChu ?? ""}</div>
+                                    <div><strong>Món ăn:</strong>${monAnHtml}</div>
+                                    <div class="order-status">
+                                        ${order.trangThai === "Đã hoàn tất"
                             ? '<span class="badge bg-success">Đã hoàn tất</span>'
                             : '<span class="badge bg-warning text-dark">Đang chờ bếp</span>'}
-                                </div>
-                            `;
+                                    </div>
+                                `;
 
                     container.appendChild(card);
                 });
@@ -89,6 +95,17 @@
             .catch(error => console.error("Lỗi khi tải thông báo mới:", error));
     }
 
+  
+    window.onload = function () {
+        const ngayChonInput = document.getElementById("ngayChon");
+        ngayChonInput.valueAsDate = new Date();
+        loadThongBaoMoi();
+    };
+
+
+    document.getElementById("ngayChon").addEventListener("change", loadThongBaoMoi);
+
+
     setInterval(loadThongBaoMoi, 3000);
-    window.onload = loadThongBaoMoi;
 </script>
+

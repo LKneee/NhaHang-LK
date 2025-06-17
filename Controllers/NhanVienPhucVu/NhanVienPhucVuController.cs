@@ -45,7 +45,7 @@ namespace NhaHang.Controllers.NhanVienPhucVu
         {
             return RedirectToAction("Index", "MenuNvpv");
         }
-        public IActionResult ThongBao()
+        public IActionResult DanhSachMonAn()
         {
             var hoTen = HttpContext.Session.GetString("UserName");
             var email = HttpContext.Session.GetString("UserEmail");
@@ -55,7 +55,7 @@ namespace NhaHang.Controllers.NhanVienPhucVu
               .OrderByDescending(o => o.NgayDat)
               .ToList();
 
-            return View("ThongBao/Index", order);
+            return View("DanhSachMonAn/Index", order);
         }
 
         public IActionResult GetThongBaoCount()
@@ -70,10 +70,17 @@ namespace NhaHang.Controllers.NhanVienPhucVu
         }
 
         [HttpGet]
-        public IActionResult GetThongBaoMoi()
+        public IActionResult GetThongBaoMoi(string ngay)
         {
+            DateTime parsedDate;
+            if (!DateTime.TryParse(ngay, out parsedDate))
+            {
+                parsedDate = DateTime.Today;
+            }
+
             var orders = _context.Orders
                 .Include(o => o.OrderItem)
+                .Where(o => o.NgayDat.Date == parsedDate.Date)
                 .OrderByDescending(o => o.NgayDat)
                 .Select(o => new
                 {
@@ -93,5 +100,6 @@ namespace NhaHang.Controllers.NhanVienPhucVu
 
             return Json(orders);
         }
+
     }
 }

@@ -74,6 +74,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5QaHVjVnVcRGFuaFNhY2hEYXRCYW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/DACNA/NhaHang/Views/NhanVienPhucVu/DanhSachMonAn/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5QaHVjVnVcRGFuaFNhY2hNb25BblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/DACNA/NhaHang/Views/NhanVienPhucVu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5QaHVjVnVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -84,10 +88,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/DACNA/NhaHang/Views/NhanVienPhucVu/MenuNvpv/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5QaHVjVnVcTWVudU52cHZcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/DACNA/NhaHang/Views/NhanVienPhucVu/ThongBao/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5QaHVjVnVcVGhvbmdCYW9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DACNA/NhaHang/Views/Profile/Index.cshtml]
