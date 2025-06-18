@@ -35,12 +35,18 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             Order order;
 
             if (existingOrder != null)
-            {                
+            {
                 order = existingOrder;
+                order.TrangThai = "Chờ bếp";
+
+                if (!string.IsNullOrWhiteSpace(model.ghiChu))
+                    order.GhiChu = model.ghiChu;
+
+                if (!string.IsNullOrWhiteSpace(model.orderType))
+                    order.OrderType = model.orderType;
             }
             else
             {
-               
                 order = new Order
                 {
                     Ban = model.banSo,
@@ -50,11 +56,11 @@ namespace NhaHang.Controllers.NhanVienPhucVu
                     GhiChu = model.ghiChu,
                     OrderType = model.orderType,
                     TrangThai = "Chờ bếp",
-                    TongTien = 0 // sẽ tính sau
+                    TongTien = 0
                 };
 
                 _context.Orders.Add(order);
-                _context.SaveChanges(); 
+                _context.SaveChanges();
             }
 
             decimal tongTienMoi = 0;
@@ -66,15 +72,14 @@ namespace NhaHang.Controllers.NhanVienPhucVu
                     OrderId = order.OrderId,
                     TenMon = item.ten,
                     SoLuong = item.soluong,
-                    DonGia = item.gia
+                    DonGia = item.gia,
+                    TrangThai = "Chờ bếp" 
                 };
-                tongTienMoi += item.gia * item.soluong;
 
+                tongTienMoi += item.gia * item.soluong;
                 _context.OrderItem.Add(orderItem);
-                Console.WriteLine($"Đã thêm {orderItem.TenMon}");
             }
 
-            
             order.TongTien += tongTienMoi;
             _context.SaveChanges();
 

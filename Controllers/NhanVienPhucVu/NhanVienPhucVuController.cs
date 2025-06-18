@@ -35,7 +35,11 @@ namespace NhaHang.Controllers.NhanVienPhucVu
                 .Select(g => g.OrderByDescending(o => o.NgayDat).FirstOrDefault())
                 .ToList();
 
-            var tableStatus = orders.ToDictionary(o => o.Ban, o => o.ThanhToan);
+            var tableStatus = orders.ToDictionary(o => o.Ban, o => new
+            {
+                thanhToan = o.ThanhToan,
+                trangThai = o.TrangThai
+            });
 
             return Json(tableStatus);
         }

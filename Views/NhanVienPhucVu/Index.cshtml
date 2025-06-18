@@ -20,7 +20,7 @@
     </div>
 
     <div id="tables" class="tables-container">
-        <!-- Bàn sẽ ở đây -->
+        
     </div>
 </div>
 
@@ -36,7 +36,6 @@
     function showTables(floor, btnEl) {
         currentFloor = floor;
 
-        // Xoá active khỏi tất cả nút
         document.querySelectorAll('.btn-floor').forEach(btn => btn.classList.remove('active'));
         btnEl.classList.add('active');
 
@@ -67,15 +66,18 @@
                     if (!btn) continue;
 
                     const status = data[i];
-                    if (status === "Chưa thanh toán") {
-                        btn.style.backgroundColor = "red";
-                        btn.style.color = "white";
-                        btn.dataset.status = "busy";
-                    } else {
+                    if (!status) continue;
+
+                    if (status.thanhToan === "Đã thanh toán" && status.trangThai === "Đã hoàn tất") {
                         btn.style.backgroundColor = "green";
                         btn.style.color = "white";
                         btn.dataset.status = "free";
+                    } else {
+                        btn.style.backgroundColor = "red";
+                        btn.style.color = "white";
+                        btn.dataset.status = "busy";
                     }
+
                 }
             });
     }

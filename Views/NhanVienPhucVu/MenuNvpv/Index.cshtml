@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<NhaHang.Models.Menu>
 <link rel="stylesheet" href="~/css/NhanVienPhucVu/MenuNvpv.css" />
+<link rel="stylesheet" href="~/css/ThongBao/ThongBao.css" />
 @{
     Layout = "~/Views/Shared/_Layout_NhanVienPhucVu.cshtml";
     var ban = Context.Request.Query["ban"];
@@ -8,7 +9,6 @@
 }
 
 <div class="row">
-    <!-- Categories cố định bên trái -->
     <div id="categories-fixed">
         <div class="btn-group-vertical w-100">
             <a href="/MenuNvpv?ban=@ban" class="btn btn-secondary">Tất Cả</a>
@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <!-- Danh sách món ăn ở giữa -->
+    
     <div class="col-md-7 offset-md-2">
         <div class="row scroll-box">
             @if (Model != null && Model.Any())
@@ -61,7 +61,7 @@
         </div>
     </div>
 
-    <!-- Phiếu gọi món cố định bên phải -->
+    
     <div id="phieu-fixed">
         <div class="card" id="phieu-goi-mon">
             <div class="card-header bg-info text-white">
@@ -94,6 +94,7 @@
     </div>
 </div>
 
+<script src="~/ThongBao/ThongBao.js"></script>
 <script>
     let phieu = [];
 
@@ -104,7 +105,7 @@
             renderPhieu();
         }
 
-        // Gắn sự kiện cho các nút "Chọn"
+        
         document.querySelectorAll('.nut-chon').forEach(btn => {
             btn.addEventListener('click', function () {
                 const ten = this.getAttribute('data-ten');
@@ -113,7 +114,7 @@
             });
         });
 
-        // Gắn sự kiện thay đổi orderType
+        
         document.getElementById("orderType").addEventListener("change", renderPhieu);
     };
 
@@ -210,10 +211,11 @@
             })
         }).then(response => {
             if (response.ok) {
-                alert("Đã gửi");
+                ThongBao("Đặt món thành công!");
                 clearPhieu();
+                document.getElementById("ghiChu").value = "";
             } else {
-                alert("Gửi đơn thất bại!");
+                ThongBao("Đặt món thất bại!");
             }
         });
     }

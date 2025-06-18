@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\Menu\\tomsotthai.jpg"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\ThongBao\\ThongBao.js",
+      "PackagePath": "staticwebassets\\ThongBao\\ThongBao.js"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\4a139375-f656-4a50-b2bc-42882badc931.jpg",
       "PackagePath": "staticwebassets\\avatar\\4a139375-f656-4a50-b2bc-42882badc931.jpg"
     },
@@ -171,6 +175,10 @@
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Register.css",
       "PackagePath": "staticwebassets\\css\\Register.css"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\ThongBao\\ThongBao.css",
+      "PackagePath": "staticwebassets\\css\\ThongBao\\ThongBao.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\site.css",

@@ -1,6 +1,12 @@
 ﻿body {
     background: url('/image/bgh1.jpg') no-repeat center center fixed;
-    background-size: 100% 100%;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0 20px 50px 0px;
+    position: relative;
 }
 
 
