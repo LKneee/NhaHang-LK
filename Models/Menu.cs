@@ -11,5 +11,7 @@
         public int? GiamGia { get; set; }
         public DateTime? SpecialDay { get; set; }
         public int? Combo { get; set; }
+        public string TrangThai { get; set; } = "Còn"; 
+
     }
 }

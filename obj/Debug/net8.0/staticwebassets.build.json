@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7arq3Mppn5t1V0wCBLTwQ+SJ8SddvUoJYCf2Bh9ExgY=",
+  "Hash": "9igHbE+so+ljBWULKqjJG40g1k63Hc3C/2/cI4niCpE=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -357,6 +357,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\NhanVienBep\\NhanVienBep.css"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienBep\\TrangThaiMonAn.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/NhanVienBep/TrangThaiMonAn.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\NhanVienBep\\TrangThaiMonAn.css"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\ChiTiet.css",

@@ -95,6 +95,7 @@ namespace NhaHang.Controllers.KhachHang
 
 
 
+
         // GET: KhachHang/Menu/GiamGia
         public async Task<IActionResult> GiamGia()
         {

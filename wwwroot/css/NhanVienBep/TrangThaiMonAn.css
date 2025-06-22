@@ -2,6 +2,16 @@
     margin-top: 59px;
 }
 
+h2 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    color: #ffffff;
+    font-size: 48px;
+    margin-bottom: -60px;
+    padding: 120px 20px 40px 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
 body {
     margin: 0;
     padding: 0;

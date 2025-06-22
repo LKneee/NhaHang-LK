@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NhaHang.Models.Menu>
+<link rel="stylesheet" href="~/css/NhanVienBep/TrangThaiMonAn.css" />
+@{
+    ViewData["Title"] = "Trạng Thái Món Ăn";
+    Layout = "~/Views/Shared/_Layout_NhanVienBep.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Trạng Thái Món Ăn</h2>
+
+    <div class="btn-group-vertical w-100">
+        <a href="/MenuNvb" class="btn btn-secondary">Tất Cả</a>
+        <a href="/MenuNvb/HaiSan" class="btn btn-primary">Hải Sản</a>
+        <a href="/MenuNvb/Ga" class="btn btn-primary">Gà</a>
+        <a href="/MenuNvb/Bo" class="btn btn-primary">Bò</a>
+        <a href="/MenuNvb/Salad" class="btn btn-primary">Salad</a>
+        <a href="/MenuNvb/TrangMieng" class="btn btn-primary">Tráng Miệng</a>
+    </div>
+
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="@($"/Menu/{item.Image ?? "default.jpg"}")" class="card-img-top" alt="@item.TenMon" />
+                    <div class="card-body">
+                        <h5 class="card-title">@item.TenMon</h5>
+                        <p class="card-text">@item.MoTa</p>
+                        <p class="card-text"><strong>@item.Gia.ToString("N0")</strong> VND</p>
+                        <form method="post" asp-action="CapNhatTrangThai" asp-controller="TrangThaiMonAn">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <div class="d-flex align-items-center">
+                                <select name="trangThai" class="form-select me-2">
+                                    <option value="Còn" selected="@(item.TrangThai == "Còn")">Còn</option>
+                                    <option value="Đã Hết" selected="@(item.TrangThai == "Đã Hết")">Đã Hết</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

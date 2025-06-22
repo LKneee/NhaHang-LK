@@ -117,6 +117,10 @@
       "PackagePath": "staticwebassets\\css\\NhanVienBep\\NhanVienBep.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienBep\\TrangThaiMonAn.css",
+      "PackagePath": "staticwebassets\\css\\NhanVienBep\\TrangThaiMonAn.css"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\ChiTiet.css",
       "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\ChiTiet.css"
     },
