@@ -22,7 +22,7 @@
 
     
     <div class="col-md-7 offset-md-2">
-        <div class="row scroll-box">
+        <div class="row scroll-box" id="menu-list">
             @if (Model != null && Model.Any())
             {
                 foreach (var pro in Model)
@@ -50,7 +50,7 @@
                                 <p class="card-text"><strong>@pro.Gia.ToString("N0")</strong> VND</p>
                                 @if (pro.TrangThai == "Đã Hết")
                                 {
-                                    <button class="btn btn-secondary" disabled>Hết món</button>
+                                    <button class="btn btn-secondary" disabled> Đã Hết Món </button>
                                 }
                                 else
                                 {
@@ -112,8 +112,7 @@
             phieu = JSON.parse(savedPhieu);
             renderPhieu();
         }
-
-        
+      
         document.querySelectorAll('.nut-chon').forEach(btn => {
             btn.addEventListener('click', function () {
                 const ten = this.getAttribute('data-ten');
@@ -227,4 +226,55 @@
             }
         });
     }
+
+    function loadMenuList() {
+        fetch('/MenuNvpv/GetDanhSachMonAn')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById("menu-list");
+                list.innerHTML = ""; // Xóa cũ
+
+                data.forEach(pro => {
+                    const tenMon = pro.tenMon.replace(/\s+/g, '');
+                    const image = pro.image ? `/Menu/${pro.image}` : "/image/default.jpg";
+                    const isHetMon = pro.trangThai === "Đã Hết";
+
+                    const card = `
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <a href="/MenuNvpv/${tenMon}/ChiTiet">
+                                    <img src="${image}" class="card-img-top" alt="${pro.tenMon}" />
+                                </a>
+                                <div class="card-body">
+                                    <a href="/MenuNvpv/${tenMon}/ChiTiet">
+                                        <h5 class="card-title">${pro.tenMon}</h5>
+                                    </a>
+                                    <p class="card-text">${pro.moTa}</p>
+                                    <p class="card-text"><strong>${parseInt(pro.gia).toLocaleString()}</strong> VND</p>
+                                    ${isHetMon
+                            ? '<button class="btn btn-secondary" disabled>Đã Hết Món</button>'
+                            : `<button class="btn btn-success nut-chon" data-ten="${pro.tenMon}" data-gia="${pro.gia}">Chọn</button>`
+                        }
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', card);
+                });
+
+                document.querySelectorAll('.nut-chon').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const ten = this.getAttribute('data-ten');
+                        const gia = parseInt(this.getAttribute('data-gia'));
+                        themVaoPhieu(ten, gia);
+                    });
+                });
+            });
+    }
+
+
+    loadMenuList();
+    setInterval(loadMenuList, 3000);
+
+
 </script>

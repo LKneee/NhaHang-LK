@@ -93,6 +93,23 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             return View("Views/NhanVienPhucVu/MenuNvpv/ChiTiet.cshtml", monAn);
         }
 
+        [HttpGet]
+        [Route("MenuNvpv/GetDanhSachMonAn")]
+        public IActionResult GetDanhSachMonAn()
+        {
+            var danhSachMon = _context.Menu
+                .Select(m => new {
+                    id = m.Id,
+                    tenMon = m.TenMon,
+                    moTa = m.MoTa,
+                    gia = m.Gia,
+                    image = m.Image,
+                    trangThai = m.TrangThai
+                })
+                .ToList();
+
+            return Json(danhSachMon);
+        }
 
 
 
