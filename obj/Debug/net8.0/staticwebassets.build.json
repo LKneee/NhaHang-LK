@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9igHbE+so+ljBWULKqjJG40g1k63Hc3C/2/cI4niCpE=",
+  "Hash": "SnAIqihCvHFWYw2uUcxVEwEbo4sJF/25e8gvrSp20rs=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\avatar\\8998e125-ae31-43eb-a122-1025522348f8.jpg"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\a627a2c7-eb43-45e8-96b1-f7ba8460a738.jpg",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "avatar/a627a2c7-eb43-45e8-96b1-f7ba8460a738.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avatar\\a627a2c7-eb43-45e8-96b1-f7ba8460a738.jpg"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\cf37a074-b737-4ead-8224-35b34409f21b.jpg",
@@ -2219,6 +2238,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Menu\\kem.jpg"
+    },
+    {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\lavie.jpg",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "Menu/lavie.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Menu\\lavie.jpg"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladcahoi.jpg",

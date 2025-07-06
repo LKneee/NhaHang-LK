@@ -111,6 +111,36 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             return Json(danhSachMon);
         }
 
+        [HttpGet]
+        [Route("MenuNvpv/GetDanhSachMonAn/{category}")]
+        public IActionResult GetDanhSachMonAnTheoLoai(string category)
+        {
+            int? categoryId = category.ToLower() switch
+            {
+                "haisan" => 1,
+                "ga" => 2,
+                "bo" => 3,
+                "salad" => 4,
+                "trangmieng" => 5,
+                _ => null
+            };
+
+            var query = _context.Menu.AsQueryable();
+            if (categoryId.HasValue)
+                query = query.Where(m => m.CategoryId == categoryId);
+
+            var danhSach = query.Select(m => new {
+                id = m.Id,
+                tenMon = m.TenMon,
+                moTa = m.MoTa,
+                gia = m.Gia,
+                image = m.Image,
+                trangThai = m.TrangThai
+            }).ToList();
+
+            return Json(danhSach);
+        }
+
 
 
         public async Task<IActionResult> GiamGia()

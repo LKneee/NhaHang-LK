@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\avatar\" />
-    <Folder Include="wwwroot\Menu\" />
   </ItemGroup>
 
 </Project>

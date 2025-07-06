@@ -5,8 +5,9 @@
 
 <link rel="stylesheet" href="~/css/QuanLy/QuanLyMenu.css" />
 <h2>Quản lý Menu</h2>
-<a asp-action="Create" class="btn-create">Thêm món mới</a>
-
+<div class="button-wrapper">
+    <a asp-action="Create" class="btn-create">Thêm món mới</a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -32,8 +33,19 @@
                 <td>@(item.SpecialDay?.ToString("dd/MM/yyyy") ?? "-")</td>
                 <td>@item.Combo</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Sửa</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Xác nhận xóa?')">Xóa</a>
+                    <div style="display: flex; justify-content: center;">
+                        <form asp-action="Edit" asp-route-id="@item.Id" method="get" style="margin-right: 5px;">
+                            <button type="submit" class="btn-action-circle btn-edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </form>
+                        <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Xác nhận xóa?');">
+                            <button type="submit" class="btn-action-circle btn-delete">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    </div>
+
                 </td>
             </tr>
         }

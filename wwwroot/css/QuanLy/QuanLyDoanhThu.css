@@ -1,20 +1,66 @@
-﻿
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+/* Tiêu đề */
+h2 {
+    padding-top: 70px;
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    margin: 60px 0 30px;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+/* Bảng hiển thị thông tin */
+.info-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    width: 90%;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Canh giữa canvas */
 canvas {
     margin: 20px auto;
     display: block;
 }
 
-#doanhThuChart {
+/* Tùy chỉnh kích thước biểu đồ */
+#doanhThuChart,
+#doanhThuChartThang,
+#doanhThuChartNam {
     display: block !important;
     width: 1000px !important;
     height: 400px !important;
 }
 
+table.table-bordered,
+table.table-bordered th,
+table.table-bordered td {
+    color: white;
+    border-color: dimgray;
+}
 
-h2 {
-    text-align: center;
-    color: #2c3e50;
-    margin: 30px 0 20px 0;
-    font-size: 28px;
-    padding: 80px;
+table.table-bordered {
+    background-color: rgba(0, 0, 0, 0.5); /* nền bảng trong suốt đen nhẹ */
 }

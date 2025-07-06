@@ -1,26 +1,23 @@
-﻿.row {
-    margin-top: 59px;
-}
-
-h2 {
-    font-family: 'Great Vibes', cursive;
-    text-align: center;
-    color: #ffffff;
-    font-size: 48px;
-    margin-bottom: -60px;
-    padding: 120px 20px 40px 20px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-body {
+﻿body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/image/h1.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/image/h1.jpg') no-repeat center center fixed;
     background-size: cover;
+    color: white;
 }
 
-/* Cố định categories bên trái */
+/* Tiêu đề */
+h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    font-size: 48px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-top:110px;
+    padding-left:200px;
+}
+
+/* Danh mục cố định bên trái */
 #categories-fixed {
     position: fixed;
     top: 120px;
@@ -29,16 +26,6 @@ body {
     z-index: 1000;
 }
 
-/* Cố định phiếu gọi món bên phải */
-#phieu-fixed {
-    position: fixed;
-    top: 120px;
-    right: 30px;
-    width: 350px;
-    z-index: 1000;
-}
-
-/* Nút danh mục */
 .btn-group-vertical {
     display: flex;
     flex-direction: column;
@@ -55,13 +42,13 @@ body {
         transition: all 0.3s;
     }
 
+
         .btn-group-vertical .btn:hover,
         .btn-group-vertical .btn.active {
             background-color: #28a745;
             color: #212529;
             border-color: #28a745;
         }
-
 
 /* Card món ăn */
 .card {
@@ -70,8 +57,15 @@ body {
     border-radius: 10px;
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    height: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    height: 100%;
 }
+
+    .card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    }
 
 .card-img-top {
     width: 100%;
@@ -79,94 +73,35 @@ body {
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    transition: transform 0.3s ease;
 }
 
-
 .card-body {
-    padding: 10px;
-    text-align: center;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .card-title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: white;
 }
 
-/* Phiếu gọi món */
-#phieu-goi-mon {
-    /* giữ nguyên style của bạn */
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    /* Có thể đặt chiều cao tổng cho card */
-    height: 600px; /* hoặc auto tùy ý, nhưng nên cố định để kiểm soát */
-    display: flex;
-    flex-direction: column;
+.card-text {
+    font-size: 14px;
+    color: #e0e0e0;
 }
 
-    #phieu-goi-mon .card-header {
-        background-color: #28a745cc !important; /* màu có chút trong suốt */
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        text-align: center;
-        font-weight: bold;
-        color: white;
-    }
-
-    #phieu-goi-mon .card-body {
-        flex-grow: 1; /* Phần nội dung chiếm không gian còn lại */
-        overflow-y: auto; /* Cho phép cuộn dọc */
-        padding: 15px;
-        /* Nếu muốn có max-height thì có thể chỉnh thêm */
-    }
-
-
-
-    #phieu-goi-mon .tong-cong {
-        margin-bottom: 0px;
-    }
-
-    #phieu-goi-mon .btn-group {
-        display: flex;
-        gap: 10px;
-        margin-top: -55px;
-    }
-
-
-#phieu-list {
-    overflow-y: auto;
-    max-height: 300px;
-}
-
-    #phieu-list .btn-outline-success,
-    #phieu-list .btn-outline-danger {
-        padding: 2px 3px;
-        font-size: 12px;
-        min-width: 24px;
-    }
-
-#phieu-goi-mon button.btn-primary {
-    flex-shrink: 0;
-    /* điều chỉnh kích thước nút nếu cần */
-    font-size: 16px;
-    padding: 6px 12px;
-    background-color: #28a745;
-    color: white;
-    border-color: #28a745;
-}
-
-/* Scroll */
+/* Scroll danh sách món */
 .scroll-box {
+    padding-left: 230px;
     max-height: 90vh;
     overflow-y: auto;
-    padding-right: 5px;
 }
 
     .scroll-box::-webkit-scrollbar {
@@ -178,23 +113,58 @@ body {
         border-radius: 4px;
     }
 
-.nut-chon {
-    background-color: #28a745 !important; /* Màu xanh lá tươi */
-    border: none;
+/* Hiệu ứng món đã hết */
+.het-mon {
+    opacity: 0.5;
+}
+/* Nút Cập Nhật hình tròn màu xanh lá */
+.btn-capnhat {
+    background-color: #28a745;
     color: white;
+    border: none;
+    border-radius: 5px;
+    /* Hình tròn */
+    width: 100%; /* Kích thước nút */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
-    transition: background-color 0.3s ease;
-    padding: 6px 12px;
-    border-radius: 6px;
+    font-size: 17px;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
-    .nut-chon:hover {
+    .btn-capnhat:hover {
         background-color: #218838; /* Màu xanh đậm hơn khi hover */
+        transform: scale(1.1);
         cursor: pointer;
     }
+/* Dropdown trạng thái món ăn */
+.form-select {
+    width: 250px; /* ✅ Ngắn lại */
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #28a745;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
 
-.card.het-mon {
-    opacity: 0.5;
-    pointer-events: none;
-    background-color: #f8f9fa;
+    .form-select:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+        background-color: rgba(40, 167, 69, 0.15); /* ✅ khi focus */
+        color: white;
+    }
+
+    /* Optional: tùy chỉnh màu nền khi chọn */
+    .form-select option {
+        color: black; /* để dễ nhìn */
+    }
+
+.update-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

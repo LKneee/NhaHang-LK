@@ -5,3 +5,219 @@
     font-size: 28px;
     padding: 80px;
 }
+
+/* Nền chung mờ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+/* Tiêu đề chính */
+h2 {
+    padding-top: 120px;
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0, 255, 100, 0.5);
+}
+
+/* Nút Thêm Tài Khoản */
+.btn-them-wrapper {
+    text-align: right;
+    padding: 0 40px 20px 40px;
+}
+
+#btnThemTaiKhoan {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+    transition: all 0.3s ease;
+}
+
+    #btnThemTaiKhoan:hover {
+        background-color: #218838;
+        box-shadow: 0 0 20px rgba(40, 255, 120, 0.7);
+        cursor: pointer;
+    }
+
+/* Tabs vai trò */
+/* Tabs vai trò */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+    .nav-tabs .nav-link {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 2px solid transparent;
+        border-radius: 30px;
+        padding: 10px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+        border: 2px solid #28a745;
+    }
+
+        .nav-tabs .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            cursor: pointer;
+            border: 2px solid #28a745;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .nav-tabs .nav-link.active {
+            background: rgba(0, 255, 150, 0.2);
+            color: #fff;
+            border: 2px solid #28a745;
+            box-shadow: 0 0 12px rgba(0, 255, 200, 0.6);
+        }
+
+/* Wrapper chứa 2 cột */
+.tai-khoan-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* Cột */
+.tai-khoan-cot {
+    flex: 1;
+    min-width: 500px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+    .tai-khoan-cot h4 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 5px #000;
+        color: #ffffff;
+    }
+
+/* Thẻ người dùng */
+.user-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .user-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(0, 255, 150, 0.3);
+    }
+
+    /* Ảnh đại diện */
+    .user-card img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #fff;
+    }
+
+/* Thông tin */
+.user-info {
+    flex: 1;
+    color: #fff;
+}
+
+    .user-info p {
+        margin: 4px 0;
+    }
+
+/* Nút hành động */
+.user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+    .user-actions .btn-warning,
+    .user-actions .btn-danger {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .user-actions .btn-warning {
+        background-color: #f39c12;
+    }
+
+        .user-actions .btn-warning:hover {
+            background-color: #e67e22;
+            box-shadow: 0 0 10px rgba(255, 190, 100, 0.6);
+        }
+
+    .user-actions .btn-danger {
+        background-color: #e74c3c;
+    }
+
+        .user-actions .btn-danger:hover {
+            background-color: #c0392b;
+            box-shadow: 0 0 10px rgba(255, 100, 100, 0.6);
+        }
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .tai-khoan-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tai-khoan-cot {
+        width: 100%;
+    }
+
+    .nav-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+}

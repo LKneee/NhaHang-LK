@@ -17,14 +17,13 @@
 </ul>
 
 <div id="danhSachTaiKhoan" style="margin-top: 20px;">
-
 </div>
 
 <script>
     let vaiTroHienTai = localStorage.getItem("vaiTroHienTai") || "NhanVienPhucVu";
 
     function taiDuLieuTaiKhoan(vaiTro) {
-        vaiTroHienTai = vaiTro; 
+        vaiTroHienTai = vaiTro;
         localStorage.setItem("vaiTroHienTai", vaiTro);
         fetch(`/TaiKhoanQuanLy/VaiTroNguoiDung?vaiTro=${vaiTro}`)
             .then(res => res.text())

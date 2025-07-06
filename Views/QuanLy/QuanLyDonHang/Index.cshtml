@@ -113,26 +113,26 @@
                     let actionHtml = "";
                     if (order.thanhToan !== "Đã thanh toán") {
                         actionHtml += `
-                                    <form method="post" action="/DonHangQuanLy/ThanhToan/${order.orderId}" style="margin-bottom:5px;">
-                                        <button type="submit" class="btn btn-primary"> Đã Thanh toán</button>
-                                    </form>`;
+                                        <form method="post" action="/DonHangQuanLy/ThanhToan/${order.orderId}" style="margin-bottom:5px;">
+                                            <button type="submit" class="btn btn-primary"> Đã Thanh toán</button>
+                                        </form>`;
                     }
                     actionHtml += `
-                                <form method="post" action="/DonHangQuanLy/InHoaDon/${order.orderId}" target="_blank">
-                                    <button type="submit" class="btn btn-secondary">In Hóa Đơn</button>
-                                </form>`;
+                                    <form method="post" action="/DonHangQuanLy/InHoaDon/${order.orderId}" target="_blank">
+                                        <button type="submit" class="btn btn-secondary">In Hóa Đơn</button>
+                                    </form>`;
 
                     row.innerHTML = `
-                                <td>${order.ban}</td>
-                                <td>${order.nhanVienHoTen}</td>
-                                <td>${order.ngayDat}</td>
-                                <td>${order.orderType || ""}</td>
-                                <td>${monAnHtml}</td>
-                                <td>${order.ghiChu || ""}</td>
-                                <td>${Number(order.tongTien).toLocaleString('vi-VN')} VND</td>
-                                <td>${thanhToanHtml}</td>
-                                <td>${actionHtml}</td>
-                            `;
+                                    <td>${order.ban}</td>
+                                    <td>${order.nhanVienHoTen}</td>
+                                    <td>${order.ngayDat}</td>
+                                    <td>${order.orderType || ""}</td>
+                                    <td>${monAnHtml}</td>
+                                    <td>${order.ghiChu || ""}</td>
+                                    <td>${Number(order.tongTien).toLocaleString('vi-VN')} VND</td>
+                                    <td>${thanhToanHtml}</td>
+                                    <td>${actionHtml}</td>
+                                `;
 
                     tableBody.appendChild(row);
                 });
@@ -147,5 +147,3 @@
     };
     setInterval(loadDonHangQuanLy, 5000);
 </script>
-
-

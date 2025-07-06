@@ -1,73 +1,63 @@
 ﻿@model IEnumerable<Users>
 
-<h4>Hoạt Động</h4>
+<div class="tai-khoan-wrapper">
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Họ Tên</th>
-            <th>Email</th>
-            <th>SĐT</th>
-            <th>Địa Chỉ</th>
-            <th>Giới Tính</th>
-            <th>Ảnh</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in Model.Where(u => u.TrangThai == "Đang Hoạt Động"))
-        {
-            <tr>
-                <td>@user.HoTen</td>
-                <td>@user.Email</td>
-                <td>@user.SDT</td>
-                <td>@user.DiaChi</td>
-                <td>@user.GioiTinh</td>
-                <td><img src="@user.Image" width="50" height="50" /></td>
-                <td>
-                    <a href="/TaiKhoanQuanLy/ChinhSuaTaiKhoanView?id=@user.Id" class="btn btn-sm btn-warning">Sửa</a>
-                    <form asp-action="XoaTaiKhoan" method="post" style="display:inline;" onsubmit="return confirm('Bạn chắc chắn muốn xóa?');">
-                        <input type="hidden" name="id" value="@user.Id" />
-                        <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
-                    </form>
-                </td>
-
-            </tr>
-        }
-    </tbody>
-</table>
-
-<h4>Không Hoạt Động</h4>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Họ Tên</th>
-            <th>Email</th>
-            <th>SĐT</th>
-            <th>Địa Chỉ</th>
-            <th>Giới Tính</th>
-            <th>Ảnh</th>
-        </tr>
-    </thead>
-    <tbody>
+    <!-- Bên trái: Không hoạt động -->
+    <div class="tai-khoan-cot">
+        <h4>Không Hoạt Động</h4>
         @foreach (var user in Model.Where(u => u.TrangThai != "Đang Hoạt Động"))
         {
-            <tr>
-                <td>@user.HoTen</td>
-                <td>@user.Email</td>
-                <td>@user.SDT</td>
-                <td>@user.DiaChi</td>
-                <td>@user.GioiTinh</td>
-                <td><img src="@user.Image" width="50" height="50" /></td>
-                <td>
-                    <a href="/TaiKhoanQuanLy/ChinhSuaTaiKhoanView?id=@user.Id" class="btn btn-sm btn-warning">Sửa</a>
-                    <form asp-action="XoaTaiKhoan" method="post" style="display:inline;" onsubmit="return confirm('Bạn chắc chắn muốn xóa?');">
+            <div class="user-card">
+                <img src="@user.Image" alt="Ảnh">
+                <div class="user-info">
+                    <p><strong>Họ tên:</strong> @user.HoTen</p>
+                    <p><strong>Email:</strong> @user.Email</p>
+                    <p><strong>SĐT:</strong> @user.SDT</p>
+                    <p><strong>Địa chỉ:</strong> @user.DiaChi</p>
+                    <p><strong>Giới tính:</strong> @user.GioiTinh</p>
+                </div>
+                <div class="user-actions">
+                    <a href="/TaiKhoanQuanLy/ChinhSuaTaiKhoanView?id=@user.Id" class="btn btn-sm btn-warning">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <form asp-action="XoaTaiKhoan" method="post" onsubmit="return confirm('Bạn chắc chắn muốn xóa?');">
                         <input type="hidden" name="id" value="@user.Id" />
-                        <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            <i class="fas fa-trash"></i>
+                        </button>
                     </form>
-                </td>
-
-            </tr>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
 
+    <!-- Bên phải: Hoạt động -->
+    <div class="tai-khoan-cot">
+        <h4>Hoạt Động</h4>
+        @foreach (var user in Model.Where(u => u.TrangThai == "Đang Hoạt Động"))
+        {
+            <div class="user-card">
+                <img src="@user.Image" alt="Ảnh">
+                <div class="user-info">
+                    <p><strong>Họ tên:</strong> @user.HoTen</p>
+                    <p><strong>Email:</strong> @user.Email</p>
+                    <p><strong>SĐT:</strong> @user.SDT</p>
+                    <p><strong>Địa chỉ:</strong> @user.DiaChi</p>
+                    <p><strong>Giới tính:</strong> @user.GioiTinh</p>
+                </div>
+                <div class="user-actions">
+                    <a href="/TaiKhoanQuanLy/ChinhSuaTaiKhoanView?id=@user.Id" class="btn btn-sm btn-warning">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <form asp-action="XoaTaiKhoan" method="post" onsubmit="return confirm('Bạn chắc chắn muốn xóa?');">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

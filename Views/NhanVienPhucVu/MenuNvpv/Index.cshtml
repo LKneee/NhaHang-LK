@@ -11,13 +11,15 @@
 <div class="row">
     <div id="categories-fixed">
         <div class="btn-group-vertical w-100">
-            <a href="/MenuNvpv?ban=@ban" class="btn btn-secondary">Tất Cả</a>
-            <a href="/MenuNvpv/HaiSan?ban=@ban" class="btn btn-primary">Hải Sản</a>
-            <a href="/MenuNvpv/Ga?ban=@ban" class="btn btn-primary">Gà</a>
-            <a href="/MenuNvpv/Bo?ban=@ban" class="btn btn-primary">Bò</a>
-            <a href="/MenuNvpv/Salad?ban=@ban" class="btn btn-primary">Salad</a>
-            <a href="/MenuNvpv/TrangMieng?ban=@ban" class="btn btn-primary">Tráng Miệng</a>
+            <button class="btn btn-secondary category-btn" data-category="tatca">Tất Cả</button>
+            <button class="btn btn-primary category-btn" data-category="haisan">Hải Sản</button>
+            <button class="btn btn-primary category-btn" data-category="ga">Gà</button>
+            <button class="btn btn-primary category-btn" data-category="bo">Bò</button>
+            <button class="btn btn-primary category-btn" data-category="salad">Salad</button>
+            <button class="btn btn-primary category-btn" data-category="trangmieng">Tráng Miệng</button>
         </div>
+    </div>
+
     </div>
 
     
@@ -105,6 +107,7 @@
 <script src="~/ThongBao/ThongBao.js"></script>
 <script>
     let phieu = [];
+    let currentCategory = "";
 
     window.onload = function () {
         const savedPhieu = localStorage.getItem("phieu");
@@ -227,12 +230,16 @@
         });
     }
 
-    function loadMenuList() {
-        fetch('/MenuNvpv/GetDanhSachMonAn')
+    function loadMenuList(category = "") {
+        const url = category
+            ? `/MenuNvpv/GetDanhSachMonAn/${category}`
+            : '/MenuNvpv/GetDanhSachMonAn';
+
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 const list = document.getElementById("menu-list");
-                list.innerHTML = ""; // Xóa cũ
+                list.innerHTML = "";
 
                 data.forEach(pro => {
                     const tenMon = pro.tenMon.replace(/\s+/g, '');
@@ -253,8 +260,7 @@
                                     <p class="card-text"><strong>${parseInt(pro.gia).toLocaleString()}</strong> VND</p>
                                     ${isHetMon
                             ? '<button class="btn btn-secondary" disabled>Đã Hết Món</button>'
-                            : `<button class="btn btn-success nut-chon" data-ten="${pro.tenMon}" data-gia="${pro.gia}">Chọn</button>`
-                        }
+                            : `<button class="btn btn-success nut-chon" data-ten="${pro.tenMon}" data-gia="${pro.gia}">Chọn</button>`}
                                 </div>
                             </div>
                         </div>
@@ -272,9 +278,43 @@
             });
     }
 
+    window.onload = function () {
+        // Phục hồi phiếu
+        const savedPhieu = localStorage.getItem("phieu");
+        if (savedPhieu) {
+            phieu = JSON.parse(savedPhieu);
+            renderPhieu();
+        }
 
-    loadMenuList();
-    setInterval(loadMenuList, 3000);
+        // Loại order
+        document.getElementById("orderType").addEventListener("change", renderPhieu);
+
+        // Chọn món
+        document.querySelectorAll('.nut-chon').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const ten = this.getAttribute('data-ten');
+                const gia = parseInt(this.getAttribute('data-gia'));
+                themVaoPhieu(ten, gia);
+            });
+        });
+
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const category = this.getAttribute('data-category');
+                currentCategory = category === "tatca" ? "" : category;
+                loadMenuList(currentCategory);
+            });
+        });
 
 
+
+
+        // Tải mặc định tất cả
+        loadMenuList(currentCategory);
+
+        // Cập nhật tự động theo danh mục đang chọn
+        setInterval(() => {
+            loadMenuList(currentCategory);
+        }, 3000);
+    }
 </script>

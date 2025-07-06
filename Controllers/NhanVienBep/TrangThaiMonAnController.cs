@@ -20,7 +20,7 @@ namespace NhaHang.Controllers.NhanVienBep
         }
 
         [HttpPost]
-        public IActionResult CapNhatTrangThai(int id, string trangThai)
+        public IActionResult CapNhatTrangThai(int id, string trangThai, string returnUrl)
         {
             var mon = _context.Menu.FirstOrDefault(m => m.Id == id);
             if (mon != null && (trangThai == "Còn" || trangThai == "Đã Hết"))
@@ -28,6 +28,12 @@ namespace NhaHang.Controllers.NhanVienBep
                 mon.TrangThai = trangThai;
                 _context.SaveChanges();
             }
+
+            if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+
             return RedirectToAction("Index");
         }
     }

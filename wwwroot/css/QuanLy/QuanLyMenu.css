@@ -1,123 +1,220 @@
-﻿
-h2 {
-    text-align: center;
-    color: #2c3e50;
-    margin: 30px 0 20px 0;
-    font-size: 28px;
-    padding:80px;
+﻿/* Nền mờ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
 }
 
-a[asp-action="Create"] {
-    display: inline-block;
-    margin: 0 0 20px 30px;
-    padding: 1px 18px;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-    a[asp-action="Create"]:hover {
-        background-color: #218838;
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
     }
 
-// kiểu cho bảng
-table.table {
-    width: 95%;
-    margin: 0 auto 40px auto;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    overflow: hidden;
+/* Tiêu đề */
+h2 {
+    padding-top: 70px;
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    margin: 60px 0 30px;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
 }
 
-    // header bảng
-    table.table thead {
-        background-color: #007bff;
+/* Wrapper nút thêm món */
+.button-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 98%;
+    margin: 0 auto 0 auto;
+}
+
+/* Nút thêm món */
+.btn-create {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #28a745, #3ddc84);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+    .btn-create:hover {
+        background: linear-gradient(135deg, #218838, #32c770);
+        box-shadow: 0 0 14px 4px rgba(40, 167, 69, 0.6);
+        transform: translateY(-2px);
         color: white;
     }
 
+/* Bảng */
+table.table {
+    width: 98%;
+    margin: 0 auto 60px auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    overflow: hidden;
+    color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+}
+
+    table.table:hover {
+        transform: scale(1.002);
+    }
+
+    /* Header bảng */
+    table.table thead {
+        background: linear-gradient(to right, transparent, rgba(76, 175, 80, 0.4), transparent);
+    }
+
         table.table thead th {
-            padding: 14px 12px;
+            padding: 18px 14px;
             font-size: 16px;
-            text-align: left;
+            text-align: center;
+            color: #6fffa6;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-   // nội dung
+    /* Dòng bảng */
     table.table tbody tr {
-        border-bottom: 1px solid #ddd;
         transition: background-color 0.3s ease;
     }
 
         table.table tbody tr:hover {
-            background-color: #f9f9f9;
+            background-color: rgba(255, 255, 255, 0.12);
         }
 
+    /* Ô bảng */
     table.table tbody td {
-        padding: 12px;
-        vertical-align: middle;
+        padding: 14px;
+        text-align: center;
         font-size: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-        //ảnh món ăn
-        table.table tbody td img {
-            width: 100px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-   //thao tac xoa sua
-    table.table td a {
-        margin: 0 5px;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 6px 10px;
-        border-radius: 4px;
-        color: red;
-        transition: background-color 0.2s ease;
-    }
-
-        table.table td a[asp-action="Edit"] {
-            background-color: #ffc107;
-        }
-
-            table.table td a[asp-action="Edit"]:hover {
-                background-color: #e0a800;
-            }
-
-        table.table td a[asp-action="Delete"] {
-            background-color: #dc3545;
-        }
-
-            table.table td a[asp-action="Delete"]:hover {
-                background-color: #c82333;
-            }
-
-.btn-create {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #28a745; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-    .btn-create:hover {
-        background-color: #218838;
-    }
-
+/* Ảnh món ăn */
 .menu-img {
-    border-radius: 50%;
     width: 80px;
     height: 80px;
     object-fit: cover;
-    border: 1px solid #4CAF50; 
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 12px rgba(76, 175, 80, 0.6);
+    transition: transform 0.3s ease;
 }
 
+    .menu-img:hover {
+        transform: scale(1.05);
+    }
+
+/* Các nút thao tác */
+table.table td a {
+    display: inline-block;
+    margin: 2px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+    table.table td a[asp-action="Edit"] {
+        background-color: #ffc107;
+    }
+
+        table.table td a[asp-action="Edit"]:hover {
+            background-color: #e0a800;
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
+        }
+
+    table.table td a[asp-action="Delete"] {
+        background-color: #dc3545;
+    }
+
+        table.table td a[asp-action="Delete"]:hover {
+            background-color: #c82333;
+            box-shadow: 0 0 10px rgba(220, 53, 69, 0.8);
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 36px;
+    }
+
+    .button-wrapper {
+        justify-content: center;
+    }
+
+    .btn-create {
+        width: auto;
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    table.table {
+        font-size: 0.85rem;
+    }
+
+        table.table thead th {
+            font-size: 14px;
+        }
+}
+/* Nút sửa và xóa dạng hình tròn */
+.btn-action-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    border: none;
+    font-size: 16px;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Nút sửa - cam */
+.btn-edit {
+    background-color: #f39c12;
+}
+
+    .btn-edit:hover {
+        background-color: #e67e22;
+        box-shadow: 0 0 10px rgba(255, 190, 100, 0.6);
+    }
+
+/* Nút xóa - đỏ */
+.btn-delete {
+    background-color: #e74c3c;
+}
+
+    .btn-delete:hover {
+        background-color: #c0392b;
+        box-shadow: 0 0 10px rgba(255, 100, 100, 0.6);
+    }

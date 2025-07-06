@@ -5,3 +5,104 @@
     font-size: 28px;
     padding: 80px;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/image/h1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+h2 {
+    padding-top: 120px;
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0, 255, 100, 0.5);
+}
+
+/* Container form tương tự MenuForm */
+.menu-form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+    .menu-form-container form {
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(10px);
+        padding: 40px 30px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+        /* Input & Select block */
+        .menu-form-container form > input,
+        .menu-form-container form > select {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            transition: border-color 0.3s ease;
+        }
+
+            .menu-form-container form > input:focus,
+            .menu-form-container form > select:focus {
+                border-color: #00ffcc;
+                outline: none;
+            }
+
+        /* Submit button */
+        .menu-form-container form button[type="submit"] {
+            padding: 12px;
+            background: linear-gradient(to right, #f12711, #f5af19);
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+            .menu-form-container form button[type="submit"]:hover {
+                background: linear-gradient(to right, #f5af19, #f12711);
+            }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-form-container form {
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .menu-form-container form input,
+    .menu-form-container form select {
+        font-size: 13px;
+    }
+}

@@ -1,44 +1,45 @@
 ﻿@model NhaHang.Models.Menu
 <link rel="stylesheet" href="~/css/QuanLy/MenuForm.css" />
-<h2>@(Model.Id == 0 ? "Thêm món" : "Sửa món")</h2>
+<h2>@(Model.Id == 0 ? "Thêm món cho nhà hàng" : "Chỉnh sửa món ăn")</h2>
+<div class="menu-form-container">
+    <form asp-action="@(Model.Id == 0 ? "Create" : "Edit")" method="post">
+        <input type="hidden" asp-for="Id" />
 
-<form asp-action="@(Model.Id == 0 ? "Create" : "Edit")" method="post">
-    <input type="hidden" asp-for="Id" />
+        <div>
+            <label>Tên món</label>
+            <input asp-for="TenMon" />
+        </div>
+        <div>
+            <label>Mô tả</label>
+            <textarea asp-for="MoTa"></textarea>
+        </div>
 
-    <div>
-        <label>Tên món</label>
-        <input asp-for="TenMon" />
-    </div>
-    <div>
-        <label>Mô tả</label>
-        <textarea asp-for="MoTa"></textarea>
-    </div>
+        <div>
+            <label>CategoryId</label>
+            <input asp-for="CategoryId" type="number" />
+        </div>
 
-    <div>
-        <label>CategoryId</label>
-        <input asp-for="CategoryId" type="number" />
-    </div>
+        <div>
+            <label>Giá</label>
+            <input asp-for="Gia" type="number" />
+        </div>
+        <div>
+            <label>Ảnh (URL)</label>
+            <input asp-for="Image" />
+        </div>
+        <div>
+            <label>Giảm giá</label>
+            <input asp-for="GiamGia" type="number" />
+        </div>
+        <div>
+            <label>Special Day</label>
+            <input asp-for="SpecialDay" type="date" />
+        </div>
+        <div>
+            <label>Combo</label>
+            <input asp-for="Combo" />
+        </div>
 
-    <div>
-        <label>Giá</label>
-        <input asp-for="Gia" type="number" />
-    </div>
-    <div>
-        <label>Ảnh (URL)</label>
-        <input asp-for="Image" />
-    </div>
-    <div>
-        <label>Giảm giá</label>
-        <input asp-for="GiamGia" type="number" />
-    </div>
-    <div>
-        <label>Special Day</label>
-        <input asp-for="SpecialDay" type="date" />
-    </div>
-    <div>
-        <label>Combo</label>
-        <input asp-for="Combo" />
-    </div>
-
-    <button type="submit">Lưu</button>
-</form>
+        <button type="submit">Lưu</button>
+    </form>
+</div>

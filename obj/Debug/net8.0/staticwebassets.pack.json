@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\Menu\\kem.jpg"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\lavie.jpg",
+      "PackagePath": "staticwebassets\\Menu\\lavie.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladcahoi.jpg",
       "PackagePath": "staticwebassets\\Menu\\saladcahoi.jpg"
     },
@@ -67,6 +71,10 @@
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\8998e125-ae31-43eb-a122-1025522348f8.jpg",
       "PackagePath": "staticwebassets\\avatar\\8998e125-ae31-43eb-a122-1025522348f8.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\a627a2c7-eb43-45e8-96b1-f7ba8460a738.jpg",
+      "PackagePath": "staticwebassets\\avatar\\a627a2c7-eb43-45e8-96b1-f7ba8460a738.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\avatar\\cf37a074-b737-4ead-8224-35b34409f21b.jpg",
