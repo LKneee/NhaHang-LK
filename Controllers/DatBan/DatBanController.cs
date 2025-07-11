@@ -3,7 +3,7 @@ using NhaHang.Data;
 using NhaHang.Models;
 using System;
 
-namespace NhaHang.Controllers.KhachHang
+namespace NhaHang.Controllers.DatBann
 {
     public class DatBanController : Controller
     {
@@ -22,15 +22,33 @@ namespace NhaHang.Controllers.KhachHang
                 ViewBag.ThongBao = TempData["ThongBao"];
             }
 
-            return View("~/Views/KhachHang/DatBan/Index.cshtml");
+            var model = new DatBan();
+
+
+            var userEmail = HttpContext.Session.GetString("UserEmail");
+
+
+            if (!string.IsNullOrEmpty(userEmail) && userEmail.EndsWith("@gmail.com"))
+            {
+
+                var user = _context.Users.FirstOrDefault(u => u.Email == userEmail);
+                if (user != null)
+                {
+                    model.HoTen = user.HoTen;
+                    model.SoDienThoai = user.SDT;
+                }
+            }
+
+            return View("~/Views/DatBan/Index.cshtml", model);
         }
+
 
         [HttpPost]
         public IActionResult Index(DatBan model)
         {
             if (!ModelState.IsValid)
             {
-                return View("~/Views/KhachHang/DatBan/Index.cshtml", model);
+                return View("~/Views/DatBan/Index.cshtml", model);
             }
 
             if (model.NgayDat.Date == DateTime.Now.Date && DateTime.Now.Hour >= 21)
@@ -45,10 +63,9 @@ namespace NhaHang.Controllers.KhachHang
             _context.SaveChanges();
 
 
-            TempData["ThongBao"] = "Đặt bàn thành công!";
-
-
+            TempData["ThongBao"] = "Đặt bàn thành công";
             return RedirectToAction(nameof(Index));
+
         }
 
         [HttpGet]
@@ -70,7 +87,8 @@ namespace NhaHang.Controllers.KhachHang
                 danhSach = danhSach.Where(d => d.NgayDat.Date == ngayFilter.Value);
             }
 
-            var result = danhSach.Select(d => new {
+            var result = danhSach.Select(d => new
+            {
                 id = d.Id,
                 hoTen = d.HoTen,
                 soDienThoai = d.SoDienThoai,

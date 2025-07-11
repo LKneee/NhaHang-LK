@@ -83,7 +83,7 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             order.TongTien += tongTienMoi;
             _context.SaveChanges();
 
-            return Ok(new { message = "Đặt món thành công!" });
+            return Ok(new { message = "Đặt món thành công" });
         }
 
     }

@@ -1,9 +1,10 @@
 ﻿@model NhaHang.Models.DatBan
-<link rel="stylesheet" href="~/css/KhachHang/DatBan.css?v=100" />
+@using System.Text.Json
+<link rel="stylesheet" href="~/css/KhachHang/DatBan.css" />
+<link rel="stylesheet" href="~/css/ThongBao/ThongBao.css" />
 @{
     ViewData["Title"] = "Đặt Bàn";
 }
-
 
 <h1>Đặt Bàn</h1>
 
@@ -43,42 +44,35 @@
 </div>
 
 <div class="form-wrapper">
-    @if (TempData["ThongBao"] != null)
-    {
-        <div class="alert alert-success text-center">
-            @TempData["ThongBao"]
-        </div>
-    }
 
     <form asp-action="Index" asp-controller="DatBan" method="post" id="formDatBan">
         <div class="form-group">
-            <label asp-for="HoTen"></label>
+            <label asp-for="HoTen"> Họ Tên </label>
             <input asp-for="HoTen" class="form-control" />
             <span asp-validation-for="HoTen" class="error-message"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="SoDienThoai"></label>
+            <label asp-for="SoDienThoai">Số Điện Thoại</label>
             <input asp-for="SoDienThoai" class="form-control" />
             <span asp-validation-for="SoDienThoai" class="error-message"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="NgayDat"></label>
-            <input asp-for="NgayDat" type="date" class="form-control" id="NgayDat" />
+            <label asp-for="NgayDat">Ngày Đặt </label>
+            <input name="NgayDat" type="date" class="form-control" id="NgayDat" />
             <span asp-validation-for="NgayDat" class="error-message"></span>
             <p id="thongBao" class="error-message"></p>
         </div>
 
         <div class="form-group">
-            <label asp-for="GioNhanBan"></label>
+            <label asp-for="GioNhanBan">Giờ Nhận Bàn</label>
             <select asp-for="GioNhanBan" class="form-control" id="gioNhanBan"></select>
-            <span class="clock-icon">🕒</span>
             <span asp-validation-for="GioNhanBan" class="error-message"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="LoaiTiec"></label>
+            <label asp-for="LoaiTiec">Loại Tiệc</label>
             <select asp-for="LoaiTiec" class="form-control">
                 <option value="">--Chọn loại tiệc--</option>
                 <option value="Sinh Nhật">Sinh Nhật</option>
@@ -90,7 +84,7 @@
         </div>
 
         <div class="form-group">
-            <label asp-for="SoNguoi"></label>
+            <label asp-for="SoNguoi">Số Người</label>
             <input asp-for="SoNguoi" type="number" class="form-control" min="1" />
             <span asp-validation-for="SoNguoi" class="error-message"></span>
         </div>
@@ -99,10 +93,32 @@
     </form>
 </div>
 
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-
+    <script src="~/ThongBao/ThongBao.js"></script>
     <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const ngayInput = document.getElementById('NgayDat');
+            if (ngayInput && !ngayInput.value) {
+                const today = new Date();
+                const yyyy = today.getFullYear();
+                const mm = String(today.getMonth() + 1).padStart(2, '0');
+                const dd = String(today.getDate()).padStart(2, '0');
+                ngayInput.value = `${yyyy}-${mm}-${dd}`; 
+            }
+        });
+
+        @if (TempData["ThongBao"] != null)
+        {
+            var messageJson = JsonSerializer.Serialize(TempData["ThongBao"]);
+            <text>
+                setTimeout(function () {
+                    ThongBao(@Html.Raw(messageJson));
+                }, 100);
+            </text>
+        }      
+
         function generateTimeOptions() {
             const select = document.getElementById('gioNhanBan');
             let start = 9 * 60;
@@ -141,5 +157,6 @@
                 document.getElementById('thongBao').textContent = "";
             }
         });
+
     </script>
 }

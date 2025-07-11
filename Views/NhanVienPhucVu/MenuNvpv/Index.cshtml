@@ -279,17 +279,12 @@
     }
 
     window.onload = function () {
-        // Phục hồi phiếu
         const savedPhieu = localStorage.getItem("phieu");
         if (savedPhieu) {
             phieu = JSON.parse(savedPhieu);
             renderPhieu();
-        }
-
-        // Loại order
-        document.getElementById("orderType").addEventListener("change", renderPhieu);
-
-        // Chọn món
+        }     
+        document.getElementById("orderType").addEventListener("change", renderPhieu);      
         document.querySelectorAll('.nut-chon').forEach(btn => {
             btn.addEventListener('click', function () {
                 const ten = this.getAttribute('data-ten');
@@ -306,13 +301,8 @@
             });
         });
 
-
-
-
-        // Tải mặc định tất cả
         loadMenuList(currentCategory);
 
-        // Cập nhật tự động theo danh mục đang chọn
         setInterval(() => {
             loadMenuList(currentCategory);
         }, 3000);
