@@ -12,16 +12,20 @@
 
     <div id="categories-fixed">
         <div class="btn-group-vertical">
-            <a href="/MenuNvb" class="btn active">Tất Cả</a>
-            <a href="/MenuNvb/HaiSan" class="btn">Hải Sản</a>
-            <a href="/MenuNvb/Ga" class="btn">Gà</a>
-            <a href="/MenuNvb/Bo" class="btn">Bò</a>
-            <a href="/MenuNvb/Salad" class="btn">Salad</a>
-            <a href="/MenuNvb/TrangMieng" class="btn">Tráng Miệng</a>
+            <button class="btn btn-secondary category-btn" data-category="tatca">Tất Cả</button>
+            <button class="btn btn-primary category-btn" data-category="salad">Salad</button>
+            <button class="btn btn-primary category-btn" data-category="haisan">Hải Sản</button>
+            <button class="btn btn-primary category-btn" data-category="ga">Gà</button>
+            <button class="btn btn-primary category-btn" data-category="bo">Bò</button>
+            <button class="btn btn-primary category-btn" data-category="trangmieng">Tráng Miệng</button>
+            <button class="btn btn-primary category-btn" data-category="nuoc">Nước</button>
+            <button class="btn btn-primary category-btn" data-category="nuocep">Nước Ép</button>
+            <button class="btn btn-primary category-btn" data-category="sinhto">Sinh Tố</button>
+            <button class="btn btn-primary category-btn" data-category="ruouvangtrang">Rượu Vang Trắng </button>
+            <button class="btn btn-primary category-btn" data-category="ruouvangdo">Rượu Vang Đỏ </button>
         </div>
     </div>
 
-    <!-- DANH SÁCH MÓN ĂN -->
     <div class="row scroll-box">
         @foreach (var item in Model)
         {
@@ -52,3 +56,117 @@
         }
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        let currentCategory = "";
+
+        function loadMenuList(category = "") {
+            const url = category
+                ? `/TrangThaiMonAn/GetDanhSachMonAn/${category}`
+                : `/TrangThaiMonAn/GetDanhSachMonAn`;
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    const container = document.querySelector(".row.scroll-box");
+                    container.innerHTML = "";
+
+                    data.forEach(item => {
+                        const image = item.image ? `/Menu/${item.image}` : "/image/default.jpg";
+                        const isHetMon = item.trangThai === "Đã Hết";
+                        const selectedCon = item.trangThai === "Còn" ? "selected" : "";
+                        const selectedHet = item.trangThai === "Đã Hết" ? "selected" : "";
+
+                        const html = `
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 ${isHetMon ? "het-mon" : ""}">
+                                    <img src="${image}" class="card-img-top" alt="${item.tenMon}" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">${item.tenMon}</h5>
+                                        <p class="card-text">${item.moTa}</p>
+                                        <p class="card-text"><strong>${parseInt(item.gia).toLocaleString()}</strong> VND</p>
+                                        <form method="post" action="/TrangThaiMonAn/CapNhatTrangThai">
+                                            <input type="hidden" name="id" value="${item.id}" />
+                                            <input type="hidden" name="returnUrl" value="${location.pathname}?category=${currentCategory}" />
+                                            <div class="update-section">
+                                                <select name="trangThai" class="form-select mb-2">
+                                                    <option value="Còn" ${selectedCon}>Đã Có Món</option>
+                                                    <option value="Đã Hết" ${selectedHet}>Đã Hết Món</option>
+                                                </select>
+                                                <div class="d-flex justify-content-center">
+                                                    <button type="submit" class="btn-capnhat" title="Cập nhật trạng thái">Cập nhật</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+                        container.insertAdjacentHTML("beforeend", html);
+                    });
+                });
+        }
+
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            currentCategory = params.get("category") || "";
+            document.querySelectorAll(".category-btn").forEach(btn => {
+                const cat = btn.getAttribute("data-category");
+                if ((currentCategory === "" && cat === "tatca") || cat === currentCategory) {
+                    btn.classList.add("active");
+                } else {
+                    btn.classList.remove("active");
+                }
+
+                btn.addEventListener("click", function () {
+                    document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+                    this.classList.add("active");
+
+                    const category = this.getAttribute("data-category");
+                    currentCategory = category === "tatca" ? "" : category;
+
+                    const newUrl = currentCategory === ""
+                        ? "/TrangThaiMonAn"
+                        : `/TrangThaiMonAn?category=${currentCategory}`;
+                    window.history.pushState({}, "", newUrl);
+
+                    loadMenuList(currentCategory);
+                });
+            });
+
+            loadMenuList(currentCategory);
+
+            document.addEventListener("submit", function (e) {
+                if (e.target && e.target.matches("form")) {
+                    e.preventDefault();
+
+                    const form = e.target;
+                    const id = form.querySelector("input[name='id']").value;
+                    const trangThai = form.querySelector("select[name='trangThai']").value;
+
+                    fetch("/TrangThaiMonAn/CapNhatTrangThai", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: new URLSearchParams({
+                            id,
+                            trangThai
+                        })
+                    }).then(() => {
+                        const card = form.closest(".card");
+
+                        if (trangThai === "Đã Hết") {
+                            card.classList.add("het-mon");
+                        } else {
+                            card.classList.remove("het-mon");
+                        }
+                    });
+                }
+            });
+
+        };
+
+    </script>
+}

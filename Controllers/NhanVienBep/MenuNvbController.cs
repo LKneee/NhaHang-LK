@@ -27,49 +27,57 @@ namespace NhaHang.Controllers.NhanVienBep
             return View("Views/NhanVienBep/TrangThaiMonAn/Index.cshtml", await menu.ToListAsync());
         }
 
-        [Route("MenuNvb/HaiSan")]
-        public async Task<IActionResult> HaiSan()
+        [HttpGet]
+        [Route("MenuNvb/GetDanhSachMonAn")]
+        public IActionResult GetDanhSachMonAn()
         {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 1)
-                .ToListAsync();
-            return View("Views/NhanVienBep/TrangThaiMonAn/Index.cshtml", items);
+            var danhSachMon = _context.Menu
+                .Select(m => new {
+                    id = m.Id,
+                    tenMon = m.TenMon,
+                    moTa = m.MoTa,
+                    gia = m.Gia,
+                    image = m.Image,
+                    trangThai = m.TrangThai
+                })
+                .ToList();
+
+            return Json(danhSachMon);
         }
 
-        [Route("MenuNvb/Ga")]
-        public async Task<IActionResult> Ga()
+        [HttpGet]
+        [Route("MenuNvb/GetDanhSachMonAn/{category}")]
+        public IActionResult GetDanhSachMonAnTheoLoai(string category)
         {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 2)
-                .ToListAsync();
-            return View("Views/NhanVienBep/TrangThaiMonAn/Index.cshtml", items);
-        }
+            int? categoryId = category.ToLower() switch
+            {
+                "salad" => 1,
+                "haisan" => 2,
+                "ga" => 3,
+                "bo" => 4,
+                "trangmieng" => 5,
+                "nuoc" => 6,
+                "nuocep" => 7,
+                "sinhto" => 8,
+                "ruouvangtrang" => 9,
+                "ruouvangdo" => 10,
+                _ => null
+            };
 
-        [Route("MenuNvb/Bo")]
-        public async Task<IActionResult> Bo()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 3)
-                .ToListAsync();
-            return View("Views/NhanVienBep/TrangThaiMonAn/Index.cshtml", items);
-        }
+            var query = _context.Menu.AsQueryable();
+            if (categoryId.HasValue)
+                query = query.Where(m => m.CategoryId == categoryId);
 
-        [Route("MenuNvb/Salad")]
-        public async Task<IActionResult> Salad()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 4)
-                .ToListAsync();
-            return View("Views/NhanVienBep/TrangThaiMonAn/Index.cshtml", items);
-        }
+            var danhSach = query.Select(m => new {
+                id = m.Id,
+                tenMon = m.TenMon,
+                moTa = m.MoTa,
+                gia = m.Gia,
+                image = m.Image,
+                trangThai = m.TrangThai
+            }).ToList();
 
-        [Route("MenuNvb/TrangMieng")]
-        public async Task<IActionResult> TrangMieng()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 5)
-                .ToListAsync();
-            return View("Views/NhanVienBep/TrangThaiMonAn/Index.cshtml", items);
+            return Json(danhSach);
         }
     }
 }
