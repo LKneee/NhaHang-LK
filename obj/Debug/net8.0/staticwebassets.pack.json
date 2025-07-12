@@ -5,8 +5,32 @@
       "PackagePath": "staticwebassets\\NhaHang.bundle.scp.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\alba.jpg",
+      "PackagePath": "staticwebassets\\Menu\\alba.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\banhmochi.jpg",
+      "PackagePath": "staticwebassets\\Menu\\banhmochi.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\bosotvang.jpg",
       "PackagePath": "staticwebassets\\Menu\\bosotvang.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\boxaobonghe.jpg",
+      "PackagePath": "staticwebassets\\Menu\\boxaobonghe.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\boxaobongthienly.jpg",
+      "PackagePath": "staticwebassets\\Menu\\boxaobongthienly.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\brancottdo.jpg",
+      "PackagePath": "staticwebassets\\Menu\\brancottdo.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\brancotttrang.jpg",
+      "PackagePath": "staticwebassets\\Menu\\brancotttrang.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\cahoinuongbotoi.jpg",
@@ -21,12 +45,44 @@
       "PackagePath": "staticwebassets\\Menu\\cahoisotchanhday.jpg"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\canhgahatsen.jpg",
+      "PackagePath": "staticwebassets\\Menu\\canhgahatsen.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\carolinareserva.jpg",
+      "PackagePath": "staticwebassets\\Menu\\carolinareserva.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\chococake.jpg",
       "PackagePath": "staticwebassets\\Menu\\chococake.jpg"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\comgasotme.jpg",
+      "PackagePath": "staticwebassets\\Menu\\comgasotme.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\comxaobo.jpg",
+      "PackagePath": "staticwebassets\\Menu\\comxaobo.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\galuocnuocdua.jpg",
+      "PackagePath": "staticwebassets\\Menu\\galuocnuocdua.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\ganautieu.jpg",
+      "PackagePath": "staticwebassets\\Menu\\ganautieu.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\ganuongcomlam.jpg",
       "PackagePath": "staticwebassets\\Menu\\ganuongcomlam.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\ghehapsa.jpg",
+      "PackagePath": "staticwebassets\\Menu\\ghehapsa.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\goigabapcai.jpg",
+      "PackagePath": "staticwebassets\\Menu\\goigabapcai.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\kem.jpg",
@@ -37,8 +93,116 @@
       "PackagePath": "staticwebassets\\Menu\\lavie.jpg"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\mixaobo.jpg",
+      "PackagePath": "staticwebassets\\Menu\\mixaobo.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\muctrunghap.jpg",
+      "PackagePath": "staticwebassets\\Menu\\muctrunghap.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\ngheuhapthai.jpg",
+      "PackagePath": "staticwebassets\\Menu\\ngheuhapthai.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\nuixaobo.jpg",
+      "PackagePath": "staticwebassets\\Menu\\nuixaobo.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\nuocepcam.jpg",
+      "PackagePath": "staticwebassets\\Menu\\nuocepcam.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\nuocepduahau.jpg",
+      "PackagePath": "staticwebassets\\Menu\\nuocepduahau.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\nuocepluu.jpg",
+      "PackagePath": "staticwebassets\\Menu\\nuocepluu.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\nuoceptao.jpg",
+      "PackagePath": "staticwebassets\\Menu\\nuoceptao.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\nuocepthom.jpg",
+      "PackagePath": "staticwebassets\\Menu\\nuocepthom.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\nuocepxoai.jpg",
+      "PackagePath": "staticwebassets\\Menu\\nuocepxoai.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\ochuonghapsa.jpg",
+      "PackagePath": "staticwebassets\\Menu\\ochuonghapsa.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\panna.jpg",
+      "PackagePath": "staticwebassets\\Menu\\panna.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\pinotgrigio.jpg",
+      "PackagePath": "staticwebassets\\Menu\\pinotgrigio.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\pinotnoir.jpg",
+      "PackagePath": "staticwebassets\\Menu\\pinotnoir.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\pudding.jpg",
+      "PackagePath": "staticwebassets\\Menu\\pudding.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladcachua.jpg",
+      "PackagePath": "staticwebassets\\Menu\\saladcachua.jpg"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladcahoi.jpg",
       "PackagePath": "staticwebassets\\Menu\\saladcahoi.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladga.jpg",
+      "PackagePath": "staticwebassets\\Menu\\saladga.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladhaisan.jpg",
+      "PackagePath": "staticwebassets\\Menu\\saladhaisan.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladrocket.jpg",
+      "PackagePath": "staticwebassets\\Menu\\saladrocket.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\saladtrungga.jpg",
+      "PackagePath": "staticwebassets\\Menu\\saladtrungga.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\sanpellegrino.jpg",
+      "PackagePath": "staticwebassets\\Menu\\sanpellegrino.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\sinhtobo.jpg",
+      "PackagePath": "staticwebassets\\Menu\\sinhtobo.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\sinhtochuoi.jpg",
+      "PackagePath": "staticwebassets\\Menu\\sinhtochuoi.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\sinhtodau.jpg",
+      "PackagePath": "staticwebassets\\Menu\\sinhtodau.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\sinhtomangcau.jpg",
+      "PackagePath": "staticwebassets\\Menu\\sinhtomangcau.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\sinhtomit.jpg",
+      "PackagePath": "staticwebassets\\Menu\\sinhtomit.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\sinhtoxoai.jpg",
+      "PackagePath": "staticwebassets\\Menu\\sinhtoxoai.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\tira.jpg",
@@ -51,6 +215,10 @@
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\tomsotthai.jpg",
       "PackagePath": "staticwebassets\\Menu\\tomsotthai.jpg"
+    },
+    {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\Menu\\twinisland.jpg",
+      "PackagePath": "staticwebassets\\Menu\\twinisland.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\ThongBao\\ThongBao.js",

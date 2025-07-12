@@ -30,69 +30,6 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             return View("Views/NhanVienPhucVu/MenuNvpv/Index.cshtml", await menu.ToListAsync());
         }
 
-        [Route("MenuNvpv/HaiSan")]
-        public async Task<IActionResult> HaiSan()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 1)
-                .ToListAsync();
-            return View("Views/NhanVienPhucVu/MenuNvpv/Index.cshtml", items);
-        }
-
-        [Route("MenuNvpv/Ga")]
-        public async Task<IActionResult> Ga()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 2)
-                .ToListAsync();
-            return View("Views/NhanVienPhucVu/MenuNvpv/Index.cshtml", items);
-        }
-
-        [Route("MenuNvpv/Bo")]
-        public async Task<IActionResult> Bo()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 3)
-                .ToListAsync();
-            return View("Views/NhanVienPhucVu/MenuNvpv/Index.cshtml", items);
-        }
-
-        [Route("MenuNvpv/Salad")]
-        public async Task<IActionResult> Salad()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 4)
-                .ToListAsync();
-            return View("Views/NhanVienPhucVu/MenuNvpv/Index.cshtml", items);
-        }
-
-        [Route("MenuNvpv/TrangMieng")]
-        public async Task<IActionResult> TrangMieng()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 5)
-                .ToListAsync();
-            return View("Views/NhanVienPhucVu/MenuNvpv/Index.cshtml", items);
-        }
-
-        //Chi Tiet
-        [Route("MenuNvpv/{tenMonAn}/ChiTiet")]
-        public async Task<IActionResult> ChiTiet(string tenMonAn)
-        {
-            if (string.IsNullOrEmpty(tenMonAn))
-                return NotFound();
-
-            var monAn = await _context.Menu
-                .FirstOrDefaultAsync(m => m.TenMon.Replace(" ", "").ToLower() == tenMonAn.ToLower());
-
-            if (monAn == null)
-            {
-                return NotFound();
-            }
-
-            return View("Views/NhanVienPhucVu/MenuNvpv/ChiTiet.cshtml", monAn);
-        }
-
         [HttpGet]
         [Route("MenuNvpv/GetDanhSachMonAn")]
         public IActionResult GetDanhSachMonAn()
@@ -117,11 +54,16 @@ namespace NhaHang.Controllers.NhanVienPhucVu
         {
             int? categoryId = category.ToLower() switch
             {
-                "haisan" => 1,
-                "ga" => 2,
-                "bo" => 3,
-                "salad" => 4,
+                "salad" => 1,
+                "haisan" => 2,
+                "ga" => 3,
+                "bo" => 4,
                 "trangmieng" => 5,
+                "nuoc" => 6,
+                "nuocep" => 7,
+                "sinhto" => 8,
+                "ruouvangtrang" => 9,
+                "ruouvangdo" => 10,
                 _ => null
             };
 
@@ -141,7 +83,23 @@ namespace NhaHang.Controllers.NhanVienPhucVu
             return Json(danhSach);
         }
 
+        //Chi Tiet
+        [Route("MenuNvpv/{tenMonAn}/ChiTiet")]
+        public async Task<IActionResult> ChiTiet(string tenMonAn)
+        {
+            if (string.IsNullOrEmpty(tenMonAn))
+                return NotFound();
 
+            var monAn = await _context.Menu
+                .FirstOrDefaultAsync(m => m.TenMon.Replace(" ", "").ToLower() == tenMonAn.ToLower());
+
+            if (monAn == null)
+            {
+                return NotFound();
+            }
+
+            return View("Views/NhanVienPhucVu/MenuNvpv/ChiTiet.cshtml", monAn);
+        }
 
         public async Task<IActionResult> GiamGia()
         {
