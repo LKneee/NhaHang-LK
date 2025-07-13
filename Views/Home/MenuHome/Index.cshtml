@@ -21,7 +21,6 @@
         </div>
     </div>
 
-    <!-- Danh sách món ăn -->
     <div class="col-md-10 offset-md-2">
         <div class="row scroll-box" id="menu-list">
           
@@ -58,7 +57,7 @@
                                             <h5 class="card-title" style="font-size: 24px;">${pro.tenMon}</h5>
                                         </a>
                                         <p class="card-text">${pro.moTa}</p>
-                                        <p class="card-text text-primary fw-bold" style="font-size: 20px;">${parseInt(pro.gia).toLocaleString()} VND</p>
+                                        <p class="card-text fw-bold" style="font-size: 20px;">${parseInt(pro.gia).toLocaleString()} VND</p>
                                     </div>
                                 </div>
                             </div>
@@ -69,14 +68,32 @@
     }
 
     window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        currentCategory = params.get("category") || "";
+
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.addEventListener('click', function () {
                 const category = this.getAttribute('data-category');
                 currentCategory = category === "tatca" ? "" : category;
                 loadMenuList(currentCategory);
+                const newUrl = currentCategory
+                    ? `/MenuHome?category=${currentCategory}`
+                    : `/MenuHome`;
+                window.history.pushState({}, "", newUrl);
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
             });
         });
 
-        loadMenuList();
+        loadMenuList(currentCategory);
+
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            const cat = btn.getAttribute('data-category');
+            if ((currentCategory === "" && cat === "tatca") || cat === currentCategory) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
     };
 </script>

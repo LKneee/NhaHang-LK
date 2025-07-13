@@ -49,23 +49,7 @@
 
 
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-items">
-                            <form asp-area="" asp-controller="Search" asp-action="Index" method="get" class="search-box">
-                                <button type="submit" class="search-button">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                                <input type="text" name="query" placeholder="Tìm kiếm..." class="search-input" />
-
-                            </form>
-                        </li>
-
-                        <li class="nav-items">
-                            <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index">
-                                <i class="fas fa-shopping-cart"></i>
-                            </a>
-                        </li>
-
-                        <li class="nav-items">
+                        <ul class="navbar-nav custom-user-nav">
                             @if (HttpContextAccessor.HttpContext.Session.GetString("UserEmail") != null)
                             {
                                 var userImage = HttpContextAccessor.HttpContext.Session.GetString("UserImage");
@@ -73,20 +57,20 @@
                                 if (!string.IsNullOrEmpty(userImage))
                                 {
                                     <a class="nav-link" asp-area="" asp-controller="Profile" asp-action="Index">
-                                        <img src="@userImage" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" />
+                                        <img src="@userImage" alt="Avatar" class="user-avatar-img" />
                                     </a>
                                 }
                                 else
                                 {
                                     <a class="nav-link" asp-area="" asp-controller="Profile" asp-action="Index">
-                                        <i class="fa-regular fa-circle-user"></i>
+                                        <i class="fa-regular fa-circle-user user-avatar-icon"></i>
                                     </a>
                                 }
                             }
                             else
                             {
                                 <a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Login">
-                                    <i class="fa-regular fa-circle-user"></i>
+                                    <i class="fa-regular fa-circle-user user-avatar-icon"></i>
                                 </a>
                             }
                         </li>

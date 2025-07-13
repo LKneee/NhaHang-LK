@@ -49,9 +49,26 @@ body {
     filter: invert(1);
 }
 
+.nhahang-brand {
+    margin-left: 140px;
+}
+
+.user-avatar-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-avatar-icon {
+    font-size: 70px;
+    color: #D8D8D8;
+}
+
 
 @media (max-width: 768px) {
     .nhahang-brand {
+        margin-left: 40px;
         font-size: 48px;
     }
 
@@ -94,9 +111,13 @@ body {
         font-size: 20px;
     }
 
-.nav-items {
-    margin: 0 5px;
+.custom-user-nav {
+    position: absolute;
+    top: 50%; /* Giữa chiều cao navbar */
+    left: 1450px; /* Dịch sang phải theo ý bạn */
+    transform: translateY(-50%);
 }
+
 
 .navbar {
     position: fixed;
@@ -106,8 +127,8 @@ body {
 }
 
 .logo-wrapper {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     overflow: hidden;
     background-color: transparent;

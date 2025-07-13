@@ -16,8 +16,6 @@ namespace NhaHang.Controllers.KhachHang
         {
             _context = context;
         }
-
-        // Danh Muc
         public async Task<IActionResult> Index(int? categoryId)
         {
             var menu = _context.Menu.AsQueryable();
@@ -30,52 +28,59 @@ namespace NhaHang.Controllers.KhachHang
             return View("Views/KhachHang/Menu/Index.cshtml", await menu.ToListAsync());
         }
 
-        [Route("Menu/HaiSan")]
-        public async Task<IActionResult> HaiSan()
+        [HttpGet]
+        [Route("Menu/GetDanhSachMonAn")]
+        public IActionResult GetDanhSachMonAn()
         {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 1)
-                .ToListAsync();
-            return View("Views/KhachHang/Menu/Index.cshtml", items);
+            var danhSachMon = _context.Menu
+                .Select(m => new {
+                    id = m.Id,
+                    tenMon = m.TenMon,
+                    moTa = m.MoTa,
+                    gia = m.Gia,
+                    image = m.Image,
+                    trangThai = m.TrangThai
+                })
+                .ToList();
+
+            return Json(danhSachMon);
         }
 
-        [Route("Menu/Ga")]
-        public async Task<IActionResult> Ga()
+        [HttpGet]
+        [Route("Menu/GetDanhSachMonAn/{category}")]
+        public IActionResult GetDanhSachMonAnTheoLoai(string category)
         {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 2)
-                .ToListAsync();
-            return View("Views/KhachHang/Menu/Index.cshtml", items);
+            int? categoryId = category.ToLower() switch
+            {
+                "salad" => 1,
+                "haisan" => 2,
+                "ga" => 3,
+                "bo" => 4,
+                "trangmieng" => 5,
+                "nuoc" => 6,
+                "nuocep" => 7,
+                "sinhto" => 8,
+                "ruouvangtrang" => 9,
+                "ruouvangdo" => 10,
+                _ => null
+            };
+
+            var query = _context.Menu.AsQueryable();
+            if (categoryId.HasValue)
+                query = query.Where(m => m.CategoryId == categoryId);
+
+            var danhSach = query.Select(m => new {
+                id = m.Id,
+                tenMon = m.TenMon,
+                moTa = m.MoTa,
+                gia = m.Gia,
+                image = m.Image,
+                trangThai = m.TrangThai
+            }).ToList();
+
+            return Json(danhSach);
         }
 
-        [Route("Menu/Bo")]
-        public async Task<IActionResult> Bo()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 3)
-                .ToListAsync();
-            return View("Views/KhachHang/Menu/Index.cshtml", items);
-        }
-
-        [Route("Menu/Salad")]
-        public async Task<IActionResult> Salad()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 4)
-                .ToListAsync();
-            return View("Views/KhachHang/Menu/Index.cshtml", items);
-        }
-
-        [Route("Menu/TrangMieng")]
-        public async Task<IActionResult> TrangMieng()
-        {
-            var items = await _context.Menu
-                .Where(m => m.CategoryId == 5)
-                .ToListAsync();
-            return View("Views/KhachHang/Menu/Index.cshtml", items);
-        }
-
-        //Chi Tiet
         [Route("Menu/{tenMonAn}/ChiTiet")]
         public async Task<IActionResult> ChiTiet(string tenMonAn)
         {
@@ -91,40 +96,6 @@ namespace NhaHang.Controllers.KhachHang
             }
 
             return View("Views/KhachHang/Menu/ChiTiet.cshtml", monAn);
-        }
-
-
-
-
-        // GET: KhachHang/Menu/GiamGia
-        public async Task<IActionResult> GiamGia()
-        {
-            var items = await _context.Menu
-                .Where(m => m.GiamGia.HasValue && m.GiamGia > 0)
-                .ToListAsync();
-
-            return View("Views/KhachHang/Menu/GiamGia.cshtml", items);
-        }
-
-        // GET: KhachHang/Menu/SpecialDay
-        public async Task<IActionResult> SpecialDay()
-        {
-            var today = DateTime.Today;
-            var items = await _context.Menu
-                .Where(m => m.SpecialDay.HasValue && m.SpecialDay.Value.Date == today)
-                .ToListAsync();
-
-            return View("Views/KhachHang/Menu/SpecialDay.cshtml", items);
-        }
-
-        // GET: KhachHang/Menu/Combo?size=2
-        public async Task<IActionResult> Combo(int size = 2)
-        {
-            var items = await _context.Menu
-                .Where(m => m.Combo.HasValue && m.Combo == size)
-                .ToListAsync();
-
-            return View("Views/KhachHang/Menu/Combo.cshtml", items);
         }
     }
 }

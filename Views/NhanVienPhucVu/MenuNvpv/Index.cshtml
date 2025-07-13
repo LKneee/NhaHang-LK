@@ -288,7 +288,21 @@
         if (savedPhieu) {
             phieu = JSON.parse(savedPhieu);
             renderPhieu();
-        }     
+        }
+
+        const navigationEntries = performance.getEntriesByType("navigation");
+        const isReload = navigationEntries.length > 0 && navigationEntries[0].type === "reload";
+
+        if (isReload) {
+            const savedCategory = sessionStorage.getItem("selectedCategory");
+            if (savedCategory !== null) {
+                currentCategory = savedCategory;
+            }
+        } else {
+            sessionStorage.removeItem("selectedCategory");
+            currentCategory = ""; 
+        }
+
         document.getElementById("orderType").addEventListener("change", renderPhieu);      
         document.querySelectorAll('.nut-chon').forEach(btn => {
             btn.addEventListener('click', function () {
@@ -303,10 +317,22 @@
                 const category = this.getAttribute('data-category');
                 currentCategory = category === "tatca" ? "" : category;
                 loadMenuList(currentCategory);
+                sessionStorage.setItem("selectedCategory", currentCategory);
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
             });
         });
 
         loadMenuList(currentCategory);
+
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            const cat = btn.getAttribute('data-category');
+            if ((currentCategory === "" && cat === "tatca") || cat === currentCategory) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
 
         setInterval(() => {
             loadMenuList(currentCategory);

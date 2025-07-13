@@ -7,52 +7,92 @@
 <div class="row">
     <div id="categories-fixed" class="col-md-2">
         <div class="btn-group-vertical w-100">
-            <a href="/Menu" class="btn btn-secondary">Tất Cả</a>
-            <a href="/Menu/HaiSan" class="btn btn-primary">Hải Sản</a>
-            <a href="/Menu/Ga" class="btn btn-primary">Gà</a>
-            <a href="/Menu/Bo" class="btn btn-primary">Bò</a>
-            <a href="/Menu/Salad" class="btn btn-primary">Salad</a>
-            <a href="/Menu/TrangMieng" class="btn btn-primary">Tráng Miệng</a>
+            <button class="btn btn-secondary category-btn" data-category="tatca">Tất Cả</button>
+            <button class="btn btn-primary category-btn" data-category="salad">Salad</button>
+            <button class="btn btn-primary category-btn" data-category="haisan">Hải Sản</button>
+            <button class="btn btn-primary category-btn" data-category="ga">Gà</button>
+            <button class="btn btn-primary category-btn" data-category="bo">Bò</button>
+            <button class="btn btn-primary category-btn" data-category="trangmieng">Tráng Miệng</button>
+            <button class="btn btn-primary category-btn" data-category="nuoc">Nước</button>
+            <button class="btn btn-primary category-btn" data-category="nuocep">Nước Ép</button>
+            <button class="btn btn-primary category-btn" data-category="sinhto">Sinh Tố</button>
+            <button class="btn btn-primary category-btn" data-category="ruouvangtrang">Rượu Vang Trắng </button>
+            <button class="btn btn-primary category-btn" data-category="ruouvangdo">Rượu Vang Đỏ </button>
         </div>
     </div>
-
 
     <div class="col-md-10 offset-md-2">
-        <div class="row scroll-box">
-            @if (Model != null && Model.Any())
-            {
-                foreach (var pro in Model)
-                {
-                    var tenMon = pro.TenMon.Replace(" ", "");
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-lg">
-                            <a href="@Url.Action("ChiTiet", "Menu", new { tenMonAn = tenMon })">
-                                @if (!string.IsNullOrEmpty(pro.Image))
-                                {
-                                    <img src="~/Menu/@pro.Image" class="card-img-top" alt="@pro.TenMon" style="height: 300px; object-fit: cover;" />
-                                }
-                                else
-                                {
-                                    <img src="~/image/default.jpg" class="card-img-top" alt="No Image" style="height: 300px; object-fit: cover;" />
-                                }
-                            </a>
-                            <div class="card-body">
-                                <a href="@Url.Action("ChiTiet", "Menu", new { tenMonAn = tenMon })" class="text-decoration-none text-dark">
-                                    <h5 class="card-title" style="font-size: 24px;">@pro.TenMon</h5>
-                                </a>
-                                <p class="card-text">@pro.MoTa</p>
-                                <p class="card-text text-primary fw-bold" style="font-size: 20px;">@pro.Gia.ToString("N0") VND</p>
-                            </div>
-                        </div>
-                    </div>
-                }
-            }
-            else
-            {
-                <p>Không có dữ liệu món ăn.</p>
-            }
+        <div class="row scroll-box" id="menu-list">
         </div>
     </div>
-
-
 </div>
+
+<script>
+    let currentCategory = "";
+
+    function loadMenuList(category = "") {
+        const url = category
+            ? `/Menu/GetDanhSachMonAn/${category}`
+            : '/Menu/GetDanhSachMonAn';
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById("menu-list");
+                list.innerHTML = "";
+
+                data.forEach(pro => {
+                    const tenMon = pro.tenMon.replace(/\s+/g, '');
+                    const image = pro.image ? `/Menu/${pro.image}` : "/image/default.jpg";
+
+                    const card = `
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100 shadow-lg">
+                                            <a href="/Menu/${tenMon}/ChiTiet">
+                                            <img src="${image}" class="card-img-top" alt="${pro.tenMon}" style="height: 300px; object-fit: cover;" />
+                                        </a>
+                                        <div class="card-body">
+                                                <a href="/Menu/${tenMon}/ChiTiet" class="text-decoration-none text-dark">
+                                                <h5 class="card-title" style="font-size: 24px;">${pro.tenMon}</h5>
+                                            </a>
+                                            <p class="card-text">${pro.moTa}</p>
+                                            <p class="card-text text-primary fw-bold" style="font-size: 20px;">${parseInt(pro.gia).toLocaleString()} VND</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                    list.insertAdjacentHTML('beforeend', card);
+                });
+            });
+    }
+
+    window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        currentCategory = params.get("category") || "";
+
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const category = this.getAttribute('data-category');
+                currentCategory = category === "tatca" ? "" : category;
+                loadMenuList(currentCategory);
+                const newUrl = currentCategory
+                    ? `/Menu?category=${currentCategory}`
+                    : `/Menu`;
+                window.history.pushState({}, "", newUrl);
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        loadMenuList(currentCategory);
+
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            const cat = btn.getAttribute('data-category');
+            if ((currentCategory === "" && cat === "tatca") || cat === currentCategory) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    };
+</script>
