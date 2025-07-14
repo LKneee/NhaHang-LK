@@ -39,7 +39,7 @@ namespace NhaHang.Controllers.Profile
         }
 
         [HttpPost]
-        public async Task<IActionResult> UploadImage(IFormFile image)
+        public async Task<IActionResult> ThemAnh(IFormFile image)
         {
             var email = HttpContext.Session.GetString("UserEmail");
 
@@ -81,5 +81,37 @@ namespace NhaHang.Controllers.Profile
 
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public IActionResult XoaAnh()
+        {
+            var email = HttpContext.Session.GetString("UserEmail");
+
+            if (string.IsNullOrEmpty(email))
+                return RedirectToAction("Login", "Auth");
+
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
+                return RedirectToAction("Login", "Auth");
+
+            if (!string.IsNullOrEmpty(user.Image))
+            {
+                var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", user.Image.TrimStart('/'));
+                if (System.IO.File.Exists(imagePath))
+                {
+                    System.IO.File.Delete(imagePath); 
+                }
+
+                user.Image = null; 
+                _context.Users.Update(user);
+                _context.SaveChanges();
+
+                HttpContext.Session.Remove("UserImage"); 
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

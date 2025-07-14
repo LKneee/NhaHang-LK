@@ -146,7 +146,23 @@ body {
         width: 200px;
         text-align: center;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
     }
+
+        .featured-items .item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(144, 238, 144, 0.2);
+            transform: skewX(-20deg);
+            transition: left 0.4s ease;
+            pointer-events: none;
+        }
+
 
         .featured-items .item img {
             width: 100%;
@@ -156,8 +172,33 @@ body {
             margin-bottom: 10px;
         }
 
+        .featured-items .item:hover img {
+            transform: scale(1.08);
+            transition: transform 0.4s ease;
+        }
 
         .featured-items .item:hover {
             background-color: #f1dab0;
             transform: scale(1.05);
+        }
+
+            .featured-items .item:hover::after {
+                left: 100%;
+            }
+
+        .featured-items .item a {
+            color: green;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 8px;
+            transition: color 0.3s;
+        }
+
+            .featured-items .item a:hover {
+                color: darkgreen;
+            }
+
+        .featured-items .item:hover a span {
+            color: #228B22;
         }

@@ -10,27 +10,27 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/KhachHang/KhachHang.css" />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-    <section class="hero-section">
-        <div class="content">
+    <section class="hero-section" data-aos="fade-down">
+        <div class="content" data-aos="zoom-in">
             <h1>Nhà Hàng LK</h1>
-            <p>Đa dạng món ăn</p>
-            <a href="/KhachHang/Menu">Xem món ngay</a>
+            <p>Đa dạng món ăn, nơi hội tụ những tinh hoa của nền ẩm thực Việt Nam</p>
+            <a href="/Home/Menu">Xem món ngay</a>
             <a asp-controller="DatBan" asp-action="Index">Đặt bàn ngay</a>
         </div>
     </section>
 
 
-    <section class="about-section">
-        <div class="about-text">
+    <section class="about-section" data-aos="fade-up">
+        <div class="about-text" data-aos="fade-right">
             <h2>Về chúng tôi</h2>
             <h3>Nhà Hàng LK</h3>
             <p>Nhà hàng LK là nơi nghệ thuật ẩm thực Việt Nam thăng hoa trong không gian sang trọng hiện đại. Chúng tôi tự hào giới thiệu những món ăn truyền thống tinh tế, kết hợp cùng các loại rượu vang và rượu mạnh nổi tiếng từ khắp nơi trên thế giới — một sự giao thoa hương vị đầy sáng tạo dành riêng cho những thực khách yêu cái đẹp và cái ngon</p>
         </div>
-        <div class="about-images">
+        <div class="about-images" data-aos="fade-left">
             <img src="~/image/h2.jpg" alt="ảnh 1" />
             <img src="~/image/h3.jpg" alt="ảnh 2" />
             <img src="~/image/h4.jpg" alt="ảnh 3" />
@@ -38,30 +38,51 @@
         </div>
     </section>
 
-    <section class="featured-section">
+    <section class="featured-section" data-aos="fade-up">
         <h2>Các Món Ăn Đặc Biệt</h2>
         <div class="featured-items">
-            <div class="item">
-                <img src="~/image/haisan.jpg" alt="Hải Sản" />
-                <a href="/MenuHome?category=haisan">Hải Sản</a>
+            <div class="item" data-aos="zoom-in" data-aos-delay="100">
+                <a href="/MenuHome?category=haisan">
+                    <img src="~/image/haisan.jpg" alt="Hải Sản" />
+                    <span>Hải Sản</span>
+                </a>
             </div>
-            <div class="item">
-                <img src="~/image/bo.jpg" alt="Món Bò" />
-                <a href="/MenuHome?category=bo">Món Bò</a>
+            <div class="item" data-aos="zoom-in" data-aos-delay="200">
+                <a href="/MenuHome?category=bo">
+                    <img src="~/image/bo.jpg" alt="Món Bò" />
+                    <span>Món Bò</span>
+                </a>
             </div>
-            <div class="item">
-                <img src="~/image/trangmieng.jpg" alt="Tráng Miệng" />
-                <a href="/MenuHome?category=trangmieng">Tráng Miệng</a>
+            <div class="item" data-aos="zoom-in" data-aos-delay="300">
+                <a href="/MenuHome?category=trangmieng">
+                    <img src="~/image/trangmieng.jpg" alt="Tráng Miệng" />
+                    <span>Tráng Miệng</span>
+                </a>
             </div>
-            <div class="item">
-                <img src="~/image/ruouvangtrang.jpg" alt="Rượu Vang Trắng" />
-                <a href="/MenuHome?category=ruouvangtrang">Rượu Vang Trắng</a>
+            <div class="item" data-aos="zoom-in" data-aos-delay="400">
+                <a href="/MenuHome?category=ruouvangtrang">
+                    <img src="~/image/ruouvangtrang.jpg" alt="Rượu Vang Trắng" />
+                    <span>Rượu Vang Trắng</span>
+                </a>
             </div>
-            <div class="item">
-                <img src="~/image/ruouvangdo.jpg" alt="Rượu Vang Đỏ" />
-                <a href="/MenuHome?category=ruouvangdo">Rượu Vang Đỏ</a>
+            <div class="item" data-aos="zoom-in" data-aos-delay="500">
+                <a href="/MenuHome?category=ruouvangdo">
+                    <img src="~/image/ruouvangdo.jpg" alt="Rượu Vang Đỏ" />
+                    <span>Rượu Vang Đỏ</span>
+                </a>
             </div>
+        </div>
     </section>
 
+
 </body>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: false
+    });
+</script>
+
 </html>

@@ -56,11 +56,12 @@
             <label asp-for="SoDienThoai">Số Điện Thoại</label>
             <input asp-for="SoDienThoai" class="form-control" />
             <span asp-validation-for="SoDienThoai" class="error-message"></span>
+            <p id="sdtError" class="error-message" style="color: red;"></p>
         </div>
 
         <div class="form-group">
             <label asp-for="NgayDat">Ngày Đặt </label>
-            <input name="NgayDat" type="date" class="form-control" id="NgayDat" />
+            <input name="NgayDat" type="date" class="form-control" id="NgayDat" min="" />
             <span asp-validation-for="NgayDat" class="error-message"></span>
             <p id="thongBao" class="error-message"></p>
         </div>
@@ -85,8 +86,9 @@
 
         <div class="form-group">
             <label asp-for="SoNguoi">Số Người</label>
-            <input asp-for="SoNguoi" type="number" class="form-control" min="1" />
+            <input asp-for="SoNguoi" type="number" class="form-control" />
             <span asp-validation-for="SoNguoi" class="error-message"></span>
+            <p id="soNguoiError" class="error-message" style="color: red;"></p>
         </div>
 
         <button type="submit" class="btn btn-primary">Xác Nhận Đặt Bàn</button>
@@ -105,9 +107,12 @@
                 const yyyy = today.getFullYear();
                 const mm = String(today.getMonth() + 1).padStart(2, '0');
                 const dd = String(today.getDate()).padStart(2, '0');
-                ngayInput.value = `${yyyy}-${mm}-${dd}`; 
+                const todayStr = `${yyyy}-${mm}-${dd}`;
+                ngayInput.value = todayStr;
+                ngayInput.min = todayStr; 
             }
         });
+
 
         @if (TempData["ThongBao"] != null)
         {
@@ -157,6 +162,59 @@
                 document.getElementById('thongBao').textContent = "";
             }
         });
+
+        const form = document.getElementById('formDatBan');
+        const soNguoiInput = document.querySelector('input[name="SoNguoi"]');
+        const soNguoiError = document.getElementById('soNguoiError');
+
+        soNguoiInput.addEventListener('input', function () {
+            const value = parseInt(this.value);
+            if (value > 100) {
+                soNguoiError.textContent = "Nhà Hàng LK chỉ nhận đặt bàn tối đa 100 người.";
+            } else {
+                soNguoiError.textContent = "";
+            }
+        });
+
+        const sdtInput = document.querySelector('input[name="SoDienThoai"]');
+        const sdtError = document.getElementById('sdtError');
+
+        sdtInput.addEventListener('input', function () {
+            const value = this.value.trim();
+
+            if (!/^\d+$/.test(value)) {
+                sdtError.textContent = "Số Điện Thoại vui lòng nhập số.";
+            } else {
+                sdtError.textContent = "";
+            }
+        });
+
+        form.addEventListener('submit', function (e) {
+            const value = parseInt(soNguoiInput.value);
+            const sdtValue = sdtInput.value.trim();
+
+            let hasError = false;
+
+            if (value > 100) {
+                soNguoiError.textContent = "Nhà Hàng LK chỉ nhận đặt bàn tối đa 100 người.";
+                hasError = true;
+            } else {
+                soNguoiError.textContent = "";
+            }
+
+            if (!/^\d+$/.test(sdtValue)) {
+                sdtError.textContent = "Số Điện Thoại vui lòng nhập số.";
+                hasError = true;
+            } else {
+                sdtError.textContent = "";
+            }
+
+            if (hasError) {
+                e.preventDefault();
+                ThongBao("Đặt Bàn Thất Bại");
+            }
+        });
+
 
     </script>
 }

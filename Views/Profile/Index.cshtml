@@ -12,21 +12,35 @@
     <link rel="stylesheet" href="~/css/Profile/Profile.css">
 </head>
 <body>
-
     <div class="Profile">
         <h2>Thông Tin Cá Nhân</h2>
 
-        @if (Model.Image != null)
-        {
-            <div>
-                <img src="@Model.Image" alt="Ảnh đại diện" />
-            </div>
-        }
+        <div id="previewContainer" class="preview-container">
+            @if (Model.Image != null)
+            {
+                <img id="previewImage" src="@Model.Image" alt="Ảnh xem trước" class="avatar-preview" />
+            }
+            else
+            {
+                <img id="previewImage" src="" alt="Ảnh xem trước" class="avatar-preview" style="display: none;" />
+            }
 
-        <form asp-controller="Profile" asp-action="UploadImage" method="post" enctype="multipart/form-data">
-            <input type="file" name="image" accept="image/*" />
-            <button type="submit" class="btn btn-success">Tải Ảnh Lên</button>
+        </div>
+
+        <form id="uploadForm" asp-controller="Profile" asp-action="ThemAnh" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" id="imageInput" accept="image/*" style="display: none;" />
+            <div class="button-group">
+                <button type="button" id="chooseButton" class="btn btn-avatar">Chọn Hình</button>
+                <button type="submit" id="uploadButton" class="btn btn-avatar" style="display: none;">Tải Ảnh Lên</button>
+            </div>
         </form>
+
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <form asp-controller="Profile" asp-action="XoaAnh" method="post" style="text-align:center; margin-top:10px;">
+                <button type="submit" class="btn btn-avatar btn-danger-custom">Xóa Ảnh</button>
+            </form>
+        }
 
         <table class="table">
             <tr><th>Họ Tên:</th><td>@Model.HoTen</td></tr>
@@ -39,5 +53,28 @@
         <a class="btn btn-primary" asp-controller="Auth" asp-action="Logout">Đăng Xuất</a>
     </div>
 
-
 </body>
+
+<script>
+    const chooseBtn = document.getElementById("chooseButton");
+    const uploadBtn = document.getElementById("uploadButton");
+    const inputFile = document.getElementById("imageInput");
+    const previewImg = document.getElementById("previewImage");
+
+    chooseBtn.addEventListener("click", () => {
+        inputFile.click();
+    });
+
+    inputFile.addEventListener("change", () => {
+        const file = inputFile.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                previewImg.src = e.target.result;
+                previewImg.style.display = "block";
+            };
+            reader.readAsDataURL(file);
+            uploadBtn.style.display = "inline-block";
+        }
+    });
+</script>
