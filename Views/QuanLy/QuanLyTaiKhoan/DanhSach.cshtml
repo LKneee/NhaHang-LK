@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<Users>
 
 <div class="tai-khoan-wrapper">
-
-    <!-- Bên trái: Không hoạt động -->
     <div class="tai-khoan-cot">
         <h4>Không Hoạt Động</h4>
         @foreach (var user in Model.Where(u => u.TrangThai != "Đang Hoạt Động"))
@@ -20,18 +18,18 @@
                     <a href="/TaiKhoanQuanLy/ChinhSuaTaiKhoanView?id=@user.Id" class="btn btn-sm btn-warning">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <form asp-action="XoaTaiKhoan" method="post" onsubmit="return confirm('Bạn chắc chắn muốn xóa?');">
+                    <form asp-action="XoaTaiKhoan" method="post">
                         <input type="hidden" name="id" value="@user.Id" />
-                        <button type="submit" class="btn btn-sm btn-danger">
+                        <button type="button" class="btn btn-sm btn-danger" onclick="hienXacNhanXoa(this)">
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
+
                 </div>
             </div>
         }
     </div>
 
-    <!-- Bên phải: Hoạt động -->
     <div class="tai-khoan-cot">
         <h4>Hoạt Động</h4>
         @foreach (var user in Model.Where(u => u.TrangThai == "Đang Hoạt Động"))
@@ -49,15 +47,15 @@
                     <a href="/TaiKhoanQuanLy/ChinhSuaTaiKhoanView?id=@user.Id" class="btn btn-sm btn-warning">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <form asp-action="XoaTaiKhoan" method="post" onsubmit="return confirm('Bạn chắc chắn muốn xóa?');">
+                    <form asp-action="XoaTaiKhoan" method="post">
                         <input type="hidden" name="id" value="@user.Id" />
-                        <button type="submit" class="btn btn-sm btn-danger">
+                        <button type="button" class="btn btn-sm btn-danger" onclick="hienXacNhanXoa(this)">
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
+
                 </div>
             </div>
         }
     </div>
-
 </div>

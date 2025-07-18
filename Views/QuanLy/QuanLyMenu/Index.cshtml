@@ -1,9 +1,12 @@
 ﻿@model IEnumerable<NhaHang.Models.Menu>
+@using System.Text.Json
 @{
     ViewData["Title"] = "Quản Lý Menu";
 }
 
 <link rel="stylesheet" href="~/css/QuanLy/QuanLyMenu.css" />
+<link rel="stylesheet" href="~/css/ThongBao/ThongBao.css" />
+
 <h2>Quản lý Menu</h2>
 <div class="button-wrapper">
     <a asp-action="Create" class="btn-create">Thêm món mới</a>
@@ -39,8 +42,8 @@
                                 <i class="fas fa-edit"></i>
                             </button>
                         </form>
-                        <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Xác nhận xóa?');">
-                            <button type="submit" class="btn-action-circle btn-delete">
+                        <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="form-xoa">
+                            <button type="button" class="btn-action-circle btn-delete" onclick="hienXacNhan(this)">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </form>
@@ -51,3 +54,53 @@
         }
     </tbody>
 </table>
+
+<div id="thongbaoXacNhan" class="thongbao-xacnhan" style="display: none;">
+    <span class="message">Bạn có chắc chắn muốn xóa?</span>
+    <div class="xacnhan-buttons">
+        <button id="xacNhanCo" class="btn btn-danger">Có</button>
+        <button id="xacNhanKhong" class="btn btn-secondary">Không</button>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/ThongBao/ThongBao.js"></script>
+
+    <script>
+
+        let formCanXoa = null;
+
+        function hienXacNhan(button) {
+            formCanXoa = button.closest("form");
+            const dialog = document.getElementById("thongbaoXacNhan");
+            dialog.classList.add("show");
+            dialog.style.display = "flex";
+        }
+
+        document.getElementById("xacNhanCo").addEventListener("click", () => {
+            if (formCanXoa) formCanXoa.submit();
+        });
+
+        document.getElementById("xacNhanKhong").addEventListener("click", () => {
+            const dialog = document.getElementById("thongbaoXacNhan");
+            dialog.classList.remove("show");
+            setTimeout(() => {
+                dialog.style.display = "none";
+            }, 400);
+        });
+
+
+        @if (TempData["ThongBao"] != null)
+        {
+            var messageJson = JsonSerializer.Serialize(TempData["ThongBao"]);
+            <text>
+                setTimeout(function () {
+                    ThongBao(@Html.Raw(messageJson));
+                }, 100);
+            </text>
+        }
+    </script>
+}
+
+

@@ -13,3 +13,63 @@
     font-weight: bold;
     font-size: 16px;
 }
+
+/*
+   quan ly menu
+*/
+#thongbaoXacNhan {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: top 0.4s ease;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+    #thongbaoXacNhan.show {
+        top: 30px;
+    }
+
+    #thongbaoXacNhan .xacnhan-buttons {
+        margin-top: 10px;
+        display: flex;
+        gap: 12px;
+    }
+
+        #thongbaoXacNhan .xacnhan-buttons .btn {
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color:white;
+            color:black;
+        }
+
+#xacNhanCo.btn.btn-danger {
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
+    color: white !important;
+}
+
+    #xacNhanCo.btn.btn-danger:hover {
+        background-color: #c0392b !important;
+        border-color: #c0392b !important;
+    }
+
+
+#xacNhanKhong.btn.btn-secondary:hover {
+    background-color:lightgreen !important;
+    border-color: #c0392b !important;
+}
+

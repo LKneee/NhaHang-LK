@@ -17,7 +17,6 @@ namespace NhaHang.Controllers.QuanLy
             _passwordHasher = new PasswordHasher<Users>();
         }
 
-
         public IActionResult Index()
         {
             return View("~/Views/QuanLy/QuanLyTaiKhoan/Index.cshtml");
@@ -66,6 +65,8 @@ namespace NhaHang.Controllers.QuanLy
             {
                 _context.Users.Add(user);
                 _context.SaveChanges();
+
+                TempData["ThongBao"] = "Thêm Tài Khoản Thành Công";
                 return RedirectToAction("Index");
             }
 
@@ -97,6 +98,8 @@ namespace NhaHang.Controllers.QuanLy
             {
                 _context.Users.Remove(user);
                 _context.SaveChanges();
+
+                TempData["ThongBao"] = "Xóa Tài Khoản Thành Công";
             }
 
             return RedirectToAction("Index");
@@ -122,6 +125,7 @@ namespace NhaHang.Controllers.QuanLy
             }
 
             _context.SaveChanges();
+            TempData["ThongBao"] = " Chỉnh Sửa Tài Khoản Thành Công";
             return RedirectToAction("Index");
         }
 

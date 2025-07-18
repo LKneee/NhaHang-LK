@@ -35,6 +35,8 @@ namespace NhaHang.Controllers.QuanLy
             {
                 _context.Menu.Add(menu);
                 _context.SaveChanges();
+
+                TempData["ThongBao"] = "Thêm Món Thành Công";
                 return RedirectToAction("Index");
             }
             return View("~/Views/QuanLy/QuanLyMenu/MenuForm.cshtml", menu);
@@ -56,6 +58,8 @@ namespace NhaHang.Controllers.QuanLy
             {
                 _context.Menu.Update(menu);
                 _context.SaveChanges();
+
+                TempData["ThongBao"] = "Sửa Món Thành Công";
                 return RedirectToAction("Index");
             }
             return View("~/Views/QuanLy/QuanLyMenu/MenuForm.cshtml", menu);
@@ -69,6 +73,8 @@ namespace NhaHang.Controllers.QuanLy
             {
                 _context.Menu.Remove(menu);
                 _context.SaveChanges();
+
+                TempData["ThongBao"] = "Xóa Món Thành Công";
             }
             return RedirectToAction("Index");
         }
