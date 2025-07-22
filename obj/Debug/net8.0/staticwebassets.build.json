@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l0tNXGdRKxENytDASyxNpQyzSb8kUVGLvo7OYGmOD3U=",
+  "Hash": "0x3PJ9kssZ4PTarf2qFPT6GC0ZJI4ClwY5PSUZ9JXQA=",
   "Source": "NhaHang",
   "BasePath": "_content/NhaHang",
   "Mode": "Default",
@@ -302,6 +302,25 @@
       "OriginalItemSpec": "wwwroot\\css\\NhanVienPhucVu\\DanhSachDatBan.css"
     },
     {
+      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\DanhSachMonAn.css",
+      "SourceId": "NhaHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
+      "BasePath": "_content/NhaHang",
+      "RelativePath": "css/NhanVienPhucVu/DanhSachMonAn.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\NhanVienPhucVu\\DanhSachMonAn.css"
+    },
+    {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\MenuNvpv.css",
       "SourceId": "NhaHang",
       "SourceType": "Discovered",
@@ -338,25 +357,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\NhanVienPhucVu\\NhanVienPhucVu.css"
-    },
-    {
-      "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\ThongBao.css",
-      "SourceId": "NhaHang",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\DACNA\\NhaHang\\wwwroot\\",
-      "BasePath": "_content/NhaHang",
-      "RelativePath": "css/NhanVienPhucVu/ThongBao.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\NhanVienPhucVu\\ThongBao.css"
     },
     {
       "Identity": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Profile\\Profile.css",

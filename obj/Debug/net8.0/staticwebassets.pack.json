@@ -277,16 +277,16 @@
       "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\DanhSachDatBan.css"
     },
     {
+      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\DanhSachMonAn.css",
+      "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\DanhSachMonAn.css"
+    },
+    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\MenuNvpv.css",
       "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\MenuNvpv.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\NhanVienPhucVu.css",
       "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\NhanVienPhucVu.css"
-    },
-    {
-      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\NhanVienPhucVu\\ThongBao.css",
-      "PackagePath": "staticwebassets\\css\\NhanVienPhucVu\\ThongBao.css"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\css\\Profile\\Profile.css",

@@ -22,7 +22,7 @@
 </div>
 
 <div id="thongbaoXacNhan" class="thongbao-xacnhan" style="display: none;">
-    <span class="message">Bạn có chắc chắn muốn xóa tài khoản này?</span>
+    <span class="message">Bạn có chắc muốn xóa tài khoản này?</span>
     <div class="xacnhan-buttons">
         <button id="xacNhanCo" class="btn btn-danger">Có</button>
         <button id="xacNhanKhong" class="btn btn-secondary">Không</button>
@@ -48,8 +48,18 @@
             .then(res => res.text())
             .then(html => {
                 document.getElementById("danhSachTaiKhoan").innerHTML = html;
+                        ganSuKienXoa();
             });
     }
+
+        function ganSuKienXoa() {
+            document.querySelectorAll('button[onclick="hienXacNhanXoa(this)"]').forEach(btn => {
+                btn.onclick = function () {
+                    hienXacNhanXoa(this);
+                };
+            });
+        }
+
 
     document.querySelector("#btnThemTaiKhoan").addEventListener("click", function () {
         window.location.href = `/TaiKhoanQuanLy/ThemTaiKhoanView?vaiTro=${vaiTroHienTai}`;

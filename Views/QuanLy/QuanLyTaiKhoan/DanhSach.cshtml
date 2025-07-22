@@ -43,18 +43,6 @@
                     <p><strong>Địa chỉ:</strong> @user.DiaChi</p>
                     <p><strong>Giới tính:</strong> @user.GioiTinh</p>
                 </div>
-                <div class="user-actions">
-                    <a href="/TaiKhoanQuanLy/ChinhSuaTaiKhoanView?id=@user.Id" class="btn btn-sm btn-warning">
-                        <i class="fas fa-edit"></i>
-                    </a>
-                    <form asp-action="XoaTaiKhoan" method="post">
-                        <input type="hidden" name="id" value="@user.Id" />
-                        <button type="button" class="btn btn-sm btn-danger" onclick="hienXacNhanXoa(this)">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
-
-                </div>
             </div>
         }
     </div>
