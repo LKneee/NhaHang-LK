@@ -57,6 +57,7 @@ namespace NhaHang.Controllers.NhaHang
             _context.Users.Add(user);
             _context.SaveChanges();
 
+            TempData["ThongBao"] = "Đăng Ký Thành Công";
             return RedirectToAction("Login");
         }
 

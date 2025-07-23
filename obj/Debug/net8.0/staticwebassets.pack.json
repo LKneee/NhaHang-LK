@@ -345,10 +345,6 @@
       "PackagePath": "staticwebassets\\image\\bgh1.jpg"
     },
     {
-      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\bo.jpg",
-      "PackagePath": "staticwebassets\\image\\bo.jpg"
-    },
-    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\h1.jpg",
       "PackagePath": "staticwebassets\\image\\h1.jpg"
     },
@@ -367,10 +363,6 @@
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\h5.jpg",
       "PackagePath": "staticwebassets\\image\\h5.jpg"
-    },
-    {
-      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\haisan.jpg",
-      "PackagePath": "staticwebassets\\image\\haisan.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\logo.jpg",
@@ -393,14 +385,6 @@
       "PackagePath": "staticwebassets\\image\\m4.jpg"
     },
     {
-      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\ruouvangdo.jpg",
-      "PackagePath": "staticwebassets\\image\\ruouvangdo.jpg"
-    },
-    {
-      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\ruouvangtrang.jpg",
-      "PackagePath": "staticwebassets\\image\\ruouvangtrang.jpg"
-    },
-    {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\t1.jpg",
       "PackagePath": "staticwebassets\\image\\t1.jpg"
     },
@@ -411,10 +395,6 @@
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\t3.jpg",
       "PackagePath": "staticwebassets\\image\\t3.jpg"
-    },
-    {
-      "Id": "D:\\DACNA\\NhaHang\\wwwroot\\image\\trangmieng.jpg",
-      "PackagePath": "staticwebassets\\image\\trangmieng.jpg"
     },
     {
       "Id": "D:\\DACNA\\NhaHang\\wwwroot\\js\\site.js",

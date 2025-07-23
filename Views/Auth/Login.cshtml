@@ -1,4 +1,6 @@
-﻿@{
+﻿@using System.Text.Json
+<link rel="stylesheet" href="~/css/ThongBao/ThongBao.css" />
+@{
     ViewData["Title"] = "Đăng Nhập";
 }
 
@@ -28,4 +30,19 @@
     </div>
 
 </body>
+
+<script src="~/ThongBao/ThongBao.js"></script>
+
+@if (TempData["ThongBao"] != null)
+{
+    var messageJson = JsonSerializer.Serialize(TempData["ThongBao"]);
+    <script>
+        setTimeout(function () {
+            ThongBao(@Html.Raw(messageJson));
+        }, 100);
+    </script>
+}
+
 </html>
+
+

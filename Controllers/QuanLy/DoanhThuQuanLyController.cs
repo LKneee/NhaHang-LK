@@ -38,7 +38,7 @@ namespace NhaHang.Controllers.QuanLy
                 .Select(g => new
                 {
                     Ngay = g.Key.ToString("dd/MM/yyyy"),
-                    TongTien = g.Sum(o => o.OrderItem.Sum(i => i.DonGia * i.SoLuong))
+                    TongTien = g.Sum(o => o.TongTien)
                 })
                 .ToList();
 
@@ -76,7 +76,7 @@ namespace NhaHang.Controllers.QuanLy
                 .Select(g => new
                 {
                     Thang = $"Tháng {g.Key}",
-                    TongTien = g.Sum(o => o.OrderItem.Sum(i => i.DonGia * i.SoLuong))
+                    TongTien = g.Sum(o => o.TongTien)
                 })
                 .OrderBy(g => g.Thang)
                 .ToList();
@@ -115,7 +115,7 @@ namespace NhaHang.Controllers.QuanLy
                 .Select(g => new
                 {
                     Nam = g.Key,
-                    TongTien = g.Sum(o => o.OrderItem.Sum(i => i.DonGia * i.SoLuong))
+                    TongTien = g.Sum(o => o.TongTien)
                 })
                 .ToList();
 
@@ -129,10 +129,7 @@ namespace NhaHang.Controllers.QuanLy
                     TongTien = item?.TongTien ?? 0
                 });
             }
-
             return Json(ketQua);
         }
-
-
     }
 }

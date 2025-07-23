@@ -101,10 +101,9 @@
                             label: 'Doanh Thu Theo Tuần',
                             data: doanhThu,
                             backgroundColor: doanhThu.map(value => {
-                                if (value < 1000000) return 'rgba(255, 0, 0, 0.6)';           // đỏ                chỗ để chỉnh màu của doanh thu nè
-                                if (value < 5000000) return 'rgba(255, 165, 0, 0.6)';         // cam
-                                if (value < 10000000) return 'rgba(255, 255, 0, 0.6)';        // vàng
-                                return 'rgba(0, 255, 0, 0.6)';                                 // xanh lá
+                                if (value <= 1000000) return 'rgba(255, 0, 0, 0.6)';           // đo
+                                if (value <= 5000000) return 'rgba(255, 255, 0, 0.6)';         // vang
+                                return 'rgba(0, 255, 0, 0.6)';                                 // xanh la                           // xanh la
                             }),
                             borderColor: 'rgba(255, 255, 255, 0.8)',
                             borderWidth: 1
@@ -223,7 +222,7 @@
 
                 const ctx = document.getElementById('doanhThuChartThang').getContext('2d');
 
-                const gradient = ctx.createLinearGradient(0, 0, ctx.canvas.width, 0); // mới thêm để tạo màu cho line biểu đồ
+                const gradient = ctx.createLinearGradient(0, 0, ctx.canvas.width, 0);
                 gradient.addColorStop(0, 'red');
                 gradient.addColorStop(0.5, 'orange');
                 gradient.addColorStop(1, 'green');
@@ -233,11 +232,9 @@
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: 'Doanh Thu Theo Tháng',
+                            label: 'Doanh Thu Theo Tháng (VND)',
                             data: doanhThu,
-                            // backgroundColor dùng cho điểm (nếu muốn màu theo từng điểm)
                             pointBackgroundColor: doanhThu.map(value => {
-                                // Mức thấp → đỏ, trung bình → vàng, cao → xanh lá
                                 if (value < 1000000) return 'red';
                                 if (value < 5000000) return 'orange';
                                 return 'green';
@@ -255,7 +252,7 @@
                             legend: {
                                 position: 'bottom',
                                 labels: {
-                                    color: 'white' // màu chữ trong chú thích
+                                    color: 'white' 
                                 }
                             },
                             datalabels: {
@@ -263,7 +260,7 @@
                                 anchor: 'end',
                                 align: 'top',
                                 formatter: function (value) {
-                                    return value.toLocaleString('vi-VN') + ' VND';
+                                    return value.toLocaleString('vi-VN');
                                 },
                                 font: {
                                     weight: 'bold'
@@ -279,21 +276,21 @@
                             y: {
                                 beginAtZero: true,
                                 ticks: {
-                                    color: 'white', // màu chữ trục Y
+                                    color: 'white', 
                                     callback: function (value) {
                                         return value.toLocaleString('vi-VN') + ' VND';
                                     }
                                 },
                                 grid: {
-                                    color: 'rgba(255, 255, 255, 0.2)' // lưới trục Y mờ
+                                    color: 'rgba(255, 255, 255, 0.2)' 
                                 }
                             },
                             x: {
                                 ticks: {
-                                    color: 'white' // màu chữ trục X
+                                    color: 'white' 
                                 },
                                 grid: {
-                                    color: 'rgba(255, 255, 255, 0.2)' // lưới trục X mờ
+                                    color: 'rgba(255, 255, 255, 0.2)' 
                                 }
                             }
                         },
@@ -374,10 +371,10 @@
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: 'Doanh Thu Theo Năm',
+                            label: 'Doanh Thu Theo Năm (VND)',
                             data: doanhThu,
-                            borderColor: gradient, // Gradient màu line
-                            pointBackgroundColor: 'white', // Màu chấm tròn
+                            borderColor: gradient, 
+                            pointBackgroundColor: 'white', 
                             borderWidth: 2,
                             tension: 0.3,
                             fill: false
@@ -390,14 +387,14 @@
                             legend: {
                                 position: 'bottom',
                                 labels: {
-                                    color: 'white' // nếu dùng nền tối
+                                    color: 'white' 
                                 }
                             },
                             datalabels: {
                                 anchor: 'end',
                                 align: 'top',
                                 color: 'white',
-                                formatter: value => value.toLocaleString('vi-VN') + ' VND',
+                                formatter: value => value.toLocaleString('vi-VN'),
                                 font: { weight: 'bold' }
                             }
                         },
