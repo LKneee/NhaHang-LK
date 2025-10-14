@@ -27,4 +27,11 @@
     <Folder Include="wwwroot\avatar\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\image\haisan.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

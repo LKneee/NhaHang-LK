@@ -1,0 +1,27 @@
+﻿<div id="chat-widget">
+    <div id="chat-button">
+        <img src="/image/logo.jpg" alt="Chatbot" />
+    </div>
+
+    <div id="chat-panel" style="display:none;">
+        <div class="chat-header">
+            <span id="menu-icon">☰</span>
+            Nhà Hàng LK
+            <span id="close-chat">✖</span>
+        </div>
+
+        <div id="chat-menu" class="hidden">
+            <button id="reload-chat">🔄 Làm mới cuộc trò chuyện</button>
+        </div>
+
+        <div id="chat-messages"></div>
+
+        <div class="chat-input">
+            <input type="text" id="chat-text" placeholder="Hãy nhập tin nhắn..." />
+            <button id="chat-send">Gửi</button>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="~/css/Chatbot/Chatbot.css" />
+<script src="~/js/chatbot.js"></script>
